@@ -14,8 +14,7 @@
 // * GLOBAL CSS NAMESPACE
 // * Example: `namespace-classname` or blank if none
 // *****************************************************************************
-
-$namespace: "sg-";
+$namespace: "su-";
 
 
 
@@ -31,7 +30,7 @@ $svg-icons: "../icons/svg";
 
 
 // *****************************************************************************
-// * ANIMATION
+// * FOR ANIMATION
 // * General tip: Animations should generally be on "activation state", that is
 // * when an element is first shown or modified. If an element is being hidden
 // * this should be immediate (no delay or animation).
@@ -46,7 +45,7 @@ $animation-speed-slow: 0.4s;
 
 
 // *****************************************************************************
-// * LAYOUT
+// * FOR LAYOUT
 // *
 // *****************************************************************************
 
