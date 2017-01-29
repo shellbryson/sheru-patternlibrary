@@ -1,0 +1,59 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _tiles.scss
+// *
+// *****************************************************************************
+
+.#{$p-title},
+.#{$c-article}__content h1,
+.#{$c-article}__content h2,
+.#{$c-article}__content h3,
+.#{$c-article}__content h4,
+.#{$c-article}__content h5,
+.#{$c-article}__content h6 {
+
+  // Todo: remove this when layouts changed
+  margin-right: 7.6923%;
+  margin-left: 7.6923%;
+
+  line-height: 1.2;
+  color: $color-title-fg;
+
+  @include breakpoint(910px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  a {
+    color: $color-title-fg-link;
+    text-decoration: none;
+    transition: $animation-speed;
+
+    &:hover,
+    &:focus {
+      color: $color-title-fg-hover;
+    }
+  }
+
+  &--one {
+    @include rem(font-size, 30px);
+    @include rem(margin-bottom, 60px);
+
+    @include breakpoint($breakpoint-small) {
+      @include rem(font-size, 40px);
+      @include rem(margin-bottom, 80px);
+    }
+  }
+
+  &--two {
+    @include rem(font-size, 20px);
+    @include rem(margin-bottom, 40px);
+
+    @include breakpoint($breakpoint-small) {
+      @include rem(font-size, 40px);
+      @include rem(margin-bottom, 80px);
+    }
+  }
+}

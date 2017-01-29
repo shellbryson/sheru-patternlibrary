@@ -1,0 +1,29 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _paragraphs.scss
+// *
+// *****************************************************************************
+
+.#{$p-paragraph},
+.su-article__content p {
+  @include rem(margin-bottom, 32px);
+  @include rem(font-size, 16px);
+  color: $color-body-fg;
+
+  @include breakpoint($breakpoint-small) {
+    @include rem(font-size, 18px);
+  }
+
+  a {
+    color: $color-body-fg-link;
+    text-decoration: none;
+    transition: $animation-speed;
+
+    &:hover,
+    &:focus {
+      color: $color-body-fg-hover;
+    }
+  }
+}

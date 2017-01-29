@@ -2,15 +2,16 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _entry.scss
+// * @name: _article.scss
 // *
 // *****************************************************************************
 
-.#{$c-entry} {
-  &__title {
-    font-family: $fontPrimary;
-    a {
-      text-decoration: none;
+.#{$c-article} {
+
+  &__content {
+
+    p {
+      line-height: 1.6;
     }
   }
 }

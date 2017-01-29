@@ -2,21 +2,20 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _modules.scss
+// * @name: _names.scss
 // *
 // *****************************************************************************
 
 // *****************************************************************************
-// * COMPONENT NAMES
+// * PATTERNS
 // *****************************************************************************
 
-@import "names";
+$p-paragraph: $namespace + "paragraph";
+$p-title: $namespace + "title";
 
 // *****************************************************************************
-// * IMPORTS MODULE SYLES
-// * Patterns  - smallest re-usable styles
-// * Component - display components, made of patterns and unique presentation
+// * COMPONENTS
 // *****************************************************************************
 
-@import "patterns";
-@import "components";
+$c-article: $namespace + "article";
+

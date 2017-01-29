@@ -6,17 +6,6 @@
 // *
 // *****************************************************************************
 
-// DO NOT REORDER THIS FILE
-
-// *****************************************************************************
-// * GLOBAL NAMES
-// * Unique global names based on namespace. Each component must have a name
-// * here.
-// *****************************************************************************
-
-$c-entry: $namespace + "entry";
-
-
 // *****************************************************************************
 // * IMPORT COMPONENT STYLES
 // * Note: Remember if you add anything in the section below to also create a
@@ -25,5 +14,5 @@ $c-entry: $namespace + "entry";
 // *****************************************************************************
 
 // Page components
-@import "../../../components/entry/assets/styles/entry";
+@import "../../../components/article/assets/styles/article";
 
