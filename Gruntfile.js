@@ -3,17 +3,23 @@ var path = require('path');
 
 module.exports = function (grunt) {
   var copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/fabric';
-  var scriptsPattern = ['patterns/**/*.js', 'components/**/*.js', 'assets/scripts/*.js'];
-  var scriptsPatternMain = ['patterns/**/*.main.js', 'components/**/*.main.js', 'assets/scripts/**/*.main.js'];
-  var stylesPattern = ['patterns/**/*.scss', 'components/**/*.scss', 'assets/styles/**/*.scss', '!**/*_scsslint_tmp*.scss'];
+  var scriptsPattern = [
+    'patterns/**/*.js',
+    'components/**/*.js',
+    'assets/scripts/*.js'
+  ];
+  var stylesPattern = [
+    'patterns/**/*.scss',
+    'components/**/*.scss',
+    'assets/styles/**/*.scss',
+    '!**/*_scsslint_tmp*.scss'
+  ];
   var imagesPattern = ['assets/images/**/*'];
   var iconsPattern =  ['assets/icons/**/*'];
   var fontsPattern = ['assets/fonts/**/*'];
   var stylesPatternMain = ['./assets/styles/build.scss'];
-  var fontsPatternDist = ['./dist/fonts/**/*'];
   var stylesPatternDist = ['./dist/styles/build.css'];
   var scriptsPatternDist = ['./dist/scripts/build.js'];
-  var scriptsLibsPatternDist = ['./dist/scripts/libs/**/*.js'];
   var svgPattern = ['assets/icons/svg/*.svg'];
 
   grunt.config.init({
@@ -30,10 +36,6 @@ module.exports = function (grunt) {
       styles: {
         files: stylesPattern,
         tasks: ['styles']
-      },
-      copyToExternal: {
-        files: stylesPatternDist,
-        tasks: ['copy:copyToExternal']
       },
       fonts: {
         files: fontsPattern,
@@ -97,7 +99,7 @@ module.exports = function (grunt) {
           dest: './dist/scripts/libs/'
         }]
       },
-      copyToExternal: {
+      toExternal: {
         files: [{
           expand: true,
           cwd: './dist/',
@@ -120,7 +122,7 @@ module.exports = function (grunt) {
       }
     },
     /*
-     Minify css - keep fonts and build seperate for now
+     Minify css - keep fonts and build separate for now
      */
     cssmin: {
       options: {
@@ -184,20 +186,6 @@ module.exports = function (grunt) {
       }
     },
     /*
-     Strip media queries and generate ie8 css
-     */
-    stripmq: {
-      options: {
-        width: '59.75em',
-        type: 'screen'
-      },
-      all: {
-        files: {
-          './dist/styles/ie8.css': ['./dist/styles/build.css']
-        }
-      }
-    },
-    /*
      Generate us some svg icons
      */
     svgstore: {
@@ -256,7 +244,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', [], function () {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.task.run('sass', 'postcss:build');
+    grunt.task.run('sass', 'postcss:build', 'copy:toExternal');
   });
 
   grunt.registerTask('modernizr', [], function () {
@@ -273,17 +261,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.task.run('copy', 'styles', 'cssmin', 'copy:scripts', 'scripts', 'modernizr', 'uglify');
-  });
-
-  grunt.registerTask('sheru', [], function () {
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.task.run('copy', 'styles', 'cssmin', 'copy:scripts', 'scripts', 'modernizr', 'uglify');
-  });
-
-  grunt.registerTask('ie8', [], function () {
-    grunt.loadNpmTasks('grunt-stripmq');
-    grunt.task.run('stripmq');
   });
 
   grunt.registerTask('lintjs', [], function () {
