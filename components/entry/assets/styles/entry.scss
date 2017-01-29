@@ -2,11 +2,15 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _fonts.scss
+// * @name: _entry.scss
 // *
 // *****************************************************************************
 
-
-$fontPrimary: 'Overpass', sans-serif;
-
-
+.#{$c-entry} {
+  &__title {
+    font-family: $fontPrimary;
+    a {
+      text-decoration: none;
+    }
+  }
+}

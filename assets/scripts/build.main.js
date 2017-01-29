@@ -3,4 +3,12 @@ define(function (require) {
 
   require('toggleAttribute');
 
+  // TODO Remove this font hack once Fabric supports fully custom headers
+  if (location.hostname === 'localhost' ||
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'sheru.local'
+  ) {
+    $('head').append('<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">');
+  }
+
 });

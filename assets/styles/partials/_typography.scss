@@ -8,4 +8,24 @@
 // *
 // *****************************************************************************
 
-$font-quicksand: "font-family: 'Quicksand', sans-serif";
+// Default the fonts
+h1,
+h2,
+h3,
+h4,
+a,
+p {
+  font-family: $fontPrimary;
+}
+
+// Base titles
+.su-title,
+.su-title a {
+  text-decoration: none;
+}
+
+// Base content
+.su-entry-content,
+.su-entry-content p {
+  line-height: 1.5;
+}

@@ -14,9 +14,7 @@
 // * here.
 // *****************************************************************************
 
-// Common components and page furniture
-$c-splash: $namespace + "splash";
-$c-linkbar: $namespace + "linkbar";
+$c-entry: $namespace + "entry";
 
 
 // *****************************************************************************
@@ -27,6 +25,5 @@ $c-linkbar: $namespace + "linkbar";
 // *****************************************************************************
 
 // Page components
-@import "../../../components/splash/assets/styles/splash";
-@import "../../../components/linkbar/assets/styles/linkbar";
+@import "../../../components/entry/assets/styles/entry";
 
