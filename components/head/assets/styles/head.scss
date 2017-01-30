@@ -1,0 +1,42 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _head.scss
+// *
+// *****************************************************************************
+
+.#{$c-head} {
+
+  position: relative;
+
+  &__navigation {
+    position: absolute;
+    //top: 0;
+
+    @include breakpoint-max($breakpoint-small) {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 80px;
+      background-color: $color-navigation-mobile-bg;
+
+      a {
+        color: $color-navigation-mobile-fg;
+      }
+    }
+
+    .menu-item {
+
+      @include breakpoint-max($breakpoint-small) {
+        @include rem(padding, 10px 20px);
+        a {
+          color: $color-navigation-mobile-fg;
+        }
+      }
+    }
+  }
+}

@@ -48,12 +48,12 @@
   }
 
   &--two {
-    @include rem(font-size, 20px);
+    @include rem(font-size, 30px);
     @include rem(margin-bottom, 40px);
 
     @include breakpoint($breakpoint-small) {
       @include rem(font-size, 40px);
-      @include rem(margin-bottom, 80px);
+      @include rem(margin-bottom, 60px);
     }
   }
 }

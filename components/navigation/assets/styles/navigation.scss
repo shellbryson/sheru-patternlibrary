@@ -1,0 +1,50 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _navigation.scss
+// *
+// *****************************************************************************
+
+.#{$c-navigation} {
+
+  //display: block;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 0;
+
+  .primary-menu {
+    @include breakpoint($breakpoint-small) {
+      display: block;
+    }
+  }
+
+  &__menu {
+
+    @include breakpoint-max($breakpoint-small) {
+      position: fixed;
+      right: 0;
+      bottom: 80px;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      background-color: $color-navigation-mobile-bg;
+    }
+  }
+
+  &__menu-toggle {
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+
+    @include breakpoint($breakpoint-small) {
+      display: none;
+    }
+  }
+
+  ul li {
+    @include reset-list;
+  }
+
+}
