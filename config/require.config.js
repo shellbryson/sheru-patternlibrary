@@ -11,6 +11,7 @@ require.config({
 
     //  components
 
+    'navigation':           'components/navigation/assets/scripts/navigation.main'
   },
   shim: {
     'modernizr': {

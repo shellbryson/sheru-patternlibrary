@@ -6,45 +6,231 @@
 // *
 // *****************************************************************************
 
+
+
+// Mixing to make breakpoints a little easier. Can be expanded with any breakpoints as needed.
+//@mixin breakpoint($width) {
+//  @media (min-width: $width)  { @content ; }
+//}
+//@mixin breakpoint-max($width) {
+//  @media (max-width: $width)  { @content ; }
+//}
+
+$font: 'PT Sans', sans-serif;
+
+// Colors
+$color-brand-bg: #000000;
+$color-brand-fg: darken(#FFFFFF, 50%);
+$color-nav-bg: darken(#FFFFFF, 10%);
+$color-toggle-bg: #0000FF;
+$color-toggle-fg: #FFFFFF;
+$color-tile-bg: #000000;
+$color-tile-fg: #FFFFFF;
+$color-tile-expanded-bg: #189AE3;
+
+$color-tile-bg-list:
+    darken($color-tile-expanded-bg, 3%)
+    darken($color-tile-expanded-bg, 6%)
+    darken($color-tile-expanded-bg, 9%)
+    darken($color-tile-expanded-bg, 12%)
+    darken($color-tile-expanded-bg, 15%)
+    darken($color-tile-expanded-bg, 18%)
+    darken($color-tile-expanded-bg, 21%)
+    darken($color-tile-expanded-bg, 24%);
+$colors-tile-fg-list:
+    darken($color-tile-expanded-bg, 23%)
+    darken($color-tile-expanded-bg, 26%)
+    darken($color-tile-expanded-bg, 29%)
+    darken($color-tile-expanded-bg, 32%)
+    darken($color-tile-expanded-bg, 35%)
+    darken($color-tile-expanded-bg, 48%)
+    darken($color-tile-expanded-bg, 41%)
+    darken($color-tile-expanded-bg, 44%);
+
+$breakpoint-small: 500px;
+
+$brand-height: 50px;
+$mobile-nav-height: 70px;
+
+//.page {
+//  width: 100%;
+//  max-width: 900px;
+//  margin: 0 auto;
+//  background-color: darken(#FFFFFF, 5%);
+//}
+
+.su-head {
+  display: flex;
+}
+
+.su-brand {
+  display: block;
+  width: 100%;
+  height: $brand-height;
+  line-height: $brand-height;
+  background-color: $color-brand-bg;
+  color: $color-brand-fg;
+  font-family: $font;
+  font-size: 30px;
+  text-align: center;
+
+  @include breakpoint($breakpoint-small) {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+  }
+}
+
 .#{$c-navigation} {
 
-  //display: block;
-  position: absolute;
-  width: 100%;
-  right: 0;
-  top: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  background-color: $color-nav-bg;
 
-  .primary-menu {
+  @include breakpoint-max($breakpoint-small) {
+    right: 0;
+    left: 0;
+  }
+
+  @include breakpoint($breakpoint-small) {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: $brand-height;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__menu-mobile {
+    display: flex;
+    flex-direction: row;
+
     @include breakpoint($breakpoint-small) {
-      display: block;
+      display: none;
+    }
+
+    li {
+      @include reset-list;
+      width: 25%;
+      text-align: center;
     }
   }
 
   &__menu {
+    display: none;
+    width: 100%;
+    margin: 0;
 
-    @include breakpoint-max($breakpoint-small) {
-      position: fixed;
-      right: 0;
-      bottom: 80px;
-      left: 0;
-      z-index: 99;
-      width: 100%;
-      background-color: $color-navigation-mobile-bg;
+    @include breakpoint($breakpoint-small) {
+      display: block;
+      text-align: right;
+    }
+
+    li {
+      @include reset-list;
+      width: 50%;
+
+      @include breakpoint($breakpoint-small) {
+        display: inline-block;
+        width: auto;
+      }
+    }
+
+    &--show {
+      display: flex;
+      flex-wrap: wrap;
+
+      // Reflow if at desktop
+      @include breakpoint($breakpoint-small) {
+        display: inline-block;
+      }
     }
   }
 
-  &__menu-toggle {
-    position: absolute;
-    right: 0;
-    margin-top: 0;
+  &__primary-mobile {
+    height: $mobile-nav-height;
 
     @include breakpoint($breakpoint-small) {
       display: none;
     }
   }
 
-  ul li {
-    @include reset-list;
+}
+
+.menu-item {
+  display: block;
+  position: relative;
+  height: 120px;
+  padding: 0 6px;
+  line-height: 120px;
+  text-align: center;
+  text-decoration: none;
+  font-family: $font;
+
+  @each $current-color in $colors-tile-fg-list {
+    $i: index($colors-tile-fg-list, $current-color);
+    &-#{$i} {
+      color: $current-color;
+      background-color: nth($color-tile-bg-list, $i);
+      &:after {
+        background-color: nth($color-tile-bg-list, $i);
+      }
+    }
   }
 
+  @include breakpoint($breakpoint-small) {
+    height: auto;
+    line-height: $brand-height;
+    background-color: transparent;
+  }
+
+  &:after {
+    @include breakpoint($breakpoint-small) {
+      display: block;
+      width: 100%;
+      height: 4px;
+      margin-top: -4px;
+      content: "";
+    }
+  }
+
+  .menu-icon {
+    font-size: 40px;
+    vertical-align: middle;
+  }
+
+  &--tile {
+    vertical-align: middle;
+    line-height: $mobile-nav-height;
+    color: $color-tile-fg;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &--one {
+    background-color: lighten($color-tile-bg, 45%);
+  }
+
+  &--two {
+    background-color: lighten($color-tile-bg, 35%);
+  }
+
+  &--three {
+    background-color: lighten($color-tile-bg, 15%)
+  }
+
+  &--four {
+    background-color: $color-tile-bg;
+  }
+
+  // Hide from deskop (still shows as tiles)
+  &--hide-desktop {
+    @include breakpoint($breakpoint-small) {
+      display: none;
+    }
+  }
 }
+

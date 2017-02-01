@@ -2,6 +2,7 @@ define(function (require) {
   'use strict';
 
   require('toggleAttribute');
+  require('navigation');
 
   // TODO Remove this font hack once Fabric supports fully custom headers
   if (location.hostname === 'localhost' ||
