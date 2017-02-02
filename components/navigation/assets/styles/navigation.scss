@@ -129,16 +129,6 @@ $mobile-nav-height: 70px;
       text-align: right;
     }
 
-    li {
-      @include reset-list;
-      width: 50%;
-
-      @include breakpoint($breakpoint-small) {
-        display: inline-block;
-        width: auto;
-      }
-    }
-
     &--show {
       display: flex;
       flex-wrap: wrap;
@@ -160,9 +150,11 @@ $mobile-nav-height: 70px;
 
 }
 
-.menu-item {
+.su-navigation__item {
+  @include reset-list;
   display: block;
   position: relative;
+  width: 50%;
   height: 120px;
   padding: 0 6px;
   line-height: 120px;
@@ -182,6 +174,8 @@ $mobile-nav-height: 70px;
   }
 
   @include breakpoint($breakpoint-small) {
+    display: inline-block;
+    width: auto;
     height: auto;
     line-height: $brand-height;
     background-color: transparent;
