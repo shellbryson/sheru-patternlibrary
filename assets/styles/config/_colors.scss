@@ -26,3 +26,44 @@ $color-body-fg-hover: #000000;
 $color-title-fg: #000000;
 $color-title-fg-link: #000000;
 $color-title-fg-hover: #000000;
+
+$color-brand-bg: #000000;
+$color-brand-fg: darken(#FFFFFF, 50%);
+$color-nav-bg: darken(#FFFFFF, 10%);
+$color-toggle-bg: #0000FF;
+$color-toggle-fg: #FFFFFF;
+$color-tile-bg: #000000;
+$color-tile-fg: #FFFFFF;
+$color-title-open-bg: #189AE3;
+
+// Color cycle used for tile navigation (10). See navigation.scss for application.
+$_ctl: $color-title-open-bg;
+$color-tile-bg-list:
+    darken($_ctl, 3%)
+    darken($_ctl, 6%)
+    darken($_ctl, 9%)
+    darken($_ctl, 12%)
+    darken($_ctl, 15%)
+    darken($_ctl, 18%)
+    darken($_ctl, 21%)
+    darken($_ctl, 24%)
+    darken($_ctl, 27%)
+    darken($_ctl, 30%);
+
+$colors-tile-fg-list:
+    lighten($_ctl, 30%)
+    lighten($_ctl, 27%)
+    lighten($_ctl, 24%)
+    lighten($_ctl, 21%)
+    lighten($_ctl, 18%)
+    lighten($_ctl, 15%)
+    lighten($_ctl, 12%)
+    lighten($_ctl, 9%)
+    lighten($_ctl, 6%)
+    lighten($_ctl, 3%);
+
+//@for $i from 0 through 100 {
+//  .width-percentage-#{$i} {
+//    width : round(percentage($i/100));
+//  }
+//}

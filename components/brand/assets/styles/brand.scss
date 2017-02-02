@@ -8,8 +8,24 @@
 
 .#{$c-brand} {
 
-  &__title {
-    @include rem(margin, 20px 60px 40px 0);
-    display: inline-block;
+  display: block;
+  width: 100%;
+  height: $brand-height;
+  line-height: $brand-height;
+  background-color: $color-brand-bg;
+  color: $color-brand-fg;
+  font-family: $fontPrimary;
+  font-size: 30px;
+  text-align: center;
+
+  @include breakpoint($breakpoint-small) {
+    display: inline-flex;
+    position: relative;
+    width: 150px;
   }
+
+  &__title {
+    margin: 0;
+  }
+
 }
