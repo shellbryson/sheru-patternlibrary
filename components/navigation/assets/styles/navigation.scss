@@ -148,83 +148,85 @@ $mobile-nav-height: 70px;
     }
   }
 
-}
+  &__item {
+    @include reset-list;
+    display: block;
+    position: relative;
+    width: 50%;
+    height: 120px;
+    padding: 0 6px;
+    line-height: 120px;
+    text-align: center;
+    text-decoration: none;
+    font-family: $font;
 
-.su-navigation__item {
-  @include reset-list;
-  display: block;
-  position: relative;
-  width: 50%;
-  height: 120px;
-  padding: 0 6px;
-  line-height: 120px;
-  text-align: center;
-  text-decoration: none;
-  font-family: $font;
-
-  @each $current-color in $colors-tile-fg-list {
-    $i: index($colors-tile-fg-list, $current-color);
-    &-#{$i} {
-      color: $current-color;
-      background-color: nth($color-tile-bg-list, $i);
-      &:after {
+    @each $current-color in $colors-tile-fg-list {
+      $i: index($colors-tile-fg-list, $current-color);
+      &-#{$i} {
+        color: $current-color;
         background-color: nth($color-tile-bg-list, $i);
+        &:after {
+          background-color: nth($color-tile-bg-list, $i);
+        }
+      }
+    }
+
+    @include breakpoint($breakpoint-small) {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      line-height: $brand-height;
+      background-color: transparent;
+    }
+
+    &:after {
+      @include breakpoint($breakpoint-small) {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: -4px;
+        content: "";
+      }
+    }
+
+    .menu-icon {
+      font-size: 40px;
+      vertical-align: middle;
+    }
+
+    &--tile {
+      vertical-align: middle;
+      line-height: $mobile-nav-height;
+      color: $color-tile-fg;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    &--one {
+      background-color: lighten($color-tile-bg, 45%);
+    }
+
+    &--two {
+      background-color: lighten($color-tile-bg, 35%);
+    }
+
+    &--three {
+      background-color: lighten($color-tile-bg, 15%)
+    }
+
+    &--four {
+      background-color: $color-tile-bg;
+    }
+
+    // Hide from deskop (still shows as tiles)
+    &--hide-desktop {
+      @include breakpoint($breakpoint-small) {
+        display: none;
       }
     }
   }
 
-  @include breakpoint($breakpoint-small) {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    line-height: $brand-height;
-    background-color: transparent;
-  }
+  &__link {
 
-  &:after {
-    @include breakpoint($breakpoint-small) {
-      display: block;
-      width: 100%;
-      height: 4px;
-      margin-top: -4px;
-      content: "";
-    }
-  }
-
-  .menu-icon {
-    font-size: 40px;
-    vertical-align: middle;
-  }
-
-  &--tile {
-    vertical-align: middle;
-    line-height: $mobile-nav-height;
-    color: $color-tile-fg;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  &--one {
-    background-color: lighten($color-tile-bg, 45%);
-  }
-
-  &--two {
-    background-color: lighten($color-tile-bg, 35%);
-  }
-
-  &--three {
-    background-color: lighten($color-tile-bg, 15%)
-  }
-
-  &--four {
-    background-color: $color-tile-bg;
-  }
-
-  // Hide from deskop (still shows as tiles)
-  &--hide-desktop {
-    @include breakpoint($breakpoint-small) {
-      display: none;
-    }
   }
 }
-
