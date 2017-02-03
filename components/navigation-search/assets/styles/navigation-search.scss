@@ -9,6 +9,11 @@
 .#{$c-navigation-search} {
 
   display: flex;
+  width: 70%;
+
+  @include breakpoint($breakpoint-small) {
+    width: 25%;
+  }
 
   &__submit {
 
@@ -21,6 +26,11 @@
   // Any overrides to su-forms__input here:
   .su-forms__input {
     height: 100%;
+    width: 100%;
+  }
+
+  .su-forms__label {
+    width: 100%;
   }
 
 }

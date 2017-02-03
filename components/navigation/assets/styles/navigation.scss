@@ -8,27 +8,25 @@
 
 .#{$c-navigation} {
 
+  // Mobile first
   position: fixed;
   bottom: 0;
   z-index: 99;
+  right: 0;
+  left: 0;
 
-  // Smallest screen only
-  @include breakpoint-max($breakpoint-small) {
-    right: 0;
-    left: 0;
-  }
-
-  // Medium screens only
+  // Tablet screens only
   @include breakpoint($breakpoint-small) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
+    left: auto;
     bottom: auto;
     width: 50%;
   }
 
-  // Medium screens only
+  // Desktop screens only
   @include breakpoint($breakpoint-medium) {
     display: inline-flex;
     position: relative;

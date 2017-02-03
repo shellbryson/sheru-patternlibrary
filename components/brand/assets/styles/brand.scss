@@ -9,19 +9,19 @@
 .#{$c-brand} {
 
   display: block;
-  width: 100%;
+  width: 30%;
   height: $brand-height;
   line-height: $brand-height;
   background-color: $color-brand-bg;
   color: $color-brand-fg;
   font-family: $fontPrimary;
   font-size: 30px;
-  text-align: center;
+  text-align: left;
 
   @include breakpoint($breakpoint-small) {
     display: inline-flex;
     position: relative;
-    width: 150px;
+    width: 25%;
   }
 
   &__title {
