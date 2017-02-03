@@ -10,16 +10,17 @@
 
   display: flex;
 
-  &__input {
-    border: 0;
-  }
-
   &__submit {
-    border: 0;
+
   }
 
   &--focus {
     // Make field wider when selected?
+  }
+
+  // Any overrides to su-forms__input here:
+  .su-forms__input {
+    height: 100%;
   }
 
 }

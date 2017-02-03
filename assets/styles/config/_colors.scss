@@ -62,8 +62,7 @@ $colors-tile-fg-list:
     lighten($_ctl, 6%)
     lighten($_ctl, 3%);
 
-//@for $i from 0 through 100 {
-//  .width-percentage-#{$i} {
-//    width : round(percentage($i/100));
-//  }
-//}
+$color-form-element-border: #000000;
+$color-form-element-bg:  #F1F1F1;
+$color-form-element-border-hover: lighten($color-form-element-border, 20%);
+$color-form-element-bg-hover: lighten($color-form-element-bg, 20%);
