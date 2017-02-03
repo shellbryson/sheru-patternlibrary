@@ -6,11 +6,29 @@
 // *
 // *****************************************************************************
 
+// *****************************************************************************
+// * Body
+// * Here we have to add some space if the WP admin bar is open as our theme
+// * removes the generated space (to allow for accurate absolute positioning)
+// *****************************************************************************
+
 body {
   background-color: $color-body-bg;
 }
 
-.su-site {
+body.admin-bar {
+  @include rem(padding-top, 50px);
+
+  @include breakpoint($breakpoint-small) {
+    @include rem(padding-top, 10px);
+  }
+}
+
+// *****************************************************************************
+// * Basic site layout
+// *****************************************************************************
+
+.#{$namespace}site {
   @include rem(margin, 10px 10px);
   vertical-align: baseline;
   background-color: $color-page-bg;
