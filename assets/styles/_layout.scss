@@ -7,8 +7,13 @@
 // *****************************************************************************
 
 body {
+  background-color: $color-body-bg;
+}
+
+.su-site {
   @include rem(margin, 10px 10px);
   vertical-align: baseline;
+  background-color: $color-page-bg;
   transition: $animation-speed;
 
   @include breakpoint($breakpoint-xsmall) {

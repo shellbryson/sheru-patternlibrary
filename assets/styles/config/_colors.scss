@@ -62,6 +62,9 @@ $colors-tile-fg-list:
     lighten($_ctl, 6%)
     lighten($_ctl, 3%);
 
+$color-body-bg: #000000;
+$color-page-bg: #FFFFFF;
+
 $color-form-element-border: #000000;
 $color-form-element-bg:  #F1F1F1;
 $color-form-element-border-hover: lighten($color-form-element-border, 20%);
