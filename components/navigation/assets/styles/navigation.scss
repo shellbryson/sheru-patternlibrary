@@ -11,14 +11,25 @@
   position: fixed;
   bottom: 0;
   z-index: 99;
-  background-color: $color-nav-bg;
 
+  // Smallest screen only
   @include breakpoint-max($breakpoint-small) {
     right: 0;
     left: 0;
   }
 
+  // Medium screens only
   @include breakpoint($breakpoint-small) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    width: 50%;
+  }
+
+  // Medium screens only
+  @include breakpoint($breakpoint-medium) {
     display: inline-flex;
     position: relative;
     width: 100%;
@@ -35,6 +46,10 @@
     flex-direction: row;
 
     @include breakpoint($breakpoint-small) {
+      height: $brand-height;
+    }
+
+    @include breakpoint($breakpoint-medium) {
       display: none;
     }
 
@@ -50,7 +65,7 @@
     width: 100%;
     margin: 0;
 
-    @include breakpoint($breakpoint-small) {
+    @include breakpoint($breakpoint-medium) {
       display: block;
       text-align: right;
     }
@@ -59,9 +74,16 @@
       display: flex;
       flex-wrap: wrap;
 
-      // Reflow if at desktop
+      // Reflow if at tablet
       @include breakpoint($breakpoint-small) {
+        display: block;
+        padding-top: $brand-height;
+      }
+
+      // Reflow if at desktop
+      @include breakpoint($breakpoint-medium) {
         display: inline-block;
+        padding-top: 0;
       }
     }
   }
@@ -70,6 +92,13 @@
     height: $mobile-nav-height;
 
     @include breakpoint($breakpoint-small) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    @include breakpoint($breakpoint-medium) {
       display: none;
     }
   }
@@ -79,7 +108,7 @@
     &__item:nth-child( #{$i} ) {
 
       // Ensure our colour cycle is only applied on mobile
-      @include breakpoint-max($breakpoint-small) {
+      @include breakpoint-max($breakpoint-medium) {
         color: $current-color;
         background-color: nth($color-tile-bg-list, $i);
 
@@ -109,6 +138,14 @@
     text-decoration: none;
 
     @include breakpoint($breakpoint-small) {
+      display: block;
+      width: auto;
+      height: auto;
+      line-height: $brand-height;
+      background-color: transparent;
+    }
+
+    @include breakpoint($breakpoint-medium) {
       display: inline-block;
       width: auto;
       height: auto;
@@ -117,7 +154,7 @@
     }
 
     &:after {
-      @include breakpoint($breakpoint-small) {
+      @include breakpoint($breakpoint-medium) {
         display: block;
         width: 100%;
         height: 4px;
@@ -137,6 +174,10 @@
       color: $color-tile-fg;
       text-align: center;
       text-decoration: none;
+
+      @include breakpoint($breakpoint-small) {
+        line-height: $brand-height;
+      }
     }
 
     &--one {
@@ -158,6 +199,10 @@
     // Hide from deskop (still shows as tiles)
     &--hide-desktop {
       @include breakpoint($breakpoint-small) {
+        //display: none;
+      }
+
+      @include breakpoint($breakpoint-medium) {
         display: none;
       }
     }
