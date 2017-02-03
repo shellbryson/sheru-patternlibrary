@@ -25,6 +25,26 @@ body.admin-bar {
 }
 
 // *****************************************************************************
+// * Helpers
+// *****************************************************************************
+
+// Hide on medium (display small only)
+.#{$namespace}display-small {
+  @include breakpoint($breakpoint-small) {
+    display: none;
+  }
+}
+
+// Hide on small (display medium or above)
+.#{$namespace}display-medium {
+  display: none;
+
+  @include breakpoint($breakpoint-small) {
+    display: inherit;
+  }
+}
+
+// *****************************************************************************
 // * Basic site layout
 // *****************************************************************************
 
