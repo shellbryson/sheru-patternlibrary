@@ -99,6 +99,28 @@
     @include breakpoint($breakpoint-medium) {
       display: none;
     }
+
+    i {
+      font-size: 40px;
+      vertical-align: middle;
+      transition: $animation-speed;
+      line-height: $brand-height;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      &:hover,
+      &:focus {
+        i {
+           transform: scale(1.1);
+         }
+      }
+
+    }
+
   }
 
   @each $current-color in $colors-tile-fg-list {
@@ -159,11 +181,6 @@
         margin-top: -4px;
         content: "";
       }
-    }
-
-    .menu-icon {
-      font-size: 40px;
-      vertical-align: middle;
     }
 
     &--tile {
