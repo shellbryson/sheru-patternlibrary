@@ -3,12 +3,27 @@ define(function (require) {
 
   var $ = require('jquery');
   var $nav = $('.js-navigation');
-  var $toggle = $('.js-toggle');
+  var $search = $('.js-search');
+  var $toggleMenu = $('.js-toggleMenu');
+  var $toggleSearch = $('.js-toggleSearch');
+  var _menuClass = 'su-navigation__menu--show';
+  var _searchClass = 'su-navigation-search--show';
 
   function initNavigation() {
-    $toggle.on('click', function (e) {
+    $toggleMenu.on('click', function (e) {
       e.preventDefault();
-      $nav.toggleClass('su-navigation__menu--show');
+      if ($nav.hasClass(_menuClass)) {
+        $nav.removeClass(_menuClass);
+        $search.removeClass(_searchClass);
+      } else {
+        $nav.addClass(_menuClass);
+        $search.addClass(_searchClass);
+      }
+    });
+
+    $toggleSearch.on('click', function (e) {
+      e.preventDefault();
+      $search.toggleClass(_searchClass);
     });
   }
 

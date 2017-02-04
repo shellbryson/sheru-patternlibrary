@@ -5,10 +5,13 @@
     </h1>
   </div>
 
-  {{navigation-search}}
-
   <div class="su-navigation">
     <nav class="su-navigation__wrapper">
+
+      <div class="su-navigation__search js-search">
+        {{navigation-search}}
+      </div>
+
       <ul class="su-navigation__menu js-navigation">
         <li class="su-navigation__item">
           <a href="#" class="su-navigation__link">
@@ -52,15 +55,23 @@
           <li class="su-navigation__item animation-fadein">
             <a href="/projects">Blog</a>
           </li>
-          <li class="su-navigation__item animation-fadein js-toggle">
+          <li class="su-navigation__item animation-fadein js-toggleMenu">
             <a href="#">
               <i class="fa fa-th-large su-display-small"></i>
               <i class="fa fa-bars su-display-medium"></i>
+            </a>
+          </li>
+          <li class="su-navigation__item su-navigation__item--small animation-fadein js-toggleSearch">
+            <a href="#">
+              <i class="fa fa-search su-display-medium"></i>
             </a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
+
+
+
 </header>
 

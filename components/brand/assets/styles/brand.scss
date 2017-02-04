@@ -14,7 +14,7 @@
 
   background-color: $color-brand-bg;
 
-  font-family: $fontPrimary;
+  font-family: $font-primary;
   line-height: $brand-height;
 
   text-align: left;
@@ -22,12 +22,12 @@
   @include breakpoint(392px) {
     display: inline-flex;
     position: relative;
-    width: 50%;
+    //width: 50%;
     transition: $animation-speed;
   }
 
   @include breakpoint($breakpoint-small) {
-    width: 100%;
+    //width: 25%;
   }
 
   &__title {
