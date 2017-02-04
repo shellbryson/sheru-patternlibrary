@@ -163,6 +163,8 @@
 
   &__primary {
     height: $mobile-nav-height;
+
+    // At 100%, Chrome leaves a very slight gap between menu elements
     width: 100%;
 
     @include breakpoint($breakpoint-small) {
@@ -184,6 +186,7 @@
       color: $color-tile-fg;
       text-align: center;
       text-decoration: none;
+      transition: $animation-speed;
 
       @include breakpoint($breakpoint-small) {
         line-height: $brand-height;
@@ -255,8 +258,9 @@
           color: $current-color;
           text-decoration: none;
         }
-        &:after {
-          background-color: nth($color-tile-bg-list, $i);
+        a.focus,
+        a:hover {
+          color: $color-white;
         }
       }
     }
