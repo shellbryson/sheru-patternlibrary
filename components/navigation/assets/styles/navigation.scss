@@ -76,6 +76,7 @@
     display: none;
     width: 100%;
     margin: 0;
+    padding: 0;
     transition: $animation-speed-slow;
     pointer-events: all;
 
@@ -162,12 +163,12 @@
 
   &__primary {
     height: $mobile-nav-height;
+    width: 100%;
 
     @include breakpoint($breakpoint-small) {
       position: absolute;
       top: 0;
       right: 0;
-      width: 100%;
       line-height: $brand-height;
       transition: $animation-speed-slow;
     }
@@ -206,12 +207,18 @@
       }
 
       &--small {
-        width: 60px;
-        margin-right: -100px;
+        display: none;
 
-        i {
-          font-size: 20px;
+        @include breakpoint($breakpoint-small) {
+          display: block;
+          width: 60px;
+          margin-right: -100px;
+
+          i {
+            font-size: 20px;
+          }
         }
+
       }
     }
 
@@ -232,6 +239,11 @@
     line-height: 120px;
     text-align: center;
     text-decoration: none;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
 
     @each $current-color in $colors-tile-fg-list {
       $i: index($colors-tile-fg-list, $current-color);

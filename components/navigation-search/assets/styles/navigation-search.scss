@@ -26,16 +26,23 @@ $layout-search-field-height: 50px;
   }
 
   &__input {
-    @include rem(padding, 0 20px);
+    @include rem(padding, 0 10px);
     @include rem(line-height, 40px);
     @include rem(font-size, 24px);
     width: 100%;
-    border: 6px solid $color-title-open-bg;
+    margin: 6px 0 6px 6px;
+    border: 1px solid $color-form-element-border;
     font-family: $font-primary;
+    transition: $animation-speed;
+    box-shadow: inset 4px 4px 50px rgba($color-title-open-bg, 0.3);
 
     &:focus,
     &:hover {
+      border: 1px solid $color-form-element-border-hover;
       outline: none;
+    }
+    &:focus {
+      box-shadow: none;
     }
   }
 
@@ -48,6 +55,7 @@ $layout-search-field-height: 50px;
   }
 
   &__label {
+    display: flex;
     width: 100%;
   }
 
