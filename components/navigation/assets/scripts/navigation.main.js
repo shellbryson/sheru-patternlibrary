@@ -6,17 +6,19 @@ define(function (require) {
   var $search = $('.js-search');
   var $toggleMenu = $('.js-toggleMenu');
   var $toggleSearch = $('.js-toggleSearch');
+  var _menuClass = 'su-navigation__menu--show';
+  var _searchClass = 'su-navigation-search--show';
 
   function initNavigation() {
     $toggleMenu.on('click', function (e) {
       e.preventDefault();
-      $nav.toggleClass('su-navigation__menu--show');
-      $search.toggleClass('su-navigation-search--show');
+      $nav.toggleClass(_menuClass);
+      $search.toggleClass(_searchClass);
     });
 
     $toggleSearch.on('click', function (e) {
       e.preventDefault();
-      $search.toggleClass('su-navigation-search--show');
+      $search.toggleClass(_searchClass);
     });
   }
 
