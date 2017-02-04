@@ -10,10 +10,10 @@
 
   // Mobile first
   position: fixed;
-  bottom: 0;
   z-index: 99;
   right: 0;
   left: 0;
+  bottom: 0;
 
   // Tablet screens only
   @include breakpoint($breakpoint-small) {
@@ -24,14 +24,6 @@
     left: auto;
     bottom: auto;
     width: 50%;
-  }
-
-  // Desktop screens only
-  @include breakpoint($breakpoint-medium) {
-    display: inline-flex;
-    position: relative;
-    width: 100%;
-    height: $brand-height;
   }
 
   &__wrapper {
@@ -47,10 +39,6 @@
       height: $brand-height;
     }
 
-    @include breakpoint($breakpoint-medium) {
-      display: none;
-    }
-
     li {
       @include reset-list;
       width: 25%;
@@ -63,25 +51,14 @@
     width: 100%;
     margin: 0;
 
-    @include breakpoint($breakpoint-medium) {
-      display: block;
-      text-align: right;
-    }
-
     &--show {
       display: flex;
       flex-wrap: wrap;
 
-      // Reflow if at tablet
+      // Reflow table or larger
       @include breakpoint($breakpoint-small) {
         display: block;
         padding-top: $brand-height;
-      }
-
-      // Reflow if at desktop
-      @include breakpoint($breakpoint-medium) {
-        display: inline-block;
-        padding-top: 0;
       }
     }
   }
@@ -96,15 +73,11 @@
       width: 100%;
     }
 
-    @include breakpoint($breakpoint-medium) {
-      display: none;
-    }
-
     i {
       font-size: 40px;
       vertical-align: middle;
-      transition: $animation-speed;
       line-height: $brand-height;
+      transition: $animation-speed;
     }
 
     a {
@@ -126,21 +99,17 @@
   @each $current-color in $colors-tile-fg-list {
     $i: index($colors-tile-fg-list, $current-color);
     &__item:nth-child( #{$i} ) {
+      color: $current-color;
+      background-color: nth($color-tile-bg-list, $i);
 
-      // Ensure our colour cycle is only applied on mobile
-      @include breakpoint-max($breakpoint-medium) {
+      a,
+      a:visited {
         color: $current-color;
+        text-decoration: none;
+      }
+
+      &:after {
         background-color: nth($color-tile-bg-list, $i);
-
-        a,
-        a:visited {
-          color: $current-color;
-          text-decoration: none;
-        }
-
-        &:after {
-          background-color: nth($color-tile-bg-list, $i);
-        }
       }
     }
   }
@@ -165,24 +134,6 @@
       background-color: transparent;
     }
 
-    @include breakpoint($breakpoint-medium) {
-      display: inline-block;
-      width: auto;
-      height: auto;
-      line-height: $brand-height;
-      background-color: transparent;
-    }
-
-    &:after {
-      @include breakpoint($breakpoint-medium) {
-        display: block;
-        width: 100%;
-        height: 4px;
-        margin-top: -4px;
-        content: "";
-      }
-    }
-
     &--tile {
       vertical-align: middle;
       line-height: $mobile-nav-height;
@@ -195,32 +146,6 @@
       }
     }
 
-    &--one {
-      background-color: lighten($color-tile-bg, 45%);
-    }
-
-    &--two {
-      background-color: lighten($color-tile-bg, 35%);
-    }
-
-    &--three {
-      background-color: lighten($color-tile-bg, 15%)
-    }
-
-    &--four {
-      background-color: $color-tile-bg;
-    }
-
-    // Hide from deskop (still shows as tiles)
-    &--hide-desktop {
-      @include breakpoint($breakpoint-small) {
-        //display: none;
-      }
-
-      @include breakpoint($breakpoint-medium) {
-        display: none;
-      }
-    }
   }
 
   &__link {

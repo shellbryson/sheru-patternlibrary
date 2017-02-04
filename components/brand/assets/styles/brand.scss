@@ -8,24 +8,45 @@
 
 .#{$c-brand} {
 
+
+
   display: block;
   width: 30%;
   height: $brand-height;
-  line-height: $brand-height;
+
   background-color: $color-brand-bg;
-  color: $color-brand-fg;
+
   font-family: $fontPrimary;
-  font-size: 30px;
+  line-height: $brand-height;
+
   text-align: left;
 
+
+
   @include breakpoint($breakpoint-small) {
+
     display: inline-flex;
     position: relative;
     width: 25%;
+    transition: $animation-speed;
   }
 
   &__title {
-    margin: 0;
+
+  }
+
+  &__subtitle {
+    display: none;
+
+    @include breakpoint($breakpoint-large) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    @include rem(font-size, 40px);
+    color: $color-brand-fg;
+    text-decoration: none;
   }
 
 }
