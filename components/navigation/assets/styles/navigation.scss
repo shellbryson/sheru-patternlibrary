@@ -101,33 +101,54 @@
     // *****************************************************************************
 
     &--show {
+
+      // *****************************************************************************
+      // * Elements within the Tile Menu (small screen)
+      // *****************************************************************************
+
       display: flex;
       flex-wrap: wrap;
 
+      a {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        // Need this z-index as Safari flickers badly on the hover
+        // transform without it.
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        z-index: 98;
+        transform: perspective( 1200px ) rotateY( 1deg );
+        transition: $animation-speed-slow;
+
+        &:hover {
+          top: 7px;
+          z-index: 99;
+          background-color: $color-title-open-bg;
+          transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
+          box-shadow: 0 10px 20px $color-shadows;
+        }
+      }
+
+      span {
+        width: 100%;
+        text-align: center;
+      }
+
       // *****************************************************************************
-      // * Elements within the popup menu
+      // * Elements within the Tile Menu (larger screen)
       // *****************************************************************************
 
       @include breakpoint($breakpoint-small) {
         a {
-          display: block;
-          // Need this z-index as Safari flickers badly on the hover
-          // transform without it.
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          bottom: 10px;
-          left: 10px;
-          z-index: 98;
           transform: perspective( 1200px ) rotateY( 1deg );
-          transition: $animation-speed-slow;
 
           &:hover {
             top: 7px;
-            z-index: 99;
-            background-color: $color-title-open-bg;
             transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
-            box-shadow: 0 10px 20px $color-shadows;
           }
         }
 
@@ -179,7 +200,7 @@
   }
 
   // *****************************************************************************
-  // * Regular menu items (in popup)
+  // * Regular menu items (in Tile Menu)
   // *****************************************************************************
 
   &__item {
@@ -219,5 +240,13 @@
       background-color: transparent;
     }
 
+  }
+
+  // *****************************************************************************
+  // * Links in items (in Tile Menu)
+  // *****************************************************************************
+
+  &__link {
+    vertical-align: middle;
   }
 }
