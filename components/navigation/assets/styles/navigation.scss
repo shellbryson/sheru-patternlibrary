@@ -80,6 +80,9 @@
       @include breakpoint($breakpoint-small) {
         a {
           display: block;
+          // Need this z-index as Safari flickers badly on the hover
+          // transform without it.
+          z-index: 98;
           position: absolute;
           top: 10px;
           right: 10px;
@@ -87,12 +90,11 @@
           left: 10px;
           transform: perspective( 1200px ) rotateY( 1deg );
           transition: $animation-speed-slow;
-          //background-color: blue;
           &:hover {
             z-index: 99;
             background-color: $color-title-open-bg;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transform: perspective( 1200px ) rotateY( -1deg ) scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           }
         }
 
@@ -108,11 +110,9 @@
       top: 0;
       right: 0;
       width: 100%;
-      //transform: perspective( 1200px ) rotateY( -20deg ) rotateX( -12deg );
       transition: $animation-speed-slow;
 
       &:hover {
-        //right: 4px;
         transform: perspective( 1200px ) rotateY( -8deg );
       }
 
