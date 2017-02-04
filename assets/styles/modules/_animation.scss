@@ -2,18 +2,13 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _build.scss
-// *
-// * Glue everything together into the a single stylesheet
+// * @name: _animation.scss
 // *
 // *****************************************************************************
 
-/*
-  General
-*/
-@import "mixins/mixins";
-@import "config/config";
-@import "vendor/vendor";
-@import "partials/partials";
-@import "modules/modules";
-@import "shame";
+.animation-fadein {
+  opacity: 0;
+  animation: fadein ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
