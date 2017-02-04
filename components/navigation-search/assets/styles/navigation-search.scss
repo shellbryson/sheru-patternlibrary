@@ -17,9 +17,17 @@ $layout-search-field-height: 50px;
 
   display: none;
   position: relative;
-  width: 100%;
+  width: 50%;
   max-width: 500px;
-  background-color: $color-search-bg;
+
+  text-align: right;
+
+  transform: perspective( 1200px ) rotateY( -4deg );
+  transition: $animation-speed-slow;
+
+  &:hover {
+    transform: perspective( 1200px ) rotateY( -6deg );
+  }
 
   @include breakpoint($breakpoint-medium) {
     width: 80%;
@@ -30,6 +38,7 @@ $layout-search-field-height: 50px;
   .su-forms__input {
     @include rem(font-size, 18px);
     @include rem(padding, 0 20px);
+    margin-right: 40px;
     width: 100%;
     height: $layout-search-field-height;
     border: 0;
@@ -39,6 +48,7 @@ $layout-search-field-height: 50px;
   &__submit {
     @include rem(padding, 0 20px);
     @include rem(font-size, 20px);
+    margin: -2px 0 -2px 2px;
     border: 0;
     color: $color-white;
     background-color: $color-title-open-bg;
