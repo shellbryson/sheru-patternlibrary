@@ -244,8 +244,7 @@
     text-decoration: none;
 
     a {
-      display: inline-block;
-      width: 100%;
+      display: block;
     }
 
     @each $current-color in $colors-tile-fg-list {
@@ -258,7 +257,7 @@
           color: $current-color;
           text-decoration: none;
         }
-        a.focus,
+        a:focus,
         a:hover {
           color: $color-white;
         }
