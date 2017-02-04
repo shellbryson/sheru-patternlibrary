@@ -10,13 +10,11 @@
 
   // Mobile first
   position: fixed;
-  z-index: 99;
   right: 0;
   left: 0;
   bottom: 0;
-
+  z-index: 99;
   transition: $animation-speed;
-
 
   // Tablet screens only
   @include breakpoint($breakpoint-small) {
@@ -24,10 +22,14 @@
     position: absolute;
     top: 0;
     right: -10px;
-    left: auto;
     bottom: auto;
+    left: auto;
     width: 50%;
   }
+
+  // *****************************************************************************
+  // * Wrap entire tile menu
+  // *****************************************************************************
 
   &__wrapper {
     width: 100%;
@@ -36,20 +38,29 @@
       position: absolute;
       pointer-events: all;
       z-index: 99;
-    }
+      transform: perspective( 1200px ) rotateY( -8deg );
+      transition: $animation-speed-slow;
 
+      &:hover {
+        transform: perspective( 1200px ) rotateY( -4deg );
+      }
+    }
   }
+
+  // *****************************************************************************
+  // * Buttons that are always visible (x4)
+  // *****************************************************************************
 
   &__menu-mobile {
     display: flex;
     flex-direction: row;
     transition: $animation-speed;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
     @include breakpoint($breakpoint-small) {
       height: $brand-height;
     }
 
+    // Four wide
     li {
       @include reset-list;
       width: 25%;
@@ -57,40 +68,60 @@
     }
   }
 
+  // *****************************************************************************
+  // * The popup menu itself
+  // *****************************************************************************
+
   &__menu {
     display: none;
     width: 100%;
     margin: 0;
-
     transition: $animation-speed-slow;
     pointer-events: all;
 
     @include breakpoint($breakpoint-small) {
       opacity: 0.98;
-      transform: perspective( 1200px ) rotateY( -8deg ) translateY(40px);
+      transform: translateY(60px);
 
       &:hover {
-        transform: perspective( 1200px ) rotateY( -10deg ) translateY(60px);
+        transform: translateY(70px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
     }
+
+    i {
+      font-size: 40px;
+      vertical-align: middle;
+      line-height: $brand-height;
+      transition: $animation-speed;
+    }
+
+  // *****************************************************************************
+  // * When menu is open...
+  // *****************************************************************************
 
     &--show {
       display: flex;
       flex-wrap: wrap;
+
+  // *****************************************************************************
+  // * Elements within the popup menu
+  // *****************************************************************************
 
       @include breakpoint($breakpoint-small) {
         a {
           display: block;
           // Need this z-index as Safari flickers badly on the hover
           // transform without it.
-          z-index: 98;
           position: absolute;
+          z-index: 98;
           top: 10px;
           right: 10px;
           bottom: 10px;
           left: 10px;
           transform: perspective( 1200px ) rotateY( 1deg );
           transition: $animation-speed-slow;
+
           &:hover {
             z-index: 99;
             top: 7px;
@@ -104,6 +135,10 @@
     }
   }
 
+  // *****************************************************************************
+  // * Elements within the popup menu
+  // *****************************************************************************
+
   &__primary-mobile {
     height: $mobile-nav-height;
 
@@ -113,16 +148,6 @@
       right: 0;
       width: 100%;
       transition: $animation-speed-slow;
-
-      &:hover {
-        right: -4px;
-        transform: perspective( 1200px ) rotateY( -8deg );
-      }
-
-    }
-
-    @include breakpoint($breakpoint-medium) {
-      z-index: -1;
     }
 
     i {
@@ -132,24 +157,11 @@
       transition: $animation-speed;
     }
 
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-
-      &:hover,
-      &:focus {
-        i {
-           transform: scale(1.1);
-         }
-      }
-
-    }
-
   }
 
   @each $current-color in $colors-tile-fg-list {
     $i: index($colors-tile-fg-list, $current-color);
+
     &__item:nth-child( #{$i} ) {
       color: $current-color;
       background-color: nth($color-tile-bg-list, $i);
@@ -184,6 +196,10 @@
       background-color: transparent;
     }
 
+    // *****************************************************************************
+    // * These are the fixed menu items that are always visible x4
+    // *****************************************************************************
+
     &--tile {
       height: auto;
       vertical-align: middle;
@@ -196,10 +212,6 @@
         line-height: $brand-height;
       }
     }
-
-  }
-
-  &__link {
 
   }
 }
