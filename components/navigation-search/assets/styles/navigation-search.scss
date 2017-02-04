@@ -8,29 +8,12 @@
 
 .#{$c-navigation-search} {
 
-  display: flex;
-
-  @include breakpoint(392px) {
-    width: 50%;
-  }
-
-  &__submit {
-
-  }
-
-  &--focus {
-    // Make field wider when selected?
-  }
+  display: none;
 
   // Any overrides to su-forms__input here:
   .su-forms__input {
     display: none;
     height: 100%;
-
-    @include breakpoint(392px) {
-      display: block;
-      //width: 100%;
-    }
 
     @include breakpoint($breakpoint-small) {
       display: none;
@@ -43,6 +26,10 @@
 
   .su-forms__label {
     width: 100%;
+  }
+
+  &--show {
+    display: flex;
   }
 
 }
