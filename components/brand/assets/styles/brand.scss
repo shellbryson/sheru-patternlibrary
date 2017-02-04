@@ -26,10 +26,8 @@
     transition: $animation-speed;
   }
 
-
   @include breakpoint($breakpoint-small) {
     width: 100%;
-
   }
 
   &__title {
