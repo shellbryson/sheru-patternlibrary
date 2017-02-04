@@ -8,10 +8,8 @@
 
 .#{$c-brand} {
 
-
-
   display: block;
-  width: 30%;
+  width: 100%;
   height: $brand-height;
 
   background-color: $color-brand-bg;
@@ -21,14 +19,17 @@
 
   text-align: left;
 
+  @include breakpoint(392px) {
+    display: inline-flex;
+    position: relative;
+    width: 50%;
+    transition: $animation-speed;
+  }
 
 
   @include breakpoint($breakpoint-small) {
+    width: 100%;
 
-    display: inline-flex;
-    position: relative;
-    width: 25%;
-    transition: $animation-speed;
   }
 
   &__title {

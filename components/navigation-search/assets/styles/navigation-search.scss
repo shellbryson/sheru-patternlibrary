@@ -5,14 +5,13 @@
 // * @name: _navigation-search.scss
 // *
 // *****************************************************************************
-
+h
 .#{$c-navigation-search} {
 
   display: flex;
-  width: 70%;
 
-  @include breakpoint($breakpoint-small) {
-    width: 25%;
+  @include breakpoint(392px) {
+    width: 50%;
   }
 
   &__submit {
@@ -25,8 +24,21 @@
 
   // Any overrides to su-forms__input here:
   .su-forms__input {
+    display: none;
     height: 100%;
-    width: 100%;
+
+    @include breakpoint(392px) {
+      display: block;
+      width: 100%;
+    }
+
+    @include breakpoint($breakpoint-small) {
+      display: none;
+    }
+
+    @include breakpoint($breakpoint-medium) {
+      display: block;
+    }
   }
 
   .su-forms__label {

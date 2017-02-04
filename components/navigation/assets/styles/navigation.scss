@@ -15,12 +15,15 @@
   left: 0;
   bottom: 0;
 
+  transition: $animation-speed;
+
+
   // Tablet screens only
   @include breakpoint($breakpoint-small) {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -10px;
     left: auto;
     bottom: auto;
     width: 50%;
@@ -34,6 +37,7 @@
   &__menu-mobile {
     display: flex;
     flex-direction: row;
+    transition: $animation-speed;
 
     @include breakpoint($breakpoint-small) {
       height: $brand-height;
@@ -51,14 +55,26 @@
     width: 100%;
     margin: 0;
 
+    transition: $animation-speed-slow;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+
+    @include breakpoint($breakpoint-medium) {
+      opacity: 0.98;
+      transform: perspective( 1200px ) rotateY( -10deg ) translateY(50px);
+
+      &:hover {
+        transform: perspective( 1200px ) rotateY( -8deg ) translateY(60px);
+      }
+    }
+
     &--show {
       display: flex;
       flex-wrap: wrap;
 
       // Reflow table or larger
       @include breakpoint($breakpoint-small) {
-        display: block;
-        padding-top: $brand-height;
+        //padding-top: $brand-height;
       }
     }
   }
@@ -71,6 +87,10 @@
       top: 0;
       right: 0;
       width: 100%;
+    }
+
+    @include breakpoint($breakpoint-medium) {
+      z-index: -1;
     }
 
     i {
@@ -128,13 +148,12 @@
 
     @include breakpoint($breakpoint-small) {
       display: block;
-      width: auto;
-      height: auto;
       line-height: $brand-height;
       background-color: transparent;
     }
 
     &--tile {
+      height: auto;
       vertical-align: middle;
       line-height: $mobile-nav-height;
       color: $color-tile-fg;
