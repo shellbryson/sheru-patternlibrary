@@ -51,7 +51,7 @@
   // * Buttons that are always visible (x4)
   // *****************************************************************************
 
-  &__menu-mobile {
+  &__primary-menu {
     display: flex;
     flex-direction: row;
     transition: $animation-speed;
@@ -61,7 +61,7 @@
     }
 
     // Four wide
-    li {
+    .#{$c-navigation}__item {
       @include reset-list;
       width: 25%;
       text-align: center;
@@ -85,7 +85,7 @@
 
       &:hover {
         transform: translateY(70px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 20px $color-shadows;
       }
     }
 
@@ -127,7 +127,7 @@
             top: 7px;
             background-color: $color-title-open-bg;
             transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px $color-shadows;
           }
         }
 
@@ -139,7 +139,7 @@
   // * Elements within the popup menu
   // *****************************************************************************
 
-  &__primary-mobile {
+  &__primary {
     height: $mobile-nav-height;
 
     @include breakpoint($breakpoint-small) {
