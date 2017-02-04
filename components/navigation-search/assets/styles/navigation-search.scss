@@ -6,22 +6,42 @@
 // *
 // *****************************************************************************
 
-.#{$c-navigation-search} {
+$color-search-bg: #FFFFFF;
+
+$layout-search-field-height: 50px;
+
+.#{$c-search} {
+
+  @include clearfix;
+  @include rem(margin, 20px);
 
   display: none;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background-color: $color-search-bg;
+
+  @include breakpoint($breakpoint-medium) {
+    width: 80%;
+    margin: 20px auto;
+  }
 
   // Any overrides to su-forms__input here:
   .su-forms__input {
-    display: none;
-    height: 100%;
+    @include rem(font-size, 18px);
+    @include rem(padding, 0 20px);
+    width: 100%;
+    height: $layout-search-field-height;
+    border: 0;
+    line-height: $layout-search-field-height;
+  }
 
-    @include breakpoint($breakpoint-small) {
-      display: none;
-    }
-
-    @include breakpoint($breakpoint-medium) {
-      display: block;
-    }
+  &__submit {
+    @include rem(padding, 0 20px);
+    @include rem(font-size, 20px);
+    border: 0;
+    color: $color-white;
+    background-color: $color-title-open-bg;
   }
 
   .su-forms__label {
