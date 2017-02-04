@@ -168,8 +168,8 @@
       top: 0;
       right: 0;
       width: 100%;
-      transition: $animation-speed-slow;
       line-height: $brand-height;
+      transition: $animation-speed-slow;
     }
 
     // *****************************************************************************
@@ -186,6 +186,15 @@
 
       @include breakpoint($breakpoint-small) {
         line-height: $brand-height;
+      }
+
+      // Animate reveal of Fixed Menu items
+      $increment: 0.25s;
+      @for $i from 1 through 4 {
+        &:nth-child( #{$i} ) {
+          animation-delay: (0.05 * $i) + $increment;
+          animation-duration: 300ms;
+        }
       }
 
       // The toggle icon triggering menu, inside the Fixed Menu
@@ -217,17 +226,14 @@
 
     @each $current-color in $colors-tile-fg-list {
       $i: index($colors-tile-fg-list, $current-color);
-
       &:nth-child( #{$i} ) {
         color: $current-color;
         background-color: nth($color-tile-bg-list, $i);
-
         a,
         a:visited {
           color: $current-color;
           text-decoration: none;
         }
-
         &:after {
           background-color: nth($color-tile-bg-list, $i);
         }
