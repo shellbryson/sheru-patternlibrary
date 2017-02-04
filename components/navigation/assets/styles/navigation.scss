@@ -30,8 +30,14 @@
   }
 
   &__wrapper {
-    position: relative;
     width: 100%;
+
+    @include breakpoint($breakpoint-small) {
+      position: absolute;
+      pointer-events: all;
+      z-index: 99;
+    }
+
   }
 
   &__menu-mobile {
@@ -56,15 +62,14 @@
     margin: 0;
 
     transition: $animation-speed-slow;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    pointer-events: auto;
+    pointer-events: all;
 
-    @include breakpoint($breakpoint-medium) {
+    @include breakpoint($breakpoint-small) {
       opacity: 0.98;
       transform: perspective( 1200px ) rotateY( -10deg ) translateY(50px);
 
       &:hover {
-        transform: perspective( 1200px ) rotateY( -8deg ) translateY(60px);
+        transform: perspective( 1200px ) rotateY( -8deg ) translateY(55px);
       }
     }
 
@@ -72,9 +77,25 @@
       display: flex;
       flex-wrap: wrap;
 
-      // Reflow table or larger
       @include breakpoint($breakpoint-small) {
-        //padding-top: $brand-height;
+        a {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          bottom: 10px;
+          left: 10px;
+          transform: perspective( 1200px ) rotateY( 1deg );
+          transition: $animation-speed-slow;
+          //background-color: blue;
+          &:hover {
+            z-index: 99;
+            background-color: $color-title-open-bg;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: perspective( 1200px ) rotateY( -1deg ) scale(1.2);
+          }
+        }
+
       }
     }
   }
