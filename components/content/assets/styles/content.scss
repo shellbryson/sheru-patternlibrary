@@ -21,19 +21,19 @@
 
 .content-area {
   float: none;
-
   margin: 0;
 
   @include breakpoint($breakpoint-small) {
+    @include rem(padding, 40px);
     width: 70%;
   }
 }
 
 .sidebar {
-
   margin: 0;
 
   @include breakpoint($breakpoint-small) {
+    @include rem(padding, 40px);
     width: 30%;
   }
 }
