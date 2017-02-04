@@ -148,35 +148,39 @@
       right: 0;
       width: 100%;
       transition: $animation-speed-slow;
-    }
-
-    i {
-      font-size: 40px;
-      vertical-align: middle;
       line-height: $brand-height;
-      transition: $animation-speed;
+    }
+
+  // *****************************************************************************
+  // * Fixed Menu, when header at page top
+  // *****************************************************************************
+
+    .#{$c-navigation}__item {
+      height: auto;
+      vertical-align: middle;
+      line-height: $mobile-nav-height;
+      color: $color-tile-fg;
+      text-align: center;
+      text-decoration: none;
+
+      @include breakpoint($breakpoint-small) {
+        line-height: $brand-height;
+      }
+
+      // The toggle icon triggering menu, inside the Fixed Menu
+      i {
+        font-size: 40px;
+        vertical-align: middle;
+        line-height: $brand-height;
+        transition: $animation-speed;
+      }
     }
 
   }
 
-  @each $current-color in $colors-tile-fg-list {
-    $i: index($colors-tile-fg-list, $current-color);
-
-    &__item:nth-child( #{$i} ) {
-      color: $current-color;
-      background-color: nth($color-tile-bg-list, $i);
-
-      a,
-      a:visited {
-        color: $current-color;
-        text-decoration: none;
-      }
-
-      &:after {
-        background-color: nth($color-tile-bg-list, $i);
-      }
-    }
-  }
+  // *****************************************************************************
+  // * Regular menu items (in popup)
+  // *****************************************************************************
 
   &__item {
     @include reset-list;
@@ -190,27 +194,29 @@
     text-align: center;
     text-decoration: none;
 
+    @each $current-color in $colors-tile-fg-list {
+      $i: index($colors-tile-fg-list, $current-color);
+
+      &:nth-child( #{$i} ) {
+        color: $current-color;
+        background-color: nth($color-tile-bg-list, $i);
+
+        a,
+        a:visited {
+          color: $current-color;
+          text-decoration: none;
+        }
+
+        &:after {
+          background-color: nth($color-tile-bg-list, $i);
+        }
+      }
+    }
+
     @include breakpoint($breakpoint-small) {
       display: block;
       line-height: $brand-height;
       background-color: transparent;
-    }
-
-    // *****************************************************************************
-    // * These are the fixed menu items that are always visible x4
-    // *****************************************************************************
-
-    &--tile {
-      height: auto;
-      vertical-align: middle;
-      line-height: $mobile-nav-height;
-      color: $color-tile-fg;
-      text-align: center;
-      text-decoration: none;
-
-      @include breakpoint($breakpoint-small) {
-        line-height: $brand-height;
-      }
     }
 
   }
