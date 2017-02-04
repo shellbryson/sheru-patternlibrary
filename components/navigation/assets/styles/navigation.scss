@@ -48,6 +48,21 @@
   }
 
   // *****************************************************************************
+  // * Search embedded in Tile Menu
+  // *****************************************************************************
+
+  &__search {
+    //display: flex;
+    //order: 2;
+
+    //@include breakpoint($breakpoint-small) {
+    //  order: 1;
+    //  opacity: $default-opacity;
+    //  transform: translateY(60px);
+    //}
+  }
+
+  // *****************************************************************************
   // * Buttons that are always visible (x4)
   // *****************************************************************************
 
@@ -80,7 +95,7 @@
     pointer-events: all;
 
     @include breakpoint($breakpoint-small) {
-      opacity: 0.98;
+      opacity: $default-opacity;
       transform: translateY(60px);
 
       &:hover {
@@ -228,7 +243,7 @@
     width: 50%;
     height: 120px;
     padding: 0 6px;
-    font-family: $fontPrimary;
+    font-family: $font-primary;
     line-height: 120px;
     text-align: center;
     text-decoration: none;
