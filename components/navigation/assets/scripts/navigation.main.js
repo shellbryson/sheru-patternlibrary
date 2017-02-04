@@ -12,8 +12,13 @@ define(function (require) {
   function initNavigation() {
     $toggleMenu.on('click', function (e) {
       e.preventDefault();
-      $nav.toggleClass(_menuClass);
-      $search.toggleClass(_searchClass);
+      if ($nav.hasClass(_menuClass)) {
+        $nav.removeClass(_menuClass);
+        $search.removeClass(_searchClass);
+      } else {
+        $nav.addClass(_menuClass);
+        $search.addClass(_searchClass);
+      }
     });
 
     $toggleSearch.on('click', function (e) {
