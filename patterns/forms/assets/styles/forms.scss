@@ -1,0 +1,33 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _forms.scss
+// *
+// *****************************************************************************
+
+.#{$p-forms} {
+
+  &__input {
+    border: 1px solid $color-form-element-border;
+    border-radius: 0;
+    background-color: $color-form-element-bg;
+
+    &:focus {
+      border: 1px solid $color-form-element-border-hover;
+      background-color: $color-form-element-bg-hover;
+      // The following you must not do. Ever. Except, perhaps if you have
+      // another obvious visual indicator of focus state. A11y FTW.
+      outline: 0;
+    }
+  }
+
+  &__label {
+
+  }
+
+  &__button {
+
+  }
+
+}

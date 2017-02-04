@@ -8,34 +8,45 @@
 
 .#{$c-navigation} {
 
+  // Mobile first
   position: fixed;
-  bottom: 0;
   z-index: 99;
-  background-color: $color-nav-bg;
+  right: 0;
+  left: 0;
+  bottom: 0;
 
-  @include breakpoint-max($breakpoint-small) {
-    right: 0;
-    left: 0;
-  }
+  transition: $animation-speed;
 
+
+  // Tablet screens only
   @include breakpoint($breakpoint-small) {
-    display: inline-flex;
-    position: relative;
-    width: 100%;
-    height: $brand-height;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    left: auto;
+    bottom: auto;
+    width: 50%;
   }
 
   &__wrapper {
-    position: relative;
     width: 100%;
+
+    @include breakpoint($breakpoint-small) {
+      position: absolute;
+      pointer-events: all;
+      z-index: 99;
+    }
+
   }
 
   &__menu-mobile {
     display: flex;
     flex-direction: row;
+    transition: $animation-speed;
 
     @include breakpoint($breakpoint-small) {
-      display: none;
+      height: $brand-height;
     }
 
     li {
@@ -50,18 +61,43 @@
     width: 100%;
     margin: 0;
 
+    transition: $animation-speed-slow;
+    pointer-events: all;
+
     @include breakpoint($breakpoint-small) {
-      display: block;
-      text-align: right;
+      opacity: 0.98;
+      transform: perspective( 1200px ) rotateY( -10deg ) translateY(50px);
+
+      &:hover {
+        transform: perspective( 1200px ) rotateY( -8deg ) translateY(55px);
+      }
     }
 
     &--show {
       display: flex;
       flex-wrap: wrap;
 
-      // Reflow if at desktop
       @include breakpoint($breakpoint-small) {
-        display: inline-block;
+        a {
+          display: block;
+          // Need this z-index as Safari flickers badly on the hover
+          // transform without it.
+          z-index: 98;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          bottom: 10px;
+          left: 10px;
+          transform: perspective( 1200px ) rotateY( 1deg );
+          transition: $animation-speed-slow;
+          &:hover {
+            z-index: 99;
+            background-color: $color-title-open-bg;
+            transform: perspective( 1200px ) rotateY( -1deg ) scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+        }
+
       }
     }
   }
@@ -70,28 +106,59 @@
     height: $mobile-nav-height;
 
     @include breakpoint($breakpoint-small) {
-      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      transition: $animation-speed-slow;
+
+      &:hover {
+        transform: perspective( 1200px ) rotateY( -8deg );
+      }
+
     }
+
+    @include breakpoint($breakpoint-medium) {
+      z-index: -1;
+    }
+
+    i {
+      font-size: 40px;
+      vertical-align: middle;
+      line-height: $brand-height;
+      transition: $animation-speed;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      &:hover,
+      &:focus {
+        i {
+           transform: scale(1.1);
+         }
+      }
+
+    }
+
   }
 
   @each $current-color in $colors-tile-fg-list {
     $i: index($colors-tile-fg-list, $current-color);
     &__item:nth-child( #{$i} ) {
+      color: $current-color;
+      background-color: nth($color-tile-bg-list, $i);
 
-      // Ensure our colour cycle is only applied on mobile
-      @include breakpoint-max($breakpoint-small) {
+      a,
+      a:visited {
         color: $current-color;
+        text-decoration: none;
+      }
+
+      &:after {
         background-color: nth($color-tile-bg-list, $i);
-
-        a,
-        a:visited {
-          color: $current-color;
-          text-decoration: none;
-        }
-
-        &:after {
-          background-color: nth($color-tile-bg-list, $i);
-        }
       }
     }
   }
@@ -109,58 +176,24 @@
     text-decoration: none;
 
     @include breakpoint($breakpoint-small) {
-      display: inline-block;
-      width: auto;
-      height: auto;
+      display: block;
       line-height: $brand-height;
       background-color: transparent;
     }
 
-    &:after {
-      @include breakpoint($breakpoint-small) {
-        display: block;
-        width: 100%;
-        height: 4px;
-        margin-top: -4px;
-        content: "";
-      }
-    }
-
-    .menu-icon {
-      font-size: 40px;
-      vertical-align: middle;
-    }
-
     &--tile {
+      height: auto;
       vertical-align: middle;
       line-height: $mobile-nav-height;
       color: $color-tile-fg;
       text-align: center;
       text-decoration: none;
-    }
 
-    &--one {
-      background-color: lighten($color-tile-bg, 45%);
-    }
-
-    &--two {
-      background-color: lighten($color-tile-bg, 35%);
-    }
-
-    &--three {
-      background-color: lighten($color-tile-bg, 15%)
-    }
-
-    &--four {
-      background-color: $color-tile-bg;
-    }
-
-    // Hide from deskop (still shows as tiles)
-    &--hide-desktop {
       @include breakpoint($breakpoint-small) {
-        display: none;
+        line-height: $brand-height;
       }
     }
+
   }
 
   &__link {

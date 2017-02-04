@@ -12,13 +12,16 @@
 
 $p-paragraph: $namespace + "paragraph";
 $p-title: $namespace + "title";
+$p-forms: $namespace + "forms";
 
 // *****************************************************************************
 // * COMPONENTS
 // *****************************************************************************
 
+$c-content: $namespace + "content";
 $c-article: $namespace + "article";
 $c-head: $namespace + "head";
 $c-brand: $namespace + "brand";
 $c-navigation: $namespace + "navigation";
+$c-navigation-search: $namespace + "navigation-search";
 
