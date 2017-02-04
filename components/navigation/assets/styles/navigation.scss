@@ -96,17 +96,17 @@
       transition: $animation-speed;
     }
 
-  // *****************************************************************************
-  // * When menu is open...
-  // *****************************************************************************
+    // *****************************************************************************
+    // * When menu is open...
+    // *****************************************************************************
 
     &--show {
       display: flex;
       flex-wrap: wrap;
 
-  // *****************************************************************************
-  // * Elements within the popup menu
-  // *****************************************************************************
+      // *****************************************************************************
+      // * Elements within the popup menu
+      // *****************************************************************************
 
       @include breakpoint($breakpoint-small) {
         a {
@@ -114,17 +114,17 @@
           // Need this z-index as Safari flickers badly on the hover
           // transform without it.
           position: absolute;
-          z-index: 98;
           top: 10px;
           right: 10px;
           bottom: 10px;
           left: 10px;
+          z-index: 98;
           transform: perspective( 1200px ) rotateY( 1deg );
           transition: $animation-speed-slow;
 
           &:hover {
-            z-index: 99;
             top: 7px;
+            z-index: 99;
             background-color: $color-title-open-bg;
             transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
             box-shadow: 0 10px 20px $color-shadows;
@@ -151,9 +151,9 @@
       line-height: $brand-height;
     }
 
-  // *****************************************************************************
-  // * Fixed Menu, when header at page top
-  // *****************************************************************************
+    // *****************************************************************************
+    // * Fixed Menu, when header at page top
+    // *****************************************************************************
 
     .#{$c-navigation}__item {
       height: auto;
