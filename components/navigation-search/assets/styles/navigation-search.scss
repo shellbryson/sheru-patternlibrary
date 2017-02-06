@@ -17,10 +17,12 @@ $layout-search-field-height: 50px;
   display: none;
   position: relative;
   width: 100%;
+  border-bottom: 10px solid darken($color-title-open-bg, 10%);
   background-color: $color-title-open-bg;
 
   @include breakpoint($breakpoint-small) {
     order: 1;
+    border-bottom: 0;
     opacity: $default-opacity;
     transform: translateY(60px);
   }

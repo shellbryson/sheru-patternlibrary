@@ -113,24 +113,32 @@
       a {
         display: flex;
         align-items: center;
-        text-align: center;
-        // Need this z-index as Safari flickers badly on the hover
-        // transform without it.
         position: absolute;
         top: 10px;
         right: 10px;
         bottom: 10px;
         left: 10px;
+        // Need this z-index as Safari flickers badly on the hover
+        // transform without it.
         z-index: 98;
+        text-align: center;
         transform: perspective( 1200px ) rotateY( 1deg );
         transition: $animation-speed-slow;
 
         &:hover {
-          top: 7px;
+          top: -2px;
           z-index: 99;
           background-color: $color-title-open-bg;
-          transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
+          transform: perspective( 1200px ) rotateY( -1deg ) scale(1.02);
           box-shadow: 0 10px 20px $color-shadows;
+
+          @include breakpoint($breakpoint-small) {
+            top: 7px;
+            z-index: 99;
+            background-color: $color-title-open-bg;
+            transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
+            box-shadow: 0 10px 20px $color-shadows;
+          }
         }
       }
 
@@ -144,6 +152,7 @@
       // *****************************************************************************
 
       @include breakpoint($breakpoint-small) {
+
         a {
           transform: perspective( 1200px ) rotateY( 1deg );
 
@@ -162,10 +171,9 @@
   // *****************************************************************************
 
   &__primary {
-    height: $mobile-nav-height;
-
     // At 100%, Chrome leaves a very slight gap between menu elements
     width: 100%;
+    height: $mobile-nav-height;
 
     @include breakpoint($breakpoint-small) {
       position: absolute;
@@ -249,14 +257,17 @@
 
     @each $current-color in $colors-tile-fg-list {
       $i: index($colors-tile-fg-list, $current-color);
+
       &:nth-child( #{$i} ) {
         color: $current-color;
         background-color: nth($color-tile-bg-list, $i);
+
         a,
         a:visited {
           color: $current-color;
           text-decoration: none;
         }
+
         a:focus,
         a:hover {
           color: $color-white;
