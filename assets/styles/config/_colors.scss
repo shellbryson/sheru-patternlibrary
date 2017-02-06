@@ -34,11 +34,12 @@ $color-head-bg: darken(#FFFFFF, 10%);
 
 $color-brand-bg: #000000;
 $color-brand-fg: darken(#FFFFFF, 50%);
-$color-toggle-bg: #0000FF;
 $color-toggle-fg: #FFFFFF;
 $color-tile-bg: #000000;
 $color-tile-fg: #FFFFFF;
 $color-title-open-bg: #189AE3;
+
+$color-divider: #189AE3;
 
 // Color cycle used for tile navigation (10). See navigation.scss for application.
 $_ctl: $color-title-open-bg;
