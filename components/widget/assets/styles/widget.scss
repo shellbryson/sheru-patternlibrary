@@ -11,8 +11,6 @@
 
 .#{$c-widget} {
 
-  background-color: $color-page-bg;
-
   &::before {
     @include rem(margin-bottom, 16px);
     display: block;

@@ -1,11 +1,14 @@
 var coloursPattern = [
-  './src/build/assets/styles/config/_colors.scss'
+  './src/build/assets/styles/config/_colors.scss',
+  './src/build/assets/styles/config/_colors_elements.scss'
 ];
-var iconsPattern = ['./src/build/assets/icons/svg/', './src/build/assets/icons/fonts/selection.json'];
+var iconsPattern = [
+  './src/build/assets/icons/svg/',
+  './src/build/assets/icons/fonts/selection.json'
+];
 
 /*
-  use this to specify a specific page to render.
-
+  Use this to specify a specific page to render.
   prefix an item with a bang ('!') to stop it being rendered.
  */
 var renderList = [
