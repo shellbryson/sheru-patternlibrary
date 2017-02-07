@@ -8,23 +8,10 @@
   HACK DESCRIPTION, REASON AND **NAME OF AUTHOR**
 */
 
-.parchment-preview-head {
-  display: none;
-}
-
-.parchment-preview-body {
-  margin: 0;
-}
-
-.icon__block {
-  &:before {
-    display: none;
-  }
-}
-
 // *****************************************************************************
 // * Reset lists specifically for Fabric -- Sheru
 // *****************************************************************************
+
 .parchment-tab-box__tab {
   @include reset-list;
 }
@@ -38,24 +25,26 @@
   @include reset-list;
 }
 
+.parchment-preview-head {
+  display: none;
+}
+
 .parchment-preview-body {
   height: 100%;
+  margin: 0;
 }
 
 .parchment-main {
   height: 100%;
 }
 
-
-
-
-// *****************************************************************************
-// * Prevents some overlapping page-content when displayed in Fabric preview -- Sheru
-// *****************************************************************************
 .parchment-menu {
   z-index: 99999;
 }
 
-.parchment-preview {
-
+.icon__block {
+  &::before {
+    display: none;
+  }
 }
+
