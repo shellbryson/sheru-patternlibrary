@@ -11,67 +11,9 @@
 
 $color-black: #000000;
 $color-white: #FFFFFF;
-$color-body-text: #FFFFFF;
+$color-tint: #189AE3;
 
-// Shadows
-$color-shadows: rgba(0, 0, 0, 0.2);
+// Where the hell are the colors? Part of the goal of this project is to use a
+// really limited color palette. We only use shades of the colors defined
+// above this message. You can find variations of these in color-elements.scss.
 
-// Navigation
-$color-navigation-mobile-bg: rgba(#000000, 0.9);
-$color-navigation-mobile-fg: #FFFFFF;
-
-// Content Text
-$color-body-fg: #000000;
-$color-body-fg-link: #000000;
-$color-body-fg-hover: #000000;
-
-// Titles (articles etc)
-$color-title-fg: #000000;
-$color-title-fg-link: #000000;
-$color-title-fg-hover: #000000;
-
-$color-head-bg: darken(#FFFFFF, 10%);
-
-$color-brand-bg: #000000;
-$color-brand-fg: darken(#FFFFFF, 50%);
-$color-toggle-bg: #0000FF;
-$color-toggle-fg: #FFFFFF;
-$color-tile-bg: #000000;
-$color-tile-fg: #FFFFFF;
-$color-title-open-bg: #189AE3;
-
-// Color cycle used for tile navigation (10). See navigation.scss for application.
-$_ctl: $color-title-open-bg;
-$color-tile-bg-list:
-    darken($_ctl, 3%)
-    darken($_ctl, 6%)
-    darken($_ctl, 9%)
-    darken($_ctl, 12%)
-    darken($_ctl, 15%)
-    darken($_ctl, 18%)
-    darken($_ctl, 21%)
-    darken($_ctl, 24%)
-    darken($_ctl, 27%)
-    darken($_ctl, 30%);
-
-$colors-tile-fg-list:
-    lighten($_ctl, 30%)
-    lighten($_ctl, 27%)
-    lighten($_ctl, 24%)
-    lighten($_ctl, 21%)
-    lighten($_ctl, 18%)
-    lighten($_ctl, 15%)
-    lighten($_ctl, 12%)
-    lighten($_ctl, 9%)
-    lighten($_ctl, 6%)
-    lighten($_ctl, 3%);
-
-$color-body-bg: #000000;
-$color-page-bg: #FFFFFF;
-
-$color-form-element-border: #000000;
-$color-form-element-bg:  #F1F1F1;
-$color-form-element-border-hover: lighten($color-form-element-border, 20%);
-$color-form-element-bg-hover: lighten($color-form-element-bg, 20%);
-$color-form-element-border: darken($color-title-open-bg, 5%);
-$color-form-element-border-hover: darken($color-title-open-bg, 25%)

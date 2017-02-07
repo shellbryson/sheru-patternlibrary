@@ -6,33 +6,31 @@
 // *
 // *****************************************************************************
 
-.#{$c-content} {
-
+.su-wrapper {
   @include rem(margin-top, 20px);
-
   background-color: $color-page-bg;
 
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($breakpoint-medium) {
     display: flex;
   }
-
 }
 
+.#{$c-content} {
+  @include rem(padding, 20px);
+  width: 100%;
 
-.content-area {
-  float: none;
-  margin: 0;
-
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($breakpoint-medium) {
     @include rem(padding, 40px);
     width: 70%;
   }
 }
 
-.sidebar {
-  margin: 0;
+// Sidebar: see page-sidebar.scss
+.#{$c-sidebar} {
+  @include rem(padding, 20px);
+  width: 100%;
 
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($breakpoint-medium) {
     @include rem(padding, 40px);
     width: 30%;
   }

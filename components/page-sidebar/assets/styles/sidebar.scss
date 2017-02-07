@@ -2,13 +2,19 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _config.scss
-// *
-// * Imports various configuration files
+// * @name: _sidebar.scss
 // *
 // *****************************************************************************
 
-@import "vars";
-@import "colors";
-@import "colors-elements";
-@import "fonts";
+.#{$c-sidebar} {
+  width: 100%;
+  margin: 0;
+  background-color: $color-sidebar-bg;
+
+  // 1024
+  @include breakpoint($breakpoint-medium) {
+    width: 30%;
+  }
+
+}
+

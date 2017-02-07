@@ -2,13 +2,13 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _config.scss
-// *
-// * Imports various configuration files
+// * @name: _foot.scss
 // *
 // *****************************************************************************
 
-@import "vars";
-@import "colors";
-@import "colors-elements";
-@import "fonts";
+.#{$c-foot} {
+
+  display: flex;
+  background-color: $color-page-bg;
+
+}

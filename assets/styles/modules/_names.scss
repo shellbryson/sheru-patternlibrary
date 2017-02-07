@@ -21,7 +21,13 @@ $p-forms: $namespace + "forms";
 $c-content: $namespace + "content";
 $c-article: $namespace + "article";
 $c-head: $namespace + "head";
+$c-page-header: $namespace + "page-header";
 $c-brand: $namespace + "brand";
 $c-navigation: $namespace + "navigation";
 $c-navigation-search: $namespace + "navigation-search";
+$c-foot: $namespace + "foot";
+$c-sidebar: $namespace + "sidebar";
+
+// WordPress class names, no prefix.
+$c-widget: "widget";
 

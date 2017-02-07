@@ -2,7 +2,7 @@ var remapify = require('remapify');
 var path = require('path');
 
 module.exports = function (grunt) {
-  var copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/fabric';
+  var copyToExternalPath = '../../../site/wordpress/wp-page-content/themes/sheru/fabric';
   var scriptsPattern = [
     'patterns/**/*.js',
     'components/**/*.js',
