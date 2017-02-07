@@ -14,15 +14,15 @@
 // *****************************************************************************
 
 // Site Head
-@import "../../../components/head/assets/styles/head";
-@import "../../../components/brand/assets/styles/brand";
+@import "../../../components/site-header/assets/styles/header";
+@import "../../../components/site-header-brand/assets/styles/brand";
 @import "../../../components/navigation/assets/styles/navigation";
 @import "../../../components/navigation-search/assets/styles/navigation-search";
-@import "../../../components/foot/assets/styles/foot";
-@import "../../../components/sidebar/assets/styles/sidebar";
+@import "../../../components/page-footer/assets/styles/footer";
+@import "../../../components/page-sidebar/assets/styles/sidebar";
 @import "../../../components/widget/assets/styles/widget";
 
 // Page components
-@import "../../../components/content/assets/styles/content";
+@import "../../../components/page-content/assets/styles/content";
 @import "../../../components/page-header/assets/styles/page-header";
 @import "../../../components/article/assets/styles/article";

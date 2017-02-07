@@ -1,8 +1,6 @@
 /*
  SHAME FILE
-
  Sometimes we have to hack. It's just one of those things. We don't like to do it, but Browsers are fickle creatures.
-
  This file can be used to include the ugly, the bad, and the hacks, but name and shame.
 */
 
@@ -10,7 +8,6 @@
   HACK DESCRIPTION, REASON AND **NAME OF AUTHOR**
 */
 
-// Hiding parchment header as not needed right now - Jamie
 .parchment-preview-head {
   display: none;
 }
@@ -53,7 +50,7 @@
 
 
 // *****************************************************************************
-// * Prevents some overlapping content when displayed in Fabric preview -- Sheru
+// * Prevents some overlapping page-content when displayed in Fabric preview -- Sheru
 // *****************************************************************************
 .parchment-menu {
   z-index: 99999;
