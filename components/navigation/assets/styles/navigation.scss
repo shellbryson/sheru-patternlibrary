@@ -25,6 +25,7 @@
     bottom: auto;
     left: auto;
     width: 50%;
+    max-width: 800px;
   }
 
   // *****************************************************************************
@@ -241,6 +242,7 @@
 
   &__item {
     @include reset-list;
+    @include rem(font-size, 18px);
     display: block;
     position: relative;
     width: 50%;
@@ -250,6 +252,7 @@
     line-height: 120px;
     text-align: center;
     text-decoration: none;
+    transition: $animation-speed-slow;
 
     a {
       display: block;
@@ -276,9 +279,19 @@
     }
 
     @include breakpoint($breakpoint-small) {
+      @include rem(font-size, 19px);
       display: block;
       line-height: $brand-height;
       background-color: transparent;
+    }
+
+    @include breakpoint($breakpoint-medium) {
+      @include rem(font-size, 21px);
+    }
+
+    @include breakpoint($breakpoint-large) {
+      @include rem(font-size, 22px);
+      height: 160px;
     }
 
   }

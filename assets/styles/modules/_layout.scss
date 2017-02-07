@@ -45,11 +45,9 @@ body.admin-bar {
 // *****************************************************************************
 
 .#{$namespace}site {
-  vertical-align: baseline;
-  background-color: $color-body-bg;
-  transition: $animation-speed;
-
   @include rem(padding, 10px 20px);
+  vertical-align: baseline;
+  transition: $animation-speed;
 
   @include breakpoint($breakpoint-xsmall) {
     @include rem(padding, 40px 30px);
@@ -58,4 +56,26 @@ body.admin-bar {
   @include breakpoint($breakpoint-small) {
     @include rem(padding, 40px 40px);
   }
+
+  @include breakpoint($breakpoint-large) {
+    @include rem(padding, 60px 60px);
+  }
+
+  &::before {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: radial-gradient(ellipse at center, rgba($color-white, 0) 0%, rgba($color-tint, 0.6) 100%);
+  }
+
+}
+
+.site-inner {
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
 }

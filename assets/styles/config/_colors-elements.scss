@@ -39,7 +39,7 @@ $color-title-open-bg: $color-tint;
 
 $color-divider: $color-tint;
 
-$color-sidebar-bg: $color-tint;
+$color-sidebar-bg: rgba($color-tint, 0.1);
 
 // Color cycle used for tile navigation (10). See navigation.scss for application.
 $_ctl: $color-title-open-bg;
