@@ -20,7 +20,7 @@ $layout-search-field-height: 50px;
   border-bottom: 10px solid darken($color-title-open-bg, 10%);
   background-color: $color-title-open-bg;
 
-  @include breakpoint($breakpoint-small) {
+  @include small {
     order: 1;
     border-bottom: 0;
     opacity: $default-opacity;
@@ -43,6 +43,7 @@ $layout-search-field-height: 50px;
       border: 1px solid $color-form-element-border-hover;
       outline: none;
     }
+
     &:focus {
       box-shadow: none;
     }

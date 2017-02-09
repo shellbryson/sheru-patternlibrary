@@ -2,7 +2,7 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _tiles.scss
+// * @name: _titles.scss
 // *
 // *****************************************************************************
 
@@ -16,11 +16,8 @@
 
   line-height: 1.2;
   color: $color-title-fg;
-
-  @include breakpoint(910px) {
-    margin-right: 0;
-    margin-left: 0;
-  }
+  margin-right: 0;
+  margin-left: 0;
 
   a {
     color: $color-title-fg-link;
@@ -37,7 +34,7 @@
     @include rem(font-size, 30px);
     @include rem(margin-bottom, 60px);
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       @include rem(font-size, 40px);
       @include rem(margin-bottom, 80px);
     }
@@ -47,7 +44,7 @@
     @include rem(font-size, 30px);
     @include rem(margin-bottom, 40px);
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       @include rem(font-size, 40px);
       @include rem(margin-bottom, 60px);
     }

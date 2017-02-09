@@ -17,7 +17,7 @@
   transition: $animation-speed;
 
   // Tablet screens only
-  @include breakpoint($breakpoint-small) {
+  @include small {
     display: block;
     position: absolute;
     top: 0;
@@ -35,7 +35,7 @@
   &__wrapper {
     width: 100%;
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       position: absolute;
       pointer-events: all;
       z-index: 99;
@@ -57,7 +57,7 @@
     flex-direction: row;
     transition: $animation-speed;
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       height: $brand-height;
     }
 
@@ -81,7 +81,7 @@
     transition: $animation-speed-slow;
     pointer-events: all;
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       opacity: $default-opacity;
       transform: translateY(60px);
 
@@ -133,7 +133,7 @@
           transform: perspective( 1200px ) rotateY( -1deg ) scale(1.02);
           box-shadow: 0 10px 20px $color-shadows;
 
-          @include breakpoint($breakpoint-small) {
+          @include small {
             top: 7px;
             z-index: 99;
             background-color: $color-title-open-bg;
@@ -152,7 +152,7 @@
       // * Elements within the Tile Menu (larger screen)
       // *****************************************************************************
 
-      @include breakpoint($breakpoint-small) {
+      @include small {
 
         a {
           transform: perspective( 1200px ) rotateY( 1deg );
@@ -176,7 +176,7 @@
     width: 100%;
     height: $mobile-nav-height;
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       position: absolute;
       top: 0;
       right: 0;
@@ -197,7 +197,7 @@
       text-decoration: none;
       transition: $animation-speed;
 
-      @include breakpoint($breakpoint-small) {
+      @include small {
         line-height: $brand-height;
       }
 
@@ -221,7 +221,7 @@
       &--small {
         display: none;
 
-        @include breakpoint($breakpoint-small) {
+        @include small {
           display: block;
           width: 60px;
           margin-right: -100px;
@@ -278,18 +278,18 @@
       }
     }
 
-    @include breakpoint($breakpoint-small) {
+    @include small {
       @include rem(font-size, 19px);
       display: block;
       line-height: $brand-height;
       background-color: transparent;
     }
 
-    @include breakpoint($breakpoint-medium) {
+    @include medium {
       @include rem(font-size, 21px);
     }
 
-    @include breakpoint($breakpoint-large) {
+    @include large {
       @include rem(font-size, 22px);
       height: 160px;
     }

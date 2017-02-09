@@ -9,16 +9,15 @@
 .su-wrapper {
   @include rem(margin-top, 20px);
 
-  @include breakpoint($breakpoint-medium) {
+  @include medium {
     display: flex;
   }
 }
 
 .#{$c-content} {
-  @include rem(padding, 20px);
   width: 100%;
 
-  @include breakpoint($breakpoint-medium) {
+  @include medium {
     @include rem(padding, 40px);
     width: 70%;
   }
@@ -29,7 +28,7 @@
   @include rem(padding, 20px);
   width: 100%;
 
-  @include breakpoint($breakpoint-medium) {
+  @include medium {
     @include rem(padding, 40px);
     width: 30%;
   }

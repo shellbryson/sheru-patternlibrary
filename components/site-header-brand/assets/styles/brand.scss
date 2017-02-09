@@ -11,15 +11,11 @@
   display: block;
   width: 100%;
   height: $brand-height;
-
-  //background-color: $color-brand-bg;
-
   font-family: $font-primary;
   line-height: $brand-height;
-
   text-align: left;
 
-  @include breakpoint(392px) {
+  @include xsmall {
     display: inline-flex;
     position: relative;
     transition: $animation-speed;
@@ -32,7 +28,7 @@
   &__subtitle {
     display: none;
 
-    @include breakpoint($breakpoint-large) {
+    @include large {
       display: flex;
     }
   }

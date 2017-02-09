@@ -11,8 +11,7 @@
   margin: 0;
   background-color: $color-sidebar-bg;
 
-  // 1024
-  @include breakpoint($breakpoint-medium) {
+  @include medium {
     width: 30%;
   }
 

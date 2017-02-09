@@ -12,7 +12,7 @@
   @include rem(font-size, 16px);
   color: $color-body-fg;
 
-  @include breakpoint($breakpoint-small) {
+  @include small {
     @include rem(font-size, 18px);
   }
 
