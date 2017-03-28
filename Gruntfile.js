@@ -11,8 +11,7 @@ module.exports = function (grunt) {
   var stylesPattern = [
     'patterns/**/*.scss',
     'components/**/*.scss',
-    'assets/styles/**/*.scss',
-    '!**/*_scsslint_tmp*.scss'
+    'assets/styles/**/*.scss'
   ];
   var imagesPattern = ['assets/images/**/*'];
   var iconsPattern =  ['assets/icons/**/*'];
@@ -21,6 +20,8 @@ module.exports = function (grunt) {
   var stylesPatternDist = ['./dist/styles/build.css'];
   var scriptsPatternDist = ['./dist/scripts/build.js'];
   var svgPattern = ['assets/icons/svg/*.svg'];
+  var sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
+  var sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
 
   grunt.config.init({
     watch: {
@@ -49,8 +50,8 @@ module.exports = function (grunt) {
         files: iconsPattern,
         tasks: ['copy:icons']
       },
-      scsslint: {
-        files: stylesPattern
+      sasslint: {
+        files: sasslintPattern
       },
       jscs: {
         files: scriptsPattern
@@ -222,19 +223,10 @@ module.exports = function (grunt) {
     /*
      Quality check for SCSS
      */
-    scsslint: {
-      allFiles: [
-        '{components,patterns}/**/assets/styles/*.scss',
-        'assets/styles/**/*.scss',
-        '!assets/styles/{vendor,mixins}/*.scss'
-      ],
+    sasslint: {
       options: {
-        bundleExec: false,
-        config: 'config/.scss-lint.yml',
-        reporterOutput: null,
-        colorizeOutput: true,
-        compact: true,
-        force: true
+        target: sasslintPattern,
+        configFile: '.scss-lint.yml'
       }
     }
   });
@@ -269,8 +261,8 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('lintscss', [], function () {
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.task.run('scsslint');
+    grunt.loadNpmTasks('grunt-sass-lint');
+    grunt.task.run('sasslint');
   });
 
   grunt.registerTask('lint', [], function () {
@@ -295,15 +287,14 @@ module.exports = function (grunt) {
   var changed_files = Object.create(null);
   var onChange = grunt.util._.debounce(function (ext) {
     if (ext === '.scss') {
-      grunt.loadNpmTasks('grunt-scss-lint');
-      grunt.config('scsslint.allFiles', Object.keys(changed_files));
-      grunt.task.run('scsslint');
+      var target = Object.keys(changed_files).concat(sasslintIgnorePattern);
+      grunt.config('sasslint.target', target);
+      grunt.task.run('lintscss');
     }
 
     if (ext === '.js') {
-      grunt.loadNpmTasks('grunt-jscs');
       grunt.config('jscs.src', Object.keys(changed_files));
-      grunt.task.run('jscs');
+      grunt.task.run('lintjs');
     }
 
     changed_files = Object.create(null);
