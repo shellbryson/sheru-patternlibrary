@@ -12,34 +12,36 @@
 // * Reset lists specifically for Fabric -- Sheru
 // *****************************************************************************
 
-.parchment-tab-box__tab {
-  @include reset-list;
-}
+.parchment {
+  &-tab-box__tab {
+    @include reset-list;
+  }
 
-.parchment-menu li,
-.parchment-menu ul ul li {
-  @include reset-list;
-}
+  &-menu {
+    z-index: 99999;
 
-.parchment-menu__item {
-  @include reset-list;
-}
+    li,
+    ul ul li {
+      @include reset-list;
+    }
+  }
 
-.parchment-preview-head {
-  display: none;
-}
+  &-menu__item {
+    @include reset-list;
+  }
 
-.parchment-preview-body {
-  height: 100%;
-  margin: 0;
-}
+  &-preview-head {
+    display: none;
+  }
 
-.parchment-main {
-  height: 100%;
-}
+  &-preview-body {
+    height: 100%;
+    margin: 0;
+  }
 
-.parchment-menu {
-  z-index: 99999;
+  &-main {
+    height: 100%;
+  }
 }
 
 .icon__block {
@@ -47,4 +49,3 @@
     display: none;
   }
 }
-
