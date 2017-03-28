@@ -7,17 +7,11 @@
 // *****************************************************************************
 
 .#{$p-title},
-.#{$c-article}__content h1,
-.#{$c-article}__content h2,
-.#{$c-article}__content h3,
-.#{$c-article}__content h4,
-.#{$c-article}__content h5,
-.#{$c-article}__content h6 {
-
-  line-height: 1.2;
-  color: $color-title-fg;
+.#{$c-article}__content {
   margin-right: 0;
   margin-left: 0;
+  line-height: 1.2;
+  color: $color-title-fg;
 
   a {
     color: $color-title-fg-link;
