@@ -1,27 +1,27 @@
-var remapify = require('remapify');
-var path = require('path');
+const remapify = require('remapify');
+const path = require('path');
 
 module.exports = function (grunt) {
-  var copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/fabric';
-  var scriptsPattern = [
+  const copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/fabric';
+  const scriptsPattern = [
     'patterns/**/*.js',
     'components/**/*.js',
     'assets/scripts/*.js'
   ];
-  var stylesPattern = [
+  const stylesPattern = [
     'patterns/**/*.scss',
     'components/**/*.scss',
     'assets/styles/**/*.scss'
   ];
-  var imagesPattern = ['assets/images/**/*'];
-  var iconsPattern =  ['assets/icons/**/*'];
-  var fontsPattern = ['assets/fonts/**/*'];
-  var stylesPatternMain = ['./assets/styles/build.scss'];
-  var stylesPatternDist = ['./dist/styles/build.css'];
-  var scriptsPatternDist = ['./dist/scripts/build.js'];
-  var svgPattern = ['assets/icons/svg/*.svg'];
-  var sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
-  var sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
+  const imagesPattern = ['assets/images/**/*'];
+  const iconsPattern =  ['assets/icons/**/*'];
+  const fontsPattern = ['assets/fonts/**/*'];
+  const stylesPatternMain = ['./assets/styles/build.scss'];
+  const stylesPatternDist = ['./dist/styles/build.css'];
+  const scriptsPatternDist = ['./dist/scripts/build.js'];
+  const svgPattern = ['assets/icons/svg/*.svg'];
+  const sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
+  const sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
 
   grunt.config.init({
     watch: {
@@ -233,48 +233,48 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('styles', [], function () {
+  grunt.registerTask('styles', [], () => {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.task.run('sass', 'postcss:build', 'copy:toExternal');
   });
 
-  grunt.registerTask('modernizr', [], function () {
+  grunt.registerTask('modernizr', [], () => {
     grunt.loadNpmTasks('grunt-modernizr');
     grunt.task.run('modernizr');
   });
 
-  grunt.registerTask('scripts', [], function () {
+  grunt.registerTask('scripts', [], () => {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.task.run('requirejs');
   });
 
-  grunt.registerTask('dist', [], function () {
+  grunt.registerTask('dist', [], () => {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.task.run('copy', 'styles', 'cssmin', 'copy:scripts', 'scripts', 'modernizr', 'uglify');
   });
 
-  grunt.registerTask('lintjs', [], function () {
+  grunt.registerTask('lintjs', [], () => {
     grunt.loadNpmTasks('grunt-jscs');
     grunt.task.run('jscs');
   });
 
-  grunt.registerTask('lintscss', [], function () {
+  grunt.registerTask('lintscss', [], () => {
     grunt.loadNpmTasks('grunt-sass-lint');
     grunt.task.run('sasslint');
   });
 
-  grunt.registerTask('lint', [], function () {
+  grunt.registerTask('lint', [], () => {
     grunt.task.run('lintscss', 'lintjs');
   });
 
-  grunt.registerTask('svg', [], function () {
+  grunt.registerTask('svg', [], () => {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.task.run('svgstore');
   });
 
-  grunt.registerTask('default', [], function () {
+  grunt.registerTask('default', [], () => {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -284,10 +284,10 @@ module.exports = function (grunt) {
   /*
    * With SCSS/JSCS linting enabled, we want to only check the currently changed file/s
    */
-  var changed_files = Object.create(null);
-  var onChange = grunt.util._.debounce(function (ext) {
+  let changed_files = Object.create(null);
+  let onChange = grunt.util._.debounce( (ext) => {
     if (ext === '.scss') {
-      var target = Object.keys(changed_files).concat(sasslintIgnorePattern);
+      let target = Object.keys(changed_files).concat(sasslintIgnorePattern);
       grunt.config('sasslint.target', target);
       grunt.task.run('lintscss');
     }
@@ -300,8 +300,8 @@ module.exports = function (grunt) {
     changed_files = Object.create(null);
   }, 200);
 
-  grunt.event.on('watch', function ( action, filepath ) {
-    var ext = path.extname(filepath);
+  grunt.event.on('watch', ( action, filepath ) => {
+    let ext = path.extname(filepath);
     changed_files[filepath] = action;
     onChange(ext);
   });
