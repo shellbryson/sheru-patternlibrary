@@ -2,10 +2,22 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _fonts.scss
+// * @name: _components.scss
 // *
 // *****************************************************************************
 
+.su-component {
 
-$font-primary: "Overpass", "Helvetica", "Arial", sans-serif;
-$font-title: "Overpass", "Helvetica", "Arial", sans-serif;
+  &__title {
+    font-size: 22px;
+    font-family: $font-title;
+    font-weight: 300;
+    color: $color-fg;
+    text-transform: uppercase;
+
+    .su-lane-primary__content & {
+      color: $color-fg-on-dark;
+    }
+  }
+
+}
