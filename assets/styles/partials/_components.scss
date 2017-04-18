@@ -8,7 +8,15 @@
 
 .su-component {
 
+  color: $color-fg;
+
+  .su-lane-primary__content & {
+    color: $color-fg-on-dark;
+  }
+
   &__title {
+    padding-top: 24px;
+    padding-bottom: 24px;
     font-size: 22px;
     font-family: $font-title;
     font-weight: 300;
@@ -19,5 +27,4 @@
       color: $color-fg-on-dark;
     }
   }
-
 }

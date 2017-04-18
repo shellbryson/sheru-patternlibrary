@@ -1,0 +1,29 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _latest.scss
+// *
+// *****************************************************************************
+
+.#{$c-latest} {
+
+  &__content {
+    @include chip;
+    padding: 0 40px 24px 40px;
+
+    p {
+      display: block;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    margin: 0 40px;
+    background-color: $color-fg-on-dark;
+    background-size: cover;
+  }
+}
