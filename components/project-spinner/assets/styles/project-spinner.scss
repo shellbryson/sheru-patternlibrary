@@ -1,0 +1,56 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _project-spinner.scss
+// *
+// *****************************************************************************
+
+.#{$c-project-spinner} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(340deg, $color-bg-dark 0%, lighten($color-bg-dark,50%) 100%);
+
+  &__pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+}
+
+.pulse-tick {
+  fill: $color-bg-dark;
+  width: 10px;
+  height: 10px;
+}
+
+
+// Sets the properties and values we want to animate between
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Common to all of the animations
+.pulse-tick {
+  opacity: 0;
+  animation: pop ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+
+  transform-origin: right bottom; /* or 100% 100%, same thing */
+  transform:
+    rotate(45deg)
+    translate(0, 100%);
+}
