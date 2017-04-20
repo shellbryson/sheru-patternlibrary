@@ -4,9 +4,9 @@ define(function (require) {
   var $ = require('jquery');
   var TweenMax = require('TweenMax');
   var $spinner = $('.su-project-spinner__pulse');
-
   var $spinnerOuter = $("#pulse-outer");
 
+  // Creates a clone of svg element [id] as [newID]
   function cloneSVG(id, newID, x, y) {
     var node = document.getElementById(id);
     var newNode = node.cloneNode("true");
@@ -16,16 +16,22 @@ define(function (require) {
     document.getElementById("Home").appendChild(newNode);
   }
 
+  // Creates a clone of svg element [id] as [newID] attached to [parentID]
+  function createSVGElement(id, x, y, parentID) {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    svg.setAttributeNS(null, "id", id);
+    svg.setAttributeNS(null, "cx", x);
+    svg.setAttributeNS(null, "cy", y);
+    svg.setAttributeNS(null, "r", 20);
+    svg.setAttributeNS(null, "fill","black");
+    svg.setAttributeNS(null, "stroke","none");
+    svg.setAttributeNS(null, "class","spinner__project");
+    document.getElementById(parentID).appendChild(svg);
+  }
+
+  // Creates a new project
   function createProject(id, x, y) {
-    var project = document.createElementNS("http://www.w3.org/2000/svg","circle");
-    project.setAttributeNS(null, "id", id);
-    project.setAttributeNS(null, "cx", x);
-    project.setAttributeNS(null, "cy", y);
-    project.setAttributeNS(null, "r", 20);
-    project.setAttributeNS(null, "fill","black");
-    project.setAttributeNS(null, "stroke","none");
-    project.setAttributeNS(null, "class","spinner__project");
-    document.getElementById("Home").appendChild(project);
+    createSVGElement(id, x, y, "Home")
   }
 
   function initSpinner() {
