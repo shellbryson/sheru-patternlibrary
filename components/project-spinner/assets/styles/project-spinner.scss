@@ -21,36 +21,29 @@
     height: 100%;
     max-width: 500px;
     max-height: 500px;
-  }
 
-}
-
-.pulse-tick {
-  fill: $color-bg-dark;
-  width: 10px;
-  height: 10px;
-}
-
-
-// Sets the properties and values we want to animate between
-@keyframes pop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+    // Modify animations during interactions
+    &:hover {
+      #pulse-outer {
+        //transition: 500ms;
+        transform: scale(0.1);
+      }
+    }
   }
 }
 
-// Common to all of the animations
-.pulse-tick {
-  opacity: 0;
-  animation: pop ease-in 1;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
+// SVG elements
+#pulse-outer {
+  animation: rotate-center 120s linear infinite both;
+  transform-origin: center center;
+}
 
-  transform-origin: right bottom; /* or 100% 100%, same thing */
-  transform:
-    rotate(45deg)
-    translate(0, 100%);
+// Animations
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
