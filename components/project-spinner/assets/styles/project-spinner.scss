@@ -13,37 +13,7 @@
   background-image: linear-gradient(340deg, $color-bg-dark 0%, lighten($color-bg-dark,50%) 100%);
 
   &__pulse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 500px;
-
-    // Modify animations during interactions
-    &:hover {
-      #pulse-outer {
-        //transition: 500ms;
-        transform: scale(0.1);
-      }
-    }
-  }
-}
-
-// SVG elements
-#pulse-outer {
-  animation: rotate-center 120s linear infinite both;
-  transform-origin: center center;
-}
-
-// Animations
-@keyframes rotate-center {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
+    margin: 0 auto;
+    text-align: center;
   }
 }
