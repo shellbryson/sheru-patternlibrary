@@ -20,9 +20,6 @@ $base-font-size: 16px;
 $rem-with-px-fallbacks: true;
 @import "rem";
 
-// Opacity - cross browser opacity
-@import "opacity";
-
 // Font
 @import "icon";
 
@@ -41,9 +38,6 @@ $rem-with-px-fallbacks: true;
 // Fonts - fonts to be purchased, will add this later.
 @import "font";
 
-// Transform - transform CSS properties.
-@import "transform";
-
 // Font smoothing
 @import "font-smoothing";
 
@@ -55,3 +49,6 @@ $rem-with-px-fallbacks: true;
 
 //removed default list styles
 @import "reset-list";
+
+// visual chip
+@import "chip";

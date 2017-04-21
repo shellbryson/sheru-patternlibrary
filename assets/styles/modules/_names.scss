@@ -18,6 +18,10 @@ $p-forms: $namespace + "forms";
 // * COMPONENTS
 // *****************************************************************************
 
+$c-latest: $namespace + "latest";
+$c-project-grid: $namespace + "project-grid";
+$c-project-spinner: $namespace + "project-spinner";
+
 $c-content: $namespace + "content";
 $c-article: $namespace + "article";
 $c-head: $namespace + "head";
@@ -30,4 +34,3 @@ $c-sidebar: $namespace + "sidebar";
 
 // WordPress class names, no prefix.
 $c-widget: "widget";
-

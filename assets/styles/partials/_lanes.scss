@@ -1,0 +1,36 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _lanes.scss
+// *
+// *****************************************************************************
+
+// Default the fonts
+.su-lane-primary {
+
+  @include small {
+    display: flex;
+  }
+
+  &__splash {
+
+    padding: 20px;
+
+    @include small {
+      padding: 40px;
+      width: 60%;
+    }
+  }
+
+  &__content {
+
+    padding: 20px;
+    background-color: $color-bg-dark;
+
+    @include small {
+      padding: 40px;
+      width: 40%;
+    }
+  }
+}
