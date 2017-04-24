@@ -1,8 +1,8 @@
 define(function (require) {
   'use strict';
 
-  var $ = require('jquery');
-  var TweenMax = require('TweenMax');
+  const $ = require('jquery');
+  const TweenMax = require('TweenMax');
   var $btnTogglePause = $(".js-pause");
   var $spinner = $('.su-project-spinner__pulse');
   var $spinnerInner = $("#pulse-inner");
@@ -17,6 +17,8 @@ define(function (require) {
   var state = {
     animated: true
   }
+
+  // test
 
   // Creates a clone of svg element [id] as [newID]
   function cloneSVG(id, newID, x, y, parentID) {
@@ -50,7 +52,7 @@ define(function (require) {
 
     // Master switches
 
-    $btnTogglePause.text( strings.buttonPause.pause ); 
+    $btnTogglePause.text( strings.buttonPause.pause );
 
     $btnTogglePause.on("click", function() {
       if (state.animated) {
