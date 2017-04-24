@@ -116,14 +116,6 @@ module.exports = function (grunt) {
           dest: copyToExternalPath + "/scripts/"
         }]
       },
-      scriptsAllExternal: {
-        files: [{
-          expand: true,
-          cwd: './dist/scripts/',
-          src: '**/*',
-          dest: copyToExternalPath + "/scripts/"
-        }]
-      },
       fontsExternal: {
         files: [{
           expand: true,
