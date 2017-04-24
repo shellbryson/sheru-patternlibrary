@@ -1,13 +1,11 @@
 define(function (require) {
   'use strict';
 
-  const $ = require('jquery');
   const TweenMax = require('TweenMax');
-  const $btnTogglePause = $('.js-pause');
-  const $spinner = $('.su-project-spinner__pulse');
-  const $spinnerInner = $('#pulse-inner');
-  const $spinnerOuter = $('#pulse-outer');
-  const $spinnerQuad = $('#pulse-quad');
+  const btnTogglePause = document.getElementsByClassName('js-pause');
+  const spinnerInner = document.getElementById('pulse-inner');
+  const spinnerOuter = document.getElementById('pulse-outer');
+  const spinnerQuad = document.getElementById('pulse-quad');
   const strings = {
     buttonPause: {
       pause: 'Pause animation',
@@ -53,19 +51,20 @@ define(function (require) {
   function initSpinner() {
 
     // Master switches
-
-    $btnTogglePause.text( strings.buttonPause.pause );
-
-    $btnTogglePause.on('click', function () {
+    const btn = btnTogglePause[0];
+    btn.textContent = strings.buttonPause.pause;
+    btn.addEventListener('click', () => {
       if ( state.animated ) {
-        $( this ).text( strings.buttonPause.resume );
-        animOuterRing.pause();
-        animQuad.pause();
+        btn.textContent = strings.buttonPause.resume;
+        TweenLite.to(
+          animOuterRing, 1, { timeScale: 0 }
+        );
         state.animated = false;
       } else {
-        $( this ).text( strings.buttonPause.pause );
-        animOuterRing.play();
-        animQuad.play();
+        btn.textContent = strings.buttonPause.pause;
+        TweenLite.to(
+          animOuterRing, 1, { timeScale: 1 }
+        );
         state.animated = true;
       }
     });
@@ -73,7 +72,7 @@ define(function (require) {
     // Animation
 
     let animOuterRing = new TweenMax.to(
-      $spinnerOuter, 15, {
+      spinnerOuter, 15, {
         rotation: 360, transformOrigin: 'center center', ease: Linear.easeNone, repeat:-1
       }, {
         timeScale: 1
@@ -81,7 +80,7 @@ define(function (require) {
     );
 
     let animQuad = new TweenMax.to(
-      $spinnerQuad, 60, {
+      spinnerQuad, 60, {
         rotation: 360, transformOrigin: 'center center', ease: Linear.easeNone, repeat:-1
       }, {
         timeScale: 1
@@ -90,22 +89,25 @@ define(function (require) {
 
     // Interactions
 
-    $spinner.on('mouseover', () => {
+    spinnerQuad.addEventListener('mouseover', () => {
+      if ( state.animated ) {
         TweenLite.to(
           animOuterRing, 1, { timeScale: 10 }
         );
+      }
     });
 
-    $spinner.on('mouseout', () => {
+    spinnerQuad.addEventListener('mouseout', () => {
+      if ( state.animated ) {
         TweenLite.to(
           animOuterRing, 1, { timeScale: 1 }
         );
+      }
     });
 
     // Creation
 
     createProject( 'test1', 200, 200 );
-
     cloneSVG( 'test1', 'test2', 300, 300, 'Spinner' );
     cloneSVG( 'test1', 'test3', 300, 340, 'Spinner' );
     cloneSVG( 'test1', 'test4', 300, 380, 'Spinner' );
