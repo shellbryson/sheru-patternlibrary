@@ -1,10 +1,9 @@
 define(function (require) {
   'use strict';
 
+  require('jquery');
   require('toggleAttribute');
   require('navigation');
-  require('TweenLite');
-  require('TweenMax');
   require('project-spinner');
 
   // TODO Remove this font hack once Fabric supports fully custom headers
