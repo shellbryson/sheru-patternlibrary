@@ -18,6 +18,21 @@ define(function (require) {
     animated: true
   };
 
+  // Creates a new svg element [id] attached to [parentID]
+  class SVGElement {
+    constructor(id, cssClass, x, y) {
+      let _svg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      _svg.setAttributeNS(null, 'id', id);
+      _svg.setAttributeNS(null, 'cx', x);
+      _svg.setAttributeNS(null, 'cy', y);
+      _svg.setAttributeNS(null, 'r', 20);
+      _svg.setAttributeNS(null, 'fill', 'black');
+      _svg.setAttributeNS(null, 'stroke', 'none');
+      _svg.setAttributeNS(null, 'class', cssClass);
+      this.svg = _svg;
+    }
+  }
+
   // Creates a clone of svg element [id] as [newID]
   function cloneSVG(id, newID, x, y, parentID) {
     const node = document.getElementById(id);
@@ -28,22 +43,11 @@ define(function (require) {
     document.getElementById(parentID).appendChild(newNode);
   }
 
-  // Creates a new svg element [id] attached to [parentID]
-  function createSVGElement(id, cssClass, x, y, parentID) {
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    svg.setAttributeNS(null, 'id', id);
-    svg.setAttributeNS(null, 'cx', x);
-    svg.setAttributeNS(null, 'cy', y);
-    svg.setAttributeNS(null, 'r', 20);
-    svg.setAttributeNS(null, 'fill', 'black');
-    svg.setAttributeNS(null, 'stroke', 'none');
-    svg.setAttributeNS(null, 'class', cssClass);
-    document.getElementById(parentID).appendChild(svg);
-  }
-
   // Creates a new project
   function createProject(id, x, y) {
-    createSVGElement(id, 'spinner__project', x, y, 'Spinner');
+    let project = new SVGElement(id, 'spinner__project', x, y, 'Spinner');
+    let parent = document.getElementById('Spinner');
+    parent.appendChild(project.svg);
   }
 
   function initSpinner() {
@@ -68,7 +72,7 @@ define(function (require) {
 
     // Animation
 
-    var animOuterRing = new TweenMax.to(
+    let animOuterRing = new TweenMax.to(
       $spinnerOuter, 15, {
         rotation: 360, transformOrigin: 'center center', ease: Linear.easeNone, repeat:-1
       }, {
@@ -76,7 +80,7 @@ define(function (require) {
       }
     );
 
-    var animQuad = new TweenMax.to(
+    let animQuad = new TweenMax.to(
       $spinnerQuad, 60, {
         rotation: 360, transformOrigin: 'center center', ease: Linear.easeNone, repeat:-1
       }, {
