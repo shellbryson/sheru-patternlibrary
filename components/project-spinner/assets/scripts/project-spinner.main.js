@@ -4,7 +4,9 @@ define(function (require) {
   var $ = require('jquery');
   var TweenMax = require('TweenMax');
   var $spinner = $('.su-project-spinner__pulse');
+  var $spinnerInner = $("#pulse-inner");
   var $spinnerOuter = $("#pulse-outer");
+  var $spinnerQuad = $("#pulse-quad");
 
   // Creates a clone of svg element [id] as [newID]
   function cloneSVG(id, newID, x, y, parentID) {
@@ -36,8 +38,16 @@ define(function (require) {
 
   function initSpinner() {
 
-    var outerRing = new TweenMax.to(
+    var animOuterRing = new TweenMax.to(
       $spinnerOuter, 160, {
+        rotation: 360, transformOrigin:"center center", ease: Linear.easeNone, repeat:-1
+      },{
+        timeScale: 1
+      }
+    );
+
+    var animQuad = new TweenMax.to(
+      $spinnerQuad, 60, {
         rotation: 360, transformOrigin:"center center", ease: Linear.easeNone, repeat:-1
       },{
         timeScale: 1
