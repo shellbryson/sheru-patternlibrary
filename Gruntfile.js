@@ -57,6 +57,14 @@ module.exports = function (grunt) {
         files: scriptsPattern
       }
     },
+    run: {
+      options: {
+        // Task-specific options go here.
+      },
+      jest: {
+        cmd: 'jest'
+      }
+    },
     sass: {
       build: {
         files: {
@@ -272,6 +280,11 @@ module.exports = function (grunt) {
   grunt.registerTask('svg', [], () => {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.task.run('svgstore');
+  });
+
+  grunt.registerTask('tests', [], () => {
+    grunt.loadNpmTasks('grunt-run');
+    grunt.task.run('run:jest');
   });
 
   grunt.registerTask('default', [], () => {

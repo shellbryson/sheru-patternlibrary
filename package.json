@@ -29,9 +29,11 @@
     "grunt-jscs": "^3.0.1",
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "^0.8.0",
+    "grunt-run": "^0.6.0",
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-svgstore": "^1.0.0",
+    "jest": "^19.0.2",
     "jquery": "3.2.1",
     "remapify": "^2.1.0"
   }
