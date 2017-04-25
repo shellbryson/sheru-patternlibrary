@@ -51,6 +51,7 @@ define(function (require) {
   function initSpinner() {
 
     // Master switches
+
     const btn = btnTogglePause[0];
     btn.textContent = strings.buttonPause.pause;
     btn.addEventListener('click', () => {
