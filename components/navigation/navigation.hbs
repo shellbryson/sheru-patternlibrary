@@ -1,9 +1,7 @@
 <div class="su-navigation">
   <nav class="su-navigation__wrapper">
 
-    <div class="su-navigation__search js-search">
-      {{navigation-search}}
-    </div>
+    {{navigation-search}}
 
     <ul class="su-navigation__menu js-navigation">
       <li class="su-navigation__item">
@@ -49,10 +47,16 @@
           <a href="/projects">Blog</a>
         </li>
         <li class="su-navigation__item animation-fadein js-toggleMenu">
-          <a href="#">
-            <i class="fa fa-th-large su-display-small"></i>
-            <i class="fa fa-bars su-display-medium"></i>
-          </a>
+          <div class="su-display-small">
+            <a href="#">
+              <i class="fa fa-th-large"></i>
+            </a>
+          </div>
+          <div class="su-display-medium">
+            <a href="#">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
         </li>
         <li class="su-navigation__item su-navigation__item--small animation-fadein js-toggleSearch">
           <a href="#">

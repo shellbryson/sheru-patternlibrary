@@ -26,6 +26,27 @@ body {
 }
 
 // *****************************************************************************
+// * Helpers
+// *****************************************************************************
+
+// Hide on medium (display small only)
+.#{$namespace}display-small {
+  display: inherit;
+  @include breakpoint($breakpoint-small) {
+    display: none;
+  }
+}
+
+// Hide on small (display medium or above)
+.#{$namespace}display-medium {
+  display: none;
+
+  @include breakpoint($breakpoint-small) {
+    display: inherit;
+  }
+}
+
+// *****************************************************************************
 // * ADMIN
 // * Here we have to add some space if the WP admin bar is open as our theme
 // * removes the generated space (to allow for accurate absolute positioning)
