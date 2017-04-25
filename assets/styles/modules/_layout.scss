@@ -11,12 +11,18 @@ body {
 }
 
 .#{$namespace}wrapper {
-  @include rem(margin, 20px);
+  @include rem(margin, 10px);
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100%;
   background-color: $color-wrapper-bg;
   border: 1px solid $color-wrapper-bg;
+  transition: $animation-speed;
+
+  @include xsmall {
+    @include rem(margin, 20px);
+  }
 }
 
 // *****************************************************************************
@@ -30,25 +36,5 @@ body.admin-bar {
 
   @include breakpoint($breakpoint-small) {
     @include rem(padding-top, 10px);
-  }
-}
-
-// *****************************************************************************
-// * Helpers
-// *****************************************************************************
-
-// Hide on medium (display small only)
-.#{$namespace}display-small {
-  @include breakpoint($breakpoint-small) {
-    display: none;
-  }
-}
-
-// Hide on small (display medium or above)
-.#{$namespace}display-medium {
-  display: none;
-
-  @include breakpoint($breakpoint-small) {
-    display: inherit;
   }
 }

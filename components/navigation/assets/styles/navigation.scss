@@ -20,10 +20,10 @@
   @include small {
     display: block;
     position: absolute;
-    top: 0;
-    right: 40px;
+    top: 20px;
+    right: auto;
     bottom: auto;
-    left: auto;
+    left: 0;
     width: 50%;
     max-width: 800px;
   }
@@ -37,10 +37,10 @@
 
     @include small {
       position: absolute;
-      pointer-events: all;
       z-index: 99;
       transform: perspective( 1200px ) rotateY( -8deg );
       transition: $animation-speed-slow;
+      pointer-events: all;
 
       &:hover {
         transform: perspective( 1200px ) rotateY( -4deg );
