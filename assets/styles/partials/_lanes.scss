@@ -9,6 +9,8 @@
 // Default the fonts
 .su-lane-primary {
 
+  background-color: $color-bg-lane-primary;
+
   @include small {
     display: flex;
   }
@@ -26,7 +28,6 @@
   &__content {
 
     padding: 20px;
-    background-color: $color-bg-dark;
 
     @include small {
       padding: 40px;

@@ -9,11 +9,27 @@
 .#{$c-project-spinner} {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
+
+  padding: 20px;
   background-image: linear-gradient(340deg, $color-bg-dark 0%, lighten($color-bg-dark,50%) 100%);
+
+  @include small {
+    //height: 100%;
+  }
 
   &__pulse {
     margin: 0 auto;
     text-align: center;
+  }
+
+  &__controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  svg {
+    width: 100%;
   }
 }

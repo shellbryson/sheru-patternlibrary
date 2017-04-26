@@ -32,23 +32,23 @@ module.exports = function (grunt) {
       },
       scripts: {
         files: scriptsPattern,
-        tasks: ['scripts']
+        tasks: ['scripts', 'copy:scriptsExternal']
       },
       styles: {
         files: stylesPattern,
-        tasks: ['styles']
+        tasks: ['styles', 'copy:stylesExternal']
       },
       fonts: {
         files: fontsPattern,
-        tasks: ['copy:fonts']
+        tasks: ['copy:fonts', 'copy:fontsExternal']
       },
       images: {
         files: imagesPattern,
-        tasks: ['copy:images']
+        tasks: ['copy:images','copy:imagesExternal']
       },
       icons: {
         files: iconsPattern,
-        tasks: ['copy:icons']
+        tasks: ['copy:icons', 'copy:iconsExternal']
       },
       sasslint: {
         files: sasslintPattern
@@ -100,12 +100,44 @@ module.exports = function (grunt) {
           dest: './dist/scripts/libs/'
         }]
       },
-      toExternal: {
+      stylesExternal: {
         files: [{
           expand: true,
-          cwd: './dist/',
+          cwd: './dist/styles/',
           src: '**/*',
-          dest: copyToExternalPath
+          dest: copyToExternalPath + "/styles/"
+        }]
+      },
+      scriptsExternal: {
+        files: [{
+          expand: true,
+          cwd: './dist/scripts/',
+          src: '**/*',
+          dest: copyToExternalPath + "/scripts/"
+        }]
+      },
+      fontsExternal: {
+        files: [{
+          expand: true,
+          cwd: './dist/fonts/',
+          src: '**/*',
+          dest: copyToExternalPath + "/fonts/"
+        }]
+      },
+      imagesExternal: {
+        files: [{
+          expand: true,
+          cwd: './dist/images/',
+          src: '**/*',
+          dest: copyToExternalPath + "/images/"
+        }]
+      },
+      iconsExternal: {
+        files: [{
+          expand: true,
+          cwd: './dist/icons/',
+          src: '**/*',
+          dest: copyToExternalPath + "/icons/"
         }]
       }
     },
@@ -236,7 +268,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', [], () => {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.task.run('sass', 'postcss:build', 'copy:toExternal');
+    grunt.task.run('sass', 'postcss:build');
   });
 
   grunt.registerTask('modernizr', [], () => {
@@ -252,7 +284,13 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', [], () => {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.task.run('copy', 'styles', 'cssmin', 'copy:scripts', 'scripts', 'modernizr', 'uglify');
+    grunt.task.run(
+      'styles', 'cssmin', 'scripts', 'modernizr', 'uglify', 'copy',
+      'copy:stylesExternal',
+      'copy:scriptsExternal',
+      'copy:fontsExternal',
+      'copy:imagesExternal'
+    );
   });
 
   grunt.registerTask('lintjs', [], () => {
@@ -278,7 +316,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.task.run('styles', 'cssmin', 'scripts', 'modernizr', 'copy', 'watch');
+    grunt.task.run('styles', 'scripts', 'modernizr', 'copy', 'watch');
   });
 
   /*

@@ -6,17 +6,22 @@
 // *
 // *****************************************************************************
 
-// *****************************************************************************
-// * ADMIN
-// * Here we have to add some space if the WP admin bar is open as our theme
-// * removes the generated space (to allow for accurate absolute positioning)
-// *****************************************************************************
+body {
+  background-color: $color-page-bg;
+}
 
-body.admin-bar {
-  @include rem(padding-top, 50px);
+.#{$namespace}wrapper {
+  @include rem(margin, 10px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  background-color: $color-wrapper-bg;
+  border: 1px solid $color-wrapper-bg;
+  transition: $animation-speed;
 
-  @include breakpoint($breakpoint-small) {
-    @include rem(padding-top, 10px);
+  @include xsmall {
+    @include rem(margin, 20px);
   }
 }
 
@@ -26,6 +31,7 @@ body.admin-bar {
 
 // Hide on medium (display small only)
 .#{$namespace}display-small {
+  display: inherit;
   @include breakpoint($breakpoint-small) {
     display: none;
   }
@@ -41,41 +47,15 @@ body.admin-bar {
 }
 
 // *****************************************************************************
-// * Basic site layout
+// * ADMIN
+// * Here we have to add some space if the WP admin bar is open as our theme
+// * removes the generated space (to allow for accurate absolute positioning)
 // *****************************************************************************
 
-.#{$namespace}site {
-  @include rem(padding, 10px 20px);
-  vertical-align: baseline;
-  transition: $animation-speed;
-
-  @include breakpoint($breakpoint-xsmall) {
-    @include rem(padding, 40px 30px);
-  }
+body.admin-bar {
+  @include rem(padding-top, 50px);
 
   @include breakpoint($breakpoint-small) {
-    @include rem(padding, 40px 40px);
+    @include rem(padding-top, 10px);
   }
-
-  @include breakpoint($breakpoint-large) {
-    @include rem(padding, 60px 60px);
-  }
-
-  &::before {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: "";
-    background: radial-gradient(ellipse at center, rgba($color-white, 0) 0%, rgba($color-tint, 0.6) 100%);
-  }
-
-}
-
-.site-inner {
-  position: relative;
-  max-width: 1800px;
-  margin: 0 auto;
 }

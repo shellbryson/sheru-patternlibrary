@@ -9,15 +9,104 @@
 // *
 // *****************************************************************************
 
-$color-black: #000;
-$color-white: #fff;
+// *****************************************************************************
+// * Base colors
+// * This first set of colors are used to generate all the other colors used
+// * in the library. This list needs to be kept short as possible.
+// *****************************************************************************
+
+$color-black: #000000;
+$color-white: #ffffff;
 $color-tint: #189ae3;
+$color-base-dark: #3e3e3e;
+$color-base-light: #ffffff;
 
-$color-bg-dark: #3e3e3e;
-$color-fg-on-dark: #fff;
+// *****************************************************************************
+// * Element colors
+// * Colors generated from the base colors defined above.
+// *****************************************************************************
 
-$color-fg: #3e3e3e;
+// Helpful defaults
+$color-bg-dark: $color-base-dark;
+$color-fg: $color-base-dark;
+$color-fg-on-dark: $color-base-light;
 
-// Where the hell are the colors? Part of the goal of this project is to use a
-// really limited color palette. We only use shades of the colors defined
-// above this message. You can find variations of these in color-elements.scss.
+// Body
+$color-body-text: $color-black;
+
+// Wrapper for all content (page)
+$color-wrapper-bg: $color-base-light;
+
+// Lanes
+$color-bg-lane: $color-base-light;
+$color-bg-lane-primary: $color-base-dark;
+
+// Shadows
+$color-shadows: rgba($color-black, .2);
+
+// Buttons
+$color-button-bg: $color-base-light;
+$color-button-fg: $color-base-dark;
+
+// Navigation
+$color-navigation-mobile-bg: rgba($color-black, .9);
+$color-navigation-mobile-fg: $color-base-light;
+
+// Content Text
+$color-body-fg: $color-black;
+$color-body-fg-link: $color-black;
+$color-body-fg-hover: $color-black;
+
+// Titles (articles etc)
+$color-title-fg: $color-black;
+$color-title-fg-link: $color-black;
+$color-title-fg-hover: $color-black;
+
+$color-head-bg: darken($color-base-light, 10%);
+
+$color-brand-bg: $color-black;
+$color-brand-fg: darken($color-white, 50%);
+$color-toggle-fg: $color-base-light;
+$color-tile-bg: $color-black;
+$color-tile-fg: $color-base-light;
+$color-title-open-bg: $color-tint;
+
+$color-divider: $color-tint;
+
+$color-sidebar-bg: rgba($color-tint, 0.1);
+
+// Color cycle used for tile navigation (10). See navigation.scss for application.
+$_ctl: $color-title-open-bg;
+$color-tile-bg-list:
+    darken($_ctl, 3%)
+    darken($_ctl, 6%)
+    darken($_ctl, 9%)
+    darken($_ctl, 12%)
+    darken($_ctl, 15%)
+    darken($_ctl, 18%)
+    darken($_ctl, 21%)
+    darken($_ctl, 24%)
+    darken($_ctl, 27%)
+    darken($_ctl, 30%);
+
+$colors-tile-fg-list:
+    lighten($_ctl, 30%)
+    lighten($_ctl, 27%)
+    lighten($_ctl, 24%)
+    lighten($_ctl, 21%)
+    lighten($_ctl, 18%)
+    lighten($_ctl, 15%)
+    lighten($_ctl, 12%)
+    lighten($_ctl, 9%)
+    lighten($_ctl, 6%)
+    lighten($_ctl, 3%);
+
+$color-body-bg: $color-black;
+$color-page-bg: #385978;
+
+$color-form-element-border: $color-black;
+$color-form-element-bg: darken($color-white, 2%);
+$color-form-element-border-hover: lighten($color-form-element-border, 20%);
+$color-form-element-bg-hover: lighten($color-form-element-bg, 20%);
+$color-form-element-border: darken($color-title-open-bg, 5%);
+$color-form-element-border-hover: darken($color-title-open-bg, 25%);
