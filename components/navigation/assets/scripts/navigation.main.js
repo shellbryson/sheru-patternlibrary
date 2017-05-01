@@ -1,34 +1,31 @@
 define(function (require) {
   'use strict';
 
-  const navPanels = document.getElementsByClassName('js-navigation');
-  const searchPanels = document.getElementsByClassName('js-search');
-  const toggleMenu = document.getElementsByClassName('js-toggleMenu');
-  const toggleSearch = document.getElementsByClassName('js-toggleSearch');
+  const navPanel = document.querySelector('.js-navigation');
+  const searchPanel = document.querySelector('.js-search');
+  const toggleMenu = document.querySelector('.js-toggleMenu');
+  const toggleSearch = document.querySelector('.js-toggleSearch');
   const _menuClass = 'su-navigation__menu--show';
   const _searchClass = 'su-navigation-search--show';
 
-  const navPanelEl = navPanels[0];
-  const searchPanelEl = searchPanels[0];
-
   function initNavigation() {
-    toggleMenu[0].addEventListener('click', function (e) {
+    toggleMenu.addEventListener('click', function (e) {
       e.preventDefault();
-      if (navPanelEl.classList.contains(_menuClass)) {
-        navPanelEl.classList.remove(_menuClass);
-        searchPanelEl.classList.remove(_searchClass);
+      if (navPanel.classList.contains(_menuClass)) {
+        navPanel.classList.remove(_menuClass);
+        searchPanel.classList.remove(_searchClass);
       } else {
-        navPanelEl.classList.add(_menuClass);
-        searchPanelEl.classList.add(_searchClass);
+        navPanel.classList.add(_menuClass);
+        searchPanel.classList.add(_searchClass);
       }
     });
 
-    toggleSearch[0].addEventListener('click', function (e) {
+    toggleSearch.addEventListener('click', function (e) {
       e.preventDefault();
-      if (searchPanelEl.classList.contains(_searchClass)) {
-        searchPanelEl.classList.remove(_searchClass);
+      if (searchPanel.classList.contains(_searchClass)) {
+        searchPanel.classList.remove(_searchClass);
       } else {
-        searchPanelEl.classList.add(_searchClass);
+        searchPanel.classList.add(_searchClass);
       }
     });
   }

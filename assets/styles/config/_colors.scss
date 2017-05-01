@@ -20,22 +20,19 @@ $color-white: #ffffff;
 $color-tint: #189ae3;
 $color-base-dark: #3e3e3e;
 $color-base-light: #ffffff;
+$color-body-bg: #385978;
+$color-page-bg: #ffffff;
 
 // *****************************************************************************
 // * Element colors
 // * Colors generated from the base colors defined above.
 // *****************************************************************************
 
-// Helpful defaults
-$color-bg-dark: $color-base-dark;
 $color-fg: $color-base-dark;
 $color-fg-on-dark: $color-base-light;
 
 // Body
 $color-body-text: $color-black;
-
-// Wrapper for all content (page)
-$color-wrapper-bg: $color-base-light;
 
 // Lanes
 $color-bg-lane: $color-base-light;
@@ -45,7 +42,7 @@ $color-bg-lane-primary: $color-base-dark;
 $color-shadows: rgba($color-black, .2);
 
 // Buttons
-$color-button-bg: $color-base-light;
+$color-button-bg: #ffffff;
 $color-button-fg: $color-base-dark;
 
 // Navigation
@@ -100,9 +97,6 @@ $colors-tile-fg-list:
     lighten($_ctl, 9%)
     lighten($_ctl, 6%)
     lighten($_ctl, 3%);
-
-$color-body-bg: $color-black;
-$color-page-bg: #385978;
 
 $color-form-element-border: $color-black;
 $color-form-element-bg: darken($color-white, 2%);

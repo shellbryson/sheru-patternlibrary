@@ -13,8 +13,8 @@
   height: $brand-height;
   font-family: $font-primary;
   line-height: $brand-height;
+  background-color: $color-base-dark;
   text-align: left;
-  background-color: $color-bg-dark;
 
   @include xsmall {
     display: inline-flex;

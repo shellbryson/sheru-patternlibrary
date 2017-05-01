@@ -1,35 +1,36 @@
+<div class="su-page">
+  <div class="su-wrapper">
 
-<div class="su-wrapper">
+    {{page-header}}
 
-  {{page-header}}
+    <div class="su-lane-primary">
+      <section class="su-lane-primary__splash">
 
-  <div class="su-lane-primary">
-    <section class="su-lane-primary__splash">
+        {{project-spinner}}
 
-      {{project-spinner}}
+        <div class="su-component su-timeline">
 
-      <div class="su-component su-timeline">
+          <header>
+            <h2>Project timeline</h2>
+          </header>
 
-        <header>
-          <h2>Project timeline</h2>
-        </header>
+          <ul class="su-timeline-list">
+            <li class="su-timeline-list__entry">
 
-        <ul class="su-timeline-list">
-          <li class="su-timeline-list__entry">
+            </li>
+          </ul>
 
-          </li>
-        </ul>
+        </div>
 
-      </div>
+      </section>
+      <section class="su-lane-primary__content">
 
-    </section>
-    <section class="su-lane-primary__content">
+        {{latest}}
+        {{project-grid}}
 
-      {{latest}}
-      {{project-grid}}
+      </section>
+    </div>
 
-    </section>
+    {{page-footer}}
   </div>
-
-  {{page-footer}}
 </div>
