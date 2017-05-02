@@ -1,8 +1,6 @@
 define(function (require) {
   'use strict';
 
-  require('jquery');
-  require('toggleAttribute');
   require('navigation');
   require('project-spinner');
 
