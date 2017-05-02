@@ -6,19 +6,22 @@
 // *
 // *****************************************************************************
 
-body {
-  background-color: $color-page-bg;
+// Wraps everything to avoid page backgrounds messing with Fabric
+.#{$namespace}page  {
+  @include rem(padding, 10px);
+  min-height: 100%;
+  background-color: $color-body-bg;
 }
 
+// Inner wrapper, around all elemenents
 .#{$namespace}wrapper {
-  @include rem(margin, 10px);
   display: flex;
-  flex-direction: column;
   position: relative;
-  height: 100%;
-  background-color: $color-wrapper-bg;
-  border: 1px solid $color-wrapper-bg;
+  min-height: 100%;
+  border: 1px solid $color-base-light;
+  background-color: $color-base-light;
   transition: $animation-speed;
+  flex-direction: column;
 
   @include xsmall {
     @include rem(margin, 20px);

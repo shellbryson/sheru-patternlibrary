@@ -1,8 +1,6 @@
 define(function (require) {
   'use strict';
 
-  require('jquery');
-  require('toggleAttribute');
   require('navigation');
   require('project-spinner');
 
@@ -11,8 +9,16 @@ define(function (require) {
       location.hostname === '127.0.0.1' ||
       location.hostname === 'sheru.local'
   ) {
-    $('head').append('<link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600" rel="stylesheet">');
-    $('head').append('<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">');
-  }
+    const head = document.querySelector("head");
+    const font = document.createElement("link");
+    const icons = document.createElement("link");
 
+    font.setAttribute("href", "https://fonts.googleapis.com/css?family=Overpass:300,400,600");
+    font.setAttribute("rel", "stylesheet");
+    icons.setAttribute("href", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+    icons.setAttribute("rel", "stylesheet");
+
+    head.append(font);
+    head.append(icons);
+  }
 });

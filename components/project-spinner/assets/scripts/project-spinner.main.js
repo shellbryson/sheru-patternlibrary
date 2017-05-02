@@ -2,7 +2,7 @@ define(function (require) {
   'use strict';
 
   const TweenMax = require('TweenMax');
-  const btnTogglePause = document.getElementsByClassName('js-pause');
+  const btnTogglePause = document.querySelector('.js-pause');
   const spinnerInner = document.getElementById('pulse-inner');
   const spinnerOuter = document.getElementById('pulse-outer');
   const spinnerQuad = document.getElementById('pulse-quad');
@@ -52,7 +52,7 @@ define(function (require) {
 
     // Master switches
 
-    const btn = btnTogglePause[0];
+    const btn = btnTogglePause;
     btn.textContent = strings.buttonPause.pause;
     btn.addEventListener('click', () => {
       if ( state.animated ) {
