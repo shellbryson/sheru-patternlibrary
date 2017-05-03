@@ -37,7 +37,7 @@ rules:
     - style: long
   hex-notation:
     - 1
-    - style: lowercase
+    - style: uppercase
   id-name-format: 0
   indentation: 0
   leading-zero: 0

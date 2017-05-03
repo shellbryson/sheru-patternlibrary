@@ -74,7 +74,7 @@ ol {
   padding: 0;
   list-style: none;
 
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($small) {
     @include rem(margin, 0 0 40px 0);
   }
 
@@ -154,13 +154,13 @@ dd + dt {
 .desktop-only {
   display: none;
 
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($small) {
     display: block;
   }
 }
 
 .mobile-only {
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($small) {
     display: none;
   }
 }

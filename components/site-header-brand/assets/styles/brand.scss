@@ -17,7 +17,7 @@
 
   text-align: left;
 
-  @include xsmall {
+  @include breakpoint($xsmall) {
     display: flex;
     position: relative;
     transition: $animation-speed;
@@ -25,15 +25,15 @@
 
   &__title {
     display: flex;
-    text-transform: uppercase;
     color: lighten($color-tint, 12%);
+    text-transform: uppercase;
   }
 
   &__subtitle {
     display: none;
     color: lighten($color-tint, 12%);
 
-    @include small {
+    @include breakpoint($small) {
       display: flex;
       width: 100%;
     }
@@ -41,8 +41,8 @@
 
   &__link {
     @include rem(font-size, 40px);
-    text-decoration: none;
     color: lighten($color-tint, 12%);
+    text-decoration: none;
 
     &--hidden {
       display: none;
