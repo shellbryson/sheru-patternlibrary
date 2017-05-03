@@ -23,7 +23,7 @@ $small-hover-rotation: 20deg;
   transition: $animation-speed;
 
   // Tablet screens+
-  @include small {
+  @include breakpoint($small) {
     @include rem(top, 10px);
     @include rem(left, -10px);
     display: block;
@@ -41,7 +41,7 @@ $small-hover-rotation: 20deg;
   &__wrapper {
     width: 100%;
 
-    @include small {
+    @include breakpoint($small) {
       position: absolute;
       z-index: 99;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
@@ -60,10 +60,10 @@ $small-hover-rotation: 20deg;
 
   &__primary-menu {
     display: flex;
-    flex-direction: row;
     transition: $animation-speed;
+    flex-direction: row;
 
-    @include small {
+    @include breakpoint($small) {
       height: $brand-height;
     }
 
@@ -87,7 +87,7 @@ $small-hover-rotation: 20deg;
     transition: $animation-speed-slow;
     pointer-events: all;
 
-    @include small {
+    @include breakpoint($small) {
       opacity: $default-opacity;
       transform: translateY(60px);
 
@@ -99,9 +99,9 @@ $small-hover-rotation: 20deg;
 
     i {
       font-size: 40px;
-      vertical-align: middle;
       line-height: $brand-height;
       transition: $animation-speed;
+      vertical-align: middle;
     }
 
     // *****************************************************************************
@@ -119,18 +119,20 @@ $small-hover-rotation: 20deg;
 
       a {
         display: flex;
-        align-items: center;
         position: absolute;
         top: 10px;
         right: 10px;
         bottom: 10px;
         left: 10px;
+
         // Need this z-index as Safari flickers badly on the hover
         // transform without it.
         z-index: 98;
         text-align: center;
         transform: perspective( 1200px ) rotateY( 1deg );
         transition: $animation-speed-slow;
+
+        align-items: center;
 
         &:hover {
           top: -2px;
@@ -139,7 +141,7 @@ $small-hover-rotation: 20deg;
           transform: perspective( 1200px ) rotateY( -1deg ) scale(1.02);
           box-shadow: 0 10px 20px $color-shadows;
 
-          @include small {
+          @include breakpoint($small) {
             top: 7px;
             z-index: 99;
             background-color: $color-title-open-bg;
@@ -158,7 +160,7 @@ $small-hover-rotation: 20deg;
       // * Elements within the Tile Menu (larger screen)
       // *****************************************************************************
 
-      @include small {
+      @include breakpoint($small) {
 
         a {
           transform: perspective( 1200px ) rotateY( 1deg );
@@ -182,7 +184,7 @@ $small-hover-rotation: 20deg;
     width: 100%;
     height: $mobile-nav-height;
 
-    @include small {
+    @include breakpoint($small) {
       position: absolute;
       top: 0;
       right: 0;
@@ -196,14 +198,14 @@ $small-hover-rotation: 20deg;
 
     .#{$c-navigation}__item {
       height: auto;
-      vertical-align: middle;
       line-height: $mobile-nav-height;
       color: $color-tile-fg;
       text-align: center;
       text-decoration: none;
       transition: $animation-speed;
+      vertical-align: middle;
 
-      @include small {
+      @include breakpoint($small) {
         line-height: $brand-height;
       }
 
@@ -219,15 +221,15 @@ $small-hover-rotation: 20deg;
       // The toggle icon triggering menu, inside the Fixed Menu
       i {
         font-size: 40px;
-        vertical-align: middle;
         line-height: $brand-height;
         transition: $animation-speed;
+        vertical-align: middle;
       }
 
       &--small {
         display: none;
 
-        @include small {
+        @include breakpoint($small) {
           display: block;
           width: 60px;
           margin-right: -100px;
@@ -272,30 +274,31 @@ $small-hover-rotation: 20deg;
         background-color: nth($color-tile-bg-list, $i);
 
         a,
-        a:visited {
+        &:visited {
           color: $current-color;
           text-decoration: none;
         }
 
-        a:focus,
-        a:hover {
+        a,
+        &:focus,
+        &:hover {
           color: $color-white;
         }
       }
     }
 
-    @include small {
+    @include breakpoint($small) {
       @include rem(font-size, 19px);
       display: block;
       line-height: $brand-height;
       background-color: transparent;
     }
 
-    @include medium {
+    @include breakpoint($medium) {
       @include rem(font-size, 21px);
     }
 
-    @include large {
+    @include breakpoint($large) {
       @include rem(font-size, 22px);
       height: 160px;
     }
