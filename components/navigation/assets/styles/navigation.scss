@@ -7,10 +7,10 @@
 // *****************************************************************************
 
 
-$small-default-perspective: 900px;
-$small-default-rotation: 20deg;
-$small-hover-perspective: 350px;
-$small-hover-rotation: 20deg;
+$small-default-perspective: 800px;
+$small-default-rotation: 8deg;
+$small-hover-perspective: 800px;
+$small-hover-rotation: 10deg;
 
 .#{$c-navigation} {
 
@@ -44,6 +44,7 @@ $small-hover-rotation: 20deg;
     @include breakpoint($small) {
       position: absolute;
       z-index: 99;
+      transform-origin: 20% 0;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
       transition: $animation-speed-slow;
       pointer-events: all;
