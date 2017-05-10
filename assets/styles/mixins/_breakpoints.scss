@@ -3,19 +3,19 @@
 // *****************************************************************************
 
 @mixin xsmall() {
-  @media (min-width: $breakpoint-xsmall)  { @content ; }
+  @media (min-width: $xsmall)  { @content ; }
 }
 
 @mixin small() {
-  @media (min-width: $breakpoint-small)  { @content ; }
+  @media (min-width: $small)  { @content ; }
 }
 
 @mixin medium() {
-  @media (min-width: $breakpoint-medium)  { @content ; }
+  @media (min-width: $medium)  { @content ; }
 }
 
 @mixin large() {
-  @media (min-width: $breakpoint-large)  { @content ; }
+  @media (min-width: $large)  { @content ; }
 }
 
 

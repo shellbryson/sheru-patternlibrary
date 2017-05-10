@@ -23,7 +23,7 @@
   transition: $animation-speed;
   flex-direction: column;
 
-  @include xsmall {
+  @include breakpoint($xsmall) {
     @include rem(margin, 20px);
   }
 }
@@ -35,7 +35,8 @@
 // Hide on medium (display small only)
 .#{$namespace}display-small {
   display: inherit;
-  @include breakpoint($breakpoint-small) {
+
+  @include breakpoint($small) {
     display: none;
   }
 }
@@ -44,7 +45,7 @@
 .#{$namespace}display-medium {
   display: none;
 
-  @include breakpoint($breakpoint-small) {
+  @include breakpoint($small) {
     display: inherit;
   }
 }
@@ -55,10 +56,12 @@
 // * removes the generated space (to allow for accurate absolute positioning)
 // *****************************************************************************
 
-body.admin-bar {
-  @include rem(padding-top, 50px);
+body {
+  &.admin-bar {
+    @include rem(padding-top, 50px);
 
-  @include breakpoint($breakpoint-small) {
-    @include rem(padding-top, 10px);
+    @include breakpoint($small) {
+      @include rem(padding-top, 10px);
+    }
   }
 }
