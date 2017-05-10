@@ -44,9 +44,9 @@ $small-hover-rotation: 10deg;
     @include breakpoint($small) {
       position: absolute;
       z-index: 99;
-      transform-origin: 20% 0;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
       transition: $animation-speed-slow;
+      transform-origin: 20% 0;
       pointer-events: all;
 
       &:hover {
