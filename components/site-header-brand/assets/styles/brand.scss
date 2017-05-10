@@ -8,39 +8,64 @@
 
 .#{$c-brand} {
 
-  display: block;
-  width: 100%;
-  height: $brand-height;
-  font-family: $font-primary;
-  line-height: $brand-height;
-  background-color: darken($color-tint, 21%);
+  display: none;
 
-  text-align: left;
-
-  @include breakpoint($xsmall) {
+  @include breakpoint($small) {
+    @include rem(margin-bottom, 10px);
     display: flex;
     position: relative;
+    width: 100%;
+    height: $brand-height;
+    font-family: $font-primary;
+    line-height: $brand-height;
+    background-color: darken($color-tint, 21%);
     transition: $animation-speed;
   }
 
-  &__title {
+  // Containers
+
+  &__wrapper {
     display: flex;
-    color: lighten($color-tint, 12%);
-    text-transform: uppercase;
+    width: 100%;
   }
 
-  &__subtitle {
-    display: none;
-    color: lighten($color-tint, 12%);
+  &__title {
+    @include rem(font-size, 20px);
+    @include rem(padding, 0 20px);
 
-    @include breakpoint($small) {
-      display: flex;
-      width: 100%;
+    display: flex;
+    width: 100%;
+    font-weight: lighter;
+    color: lighten($color-tint, 12%);
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      .su-brand__link {
+        display: none;
+      }
+      .su-brand__link--hidden {
+        display: block;
+      }
     }
   }
 
+  &__subtitle {
+
+    display: none;
+
+    @include breakpoint($medium) {
+      @include rem(padding, 0 20px);
+      display: flex;
+      color: lighten($color-tint, 12%);
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  // Content
+
   &__link {
-    @include rem(font-size, 40px);
     color: lighten($color-tint, 12%);
     text-decoration: none;
 

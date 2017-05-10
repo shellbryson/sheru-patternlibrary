@@ -90,10 +90,10 @@ $small-hover-rotation: 10deg;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
-      transform: translateY(60px);
+      transform: translateY(90px);
 
       &:hover {
-        transform: translateY(70px);
+        transform: translateY(100px);
         box-shadow: 0 10px 20px $color-shadows;
       }
     }
