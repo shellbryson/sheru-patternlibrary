@@ -6,32 +6,69 @@
 // *
 // *****************************************************************************
 
-// Default the fonts
-.su-lane-primary {
+$menu-offset: 60px;
 
-  background-color: $color-base-dark;
+.su-lane {
+
+  $this: &;
 
   @include small {
     display: flex;
   }
 
-  &__splash {
+  // Standard lane split
+  #{$this}__main {
 
-    padding: 20px;
+    @include rem(padding, 20px);
 
     @include small {
+      @include rem(padding, 40px);
       width: 60%;
-      padding: 40px;
     }
   }
 
-  &__content {
+  #{$this}__side {
 
-    padding: 20px;
+    @include rem(padding, 20px);
 
     @include small {
+      @include rem(padding, 40px);
       width: 40%;
-      padding: 40px;
     }
+  }
+
+  // ***************************************************************************
+  // * Primary lane with big impact colors
+  // ***************************************************************************
+  &--primary {
+
+    background-color: $color-base-dark;
+
+  }
+
+  // ***************************************************************************
+  // * First lane with spacers for navigation on the first section
+  // ***************************************************************************
+
+  &--first {
+
+    #{$this}__main {
+      @include small {
+        margin-top: $menu-offset;
+      }
+    }
+
+  }
+
+  // ***************************************************************************
+  // * Single column lane
+  // ***************************************************************************
+
+  &--span {
+
+    #{$this}__main {
+      width: 100%;
+    }
+
   }
 }
