@@ -129,10 +129,9 @@ $menu-tile-height: 40px;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
-      transform: translateY(40px);
 
       &:hover {
-        transform: translateY(50px);
+        @include rem(margin, 4px 0);
         box-shadow: 0 10px 20px $color-shadows;
       }
     }
@@ -271,9 +270,6 @@ $menu-tile-height: 40px;
     order: 3;
 
     @include breakpoint($small) {
-      position: absolute;
-      top: 0;
-      right: 0;
       height: $menu-tile-height;
       line-height: $menu-tile-height;
       transition: $animation-speed-slow;

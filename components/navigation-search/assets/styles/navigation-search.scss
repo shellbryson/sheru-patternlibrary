@@ -17,6 +17,7 @@ $layout-search-field-height: 50px;
   width: 100%;
   border-bottom: 10px solid darken($color-title-open-bg, 10%);
   background-color: $color-title-open-bg;
+  transition: $animation-speed;
 
   // As the navigation reorders nav/secondary/search, here we
   // deliberate set the search to be 2nd item (directly above)
@@ -26,7 +27,10 @@ $layout-search-field-height: 50px;
   @include breakpoint($small) {
     border-bottom: 0;
     opacity: $default-opacity;
-    transform: translateY(40px);
+
+    &:hover {
+      @include rem(margin, 4px 0);
+    }
   }
 
   &__input {
