@@ -18,6 +18,12 @@ $navigation-width-small: 400px;
 $navigation-width-medium: 500px;
 $navigation-width-large: 600px;
 
+$navigation-slider-default-width: 800px;
+$navigation-slider-small-width: 1000px;
+$navigation-slider-medium-width: 1100px;
+$navigation-slider-large-width: 1200px;
+
+
 .#{$c-navigation} {
 
   // Mobile first
@@ -177,8 +183,9 @@ $navigation-width-large: 600px;
     // *****************************************************************************
 
     &--show {
+
       display: grid;
-      width: 1200px;
+      width: $navigation-slider-default-width;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
@@ -186,6 +193,19 @@ $navigation-width-large: 600px;
       grid-row-gap: 0;
       justify-items: stretch;
       align-items: stretch;
+
+      @include breakpoint($xsmall) {
+        width: $navigation-slider-small-width;
+      }
+
+      @include breakpoint($small) {
+        width: $navigation-slider-medium-width;
+      }
+
+      @include breakpoint($medium) {
+        width: $navigation-slider-large-width;
+      }
+
     }
   }
 
@@ -285,7 +305,7 @@ $navigation-width-large: 600px;
   }
 
   // *****************************************************************************
-  // * Elements within the popup menu
+  // * Primary menu
   // *****************************************************************************
 
   &__primary {
@@ -293,6 +313,10 @@ $navigation-width-large: 600px;
     width: 100%;
     height: $mobile-nav-height;
     order: 3;
+
+    @include breakpoint(700px) {
+      height: 50px;
+    }
 
     @include breakpoint($small) {
       height: $menu-tile-height;
@@ -314,6 +338,12 @@ $navigation-width-large: 600px;
       text-decoration: none;
       transition: $animation-speed;
       vertical-align: middle;
+
+      @include breakpoint(700px) {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+      }
 
       @include breakpoint($small) {
         display: block;
