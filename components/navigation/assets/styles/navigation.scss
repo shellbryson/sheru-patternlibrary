@@ -132,8 +132,17 @@ $navigation-width-large: 600px;
   // *****************************************************************************
 
   &__scroll {
+    display: block;
     overflow: auto;
     width: 100%;
+    transition: $animation-speed;
+    -webkit-overflow-scrolling: touch;
+
+    @include breakpoint($small) {
+      &:hover {
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
   }
 
   // *****************************************************************************
@@ -152,8 +161,7 @@ $navigation-width-large: 600px;
       opacity: $default-opacity;
 
       &:hover {
-        @include rem(margin, 4px 0);
-        box-shadow: 0 10px 20px $color-shadows;
+        @include rem(margin, 4px 0 0);
       }
     }
 
@@ -198,24 +206,24 @@ $navigation-width-large: 600px;
     text-decoration: none;
     transition: $animation-speed-slow;
 
-    @each $current-color in $colors-tile-fg-list {
-      $i: index($colors-tile-fg-list, $current-color);
+    a,
+    &:visited {
+      color: $color-fg-on-dark;
+      text-decoration: none;
+      display: block;
+    }
+
+    a,
+    &:focus,
+    &:hover {
+      color: $color-fg-on-dark;
+    }
+
+    @each $current-color in $color-tile-bg-list {
+      $i: index($color-tile-bg-list, $current-color);
 
       &:nth-child( #{$i} ) {
-        color: $current-color;
-        background-color: nth($color-tile-bg-list, $i);
-
-        a,
-        &:visited {
-          color: $current-color;
-          text-decoration: none;
-        }
-
-        a,
-        &:focus,
-        &:hover {
-          color: $color-white;
-        }
+        background-color: $current-color;
       }
     }
 
