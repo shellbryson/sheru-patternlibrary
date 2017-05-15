@@ -5,7 +5,7 @@ define(function (require) {
   const searchPanel = document.querySelector('.js-search');
   const toggleMenu = document.querySelector('.js-toggleMenu');
   const toggleSearch = document.querySelector('.js-toggleSearch');
-  const _menuClass = 'su-navigation__menu--show';
+  const _menuClass = 'su-navigation__menu-secondary--show';
   const _searchClass = 'su-navigation-search--show';
 
   function initNavigation() {

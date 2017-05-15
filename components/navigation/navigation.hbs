@@ -1,55 +1,57 @@
 <div class="su-navigation">
+
+  {{site-header-brand}}
+
   <nav class="su-navigation__wrapper">
 
     {{navigation-search}}
 
-    <ul class="su-navigation__menu js-navigation">
-      <li class="su-navigation__item">
+    <ul class="su-navigation__menu-secondary js-navigation">
+      <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
-          Menu item 1
+          Menu tile 1
         </a>
       </li>
-      <li class="su-navigation__item">
+      <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
-          Menu item 2
+          Menu tile 2
         </a>
       </li>
-      <li class="su-navigation__item">
+      <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
-          Menu item 3
+          Menu tile 3
         </a>
       </li>
-      <li class="su-navigation__item">
+      <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
-          Menu item 4
+          Menu tile 4
         </a>
       </li>
-      <li class="su-navigation__item su-navigation__item--hide-desktop">
+      <li class="su-navigation__tile su-navigation__tile--hide-desktop">
         <a href="#" class="su-navigation__link">
-          Menu item 5
+          Menu tile 5
         </a>
       </li>
-      <li class="su-navigation__item su-navigation__item--hide-desktop">
+      <li class="su-navigation__tile su-navigation__tile--hide-desktop">
         <a href="#" class="su-navigation__link">
-          Menu item 6
+          Menu tile 6
         </a>
       </li>
     </ul>
+
     <div class="su-navigation__primary">
 
-      {{site-header-brand}}
-
-      <ul class="su-navigation__primary-menu">
-        <li class="su-navigation__item animation-fadein">
+      <ul class="su-navigation__menu-primary">
+        <li class="su-navigation__tile animation-fadein">
           <a href="/code-tips">Code</a>
         </li>
-        <li class="su-navigation__item animation-fadein">
+        <li class="su-navigation__tile animation-fadein">
           <a href="/blog">Projects</a>
         </li>
-        <li class="su-navigation__item animation-fadein">
+        <li class="su-navigation__tile animation-fadein">
           <a href="/projects">Blog</a>
         </li>
-        <li class="su-navigation__item animation-fadein js-toggleMenu">
+        <li class="su-navigation__tile animation-fadein js-toggleMenu">
           <div class="su-display-small">
             <a href="#">
               <i class="fa fa-th-large"></i>
@@ -61,12 +63,14 @@
             </a>
           </div>
         </li>
-        <li class="su-navigation__item su-navigation__item--small animation-fadein js-toggleSearch">
+        <li class="su-navigation__tile su-navigation__tile--small animation-fadein js-toggleSearch">
           <a href="#">
             <i class="fa fa-search su-display-medium"></i>
           </a>
         </li>
       </ul>
+
     </div>
+
   </nav>
 </div>
