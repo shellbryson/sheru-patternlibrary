@@ -5,27 +5,45 @@ define(function (require) {
   const searchPanel = document.querySelector('.js-search');
   const toggleMenu = document.querySelector('.js-toggleMenu');
   const toggleSearch = document.querySelector('.js-toggleSearch');
-  const _menuClass = 'su-navigation__menu-secondary--show';
-  const _searchClass = 'su-navigation-search--show';
+  const _navOnClass = 'su-navigation__menu-secondary--show';
+  const _searchOnClass = 'su-navigation-search--show';
 
   function initNavigation() {
     toggleMenu.addEventListener('click', function (e) {
       e.preventDefault();
-      if (navPanel.classList.contains(_menuClass)) {
-        navPanel.classList.remove(_menuClass);
-        searchPanel.classList.remove(_searchClass);
+      if (navPanel.classList.contains(_navOnClass)) {
+        // hide
+        navPanel.classList.remove(_navOnClass);
+        navPanel.setAttribute("aria-hidden", "true");
+        navPanel.setAttribute("aria-expanded", "false");
+
+        searchPanel.classList.remove(_searchOnClass);
+        searchPanel.setAttribute("aria-hidden", "true");
+        searchPanel.setAttribute("aria-expanded", "false");
       } else {
-        navPanel.classList.add(_menuClass);
-        searchPanel.classList.add(_searchClass);
+        // show
+        navPanel.classList.add(_navOnClass);
+        navPanel.setAttribute("aria-hidden", "false");
+        navPanel.setAttribute("aria-expanded", "true");
+
+        searchPanel.classList.add(_searchOnClass);
+        searchPanel.setAttribute("aria-hidden", "false");
+        searchPanel.setAttribute("aria-expanded", "true");
       }
     });
 
     toggleSearch.addEventListener('click', function (e) {
       e.preventDefault();
-      if (searchPanel.classList.contains(_searchClass)) {
-        searchPanel.classList.remove(_searchClass);
+      if (searchPanel.classList.contains(_searchOnClass)) {
+        // hide
+        searchPanel.classList.remove(_searchOnClass);
+        searchPanel.setAttribute("aria-hidden", "true");
+        searchPanel.setAttribute("aria-expanded", "false");
       } else {
-        searchPanel.classList.add(_searchClass);
+        // show
+        searchPanel.classList.add(_searchOnClass);
+        searchPanel.setAttribute("aria-hidden", "false");
+        searchPanel.setAttribute("aria-expanded", "true");
       }
     });
   }

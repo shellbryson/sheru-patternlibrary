@@ -17,13 +17,19 @@
           <a href="/projects">Blog</a>
         </li>
         <li class="su-navigation__tile animation-fadein js-toggleMenu">
-          <button class="su-navigation__button">
+          <button class="su-navigation__button"
+            aria-haspopup="true"
+            aria-owns="navigation-secondary"
+            aria-controls="navigation-secondary">
             <i class="fa fa-th-large su-display-small"></i>
             <i class="fa fa-bars su-display-medium"></i>
           </button>
         </li>
         <li class="su-navigation__tile su-navigation__tile--small animation-fadein js-toggleSearch">
-          <button class="su-navigation__button">
+          <button class="su-navigation__button"
+            aria-haspopup="true"
+            aria-owns="navigation-search"
+            aria-controls="navigation-search">
             <i class="fa fa-search su-display-medium"></i>
           </button>
         </li>
@@ -33,7 +39,7 @@
 
     {{navigation-search}}
 
-    <ol class="su-navigation__menu-secondary js-navigation" aria-label="example with dropdowns">
+    <ol class="su-navigation__menu-secondary js-navigation" aria-expanded="false" aria-hidden="true" id="navigation-secondary">
       <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
           Menu tile 1
