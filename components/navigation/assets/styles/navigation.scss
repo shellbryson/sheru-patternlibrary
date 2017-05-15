@@ -65,6 +65,36 @@ $menu-tile-height: 40px;
   }
 
   // *****************************************************************************
+  // * Accessible buttons
+  // *****************************************************************************
+
+  &__button {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include breakpoint($small) {
+      display: inline-block;
+      padding-top: 6px;
+      cursor: pointer;
+      vertical-align: top;
+    }
+
+    i {
+      font-size: 40px;
+      transition: $animation-speed;
+      vertical-align: middle;
+
+      @include breakpoint($small) {
+        font-size: 30px;
+      }
+    }
+
+  }
+
+  // *****************************************************************************
   // * Primary menu (always visible)
   // *****************************************************************************
 
@@ -277,14 +307,6 @@ $menu-tile-height: 40px;
         }
       }
 
-      // The toggle icon triggering menu, inside the Fixed Menu
-      i {
-        font-size: 40px;
-        line-height: $brand-height;
-        transition: $animation-speed;
-        vertical-align: middle;
-      }
-
       &--small {
         display: none;
 
@@ -292,15 +314,10 @@ $menu-tile-height: 40px;
           display: block;
           width: 60px;
           margin-right: -100px;
-
-          i {
-            font-size: 20px;
-          }
         }
-
       }
+
     }
 
   }
-
 }

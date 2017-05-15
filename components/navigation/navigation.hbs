@@ -17,21 +17,15 @@
           <a href="/projects">Blog</a>
         </li>
         <li class="su-navigation__tile animation-fadein js-toggleMenu">
-          <div class="su-display-small">
-            <a href="#">
-              <i class="fa fa-th-large"></i>
-            </a>
-          </div>
-          <div class="su-display-medium">
-            <a href="#">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
+          <button class="su-navigation__button">
+            <i class="fa fa-th-large su-display-small"></i>
+            <i class="fa fa-bars su-display-medium"></i>
+          </button>
         </li>
         <li class="su-navigation__tile su-navigation__tile--small animation-fadein js-toggleSearch">
-          <a href="#">
+          <button class="su-navigation__button">
             <i class="fa fa-search su-display-medium"></i>
-          </a>
+          </button>
         </li>
       </ol>
 
@@ -39,7 +33,7 @@
 
     {{navigation-search}}
 
-    <ol class="su-navigation__menu-secondary js-navigation">
+    <ol class="su-navigation__menu-secondary js-navigation" aria-label="example with dropdowns">
       <li class="su-navigation__tile">
         <a href="#" class="su-navigation__link">
           Menu tile 1

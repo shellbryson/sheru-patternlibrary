@@ -34,19 +34,19 @@
 
 // Hide on medium (display small only)
 .#{$namespace}display-small {
-  display: inherit;
+  display: inherit!important;
 
   @include breakpoint($small) {
-    display: none;
+    display: none!important;
   }
 }
 
 // Hide on small (display medium or above)
 .#{$namespace}display-medium {
-  display: none;
+  display: none!important;
 
   @include breakpoint($small) {
-    display: inherit;
+    display: inherit!important;
   }
 }
 
