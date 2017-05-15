@@ -14,6 +14,10 @@ $small-hover-rotation: 10deg;
 
 $menu-tile-height: 40px;
 
+$navigation-width-small: 400px;
+$navigation-width-medium: 500px;
+$navigation-width-large: 600px;
+
 .#{$c-navigation} {
 
   // Mobile first
@@ -32,8 +36,16 @@ $menu-tile-height: 40px;
     position: absolute;
     right: auto;
     bottom: auto;
-    width: 50%;
+    width: $navigation-width-small;
     max-width: 800px;
+  }
+
+  @include breakpoint($medium) {
+    width: $navigation-width-medium;
+  }
+
+  @include breakpoint($large) {
+    width: $navigation-width-large;
   }
 
   // *****************************************************************************
