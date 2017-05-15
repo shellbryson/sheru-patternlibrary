@@ -131,6 +131,15 @@ $navigation-width-large: 600px;
   // * Secondary menu (tile view)
   // *****************************************************************************
 
+  &__scroll {
+    overflow: auto;
+    width: 100%;
+  }
+
+  // *****************************************************************************
+  // * Secondary menu (tile view)
+  // *****************************************************************************
+
   &__menu-secondary {
     display: none;
     width: 100%;
@@ -160,8 +169,15 @@ $navigation-width-large: 600px;
     // *****************************************************************************
 
     &--show {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      width: 1200px;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      justify-items: stretch;
+      align-items: stretch;
     }
   }
 
@@ -174,7 +190,6 @@ $navigation-width-large: 600px;
     @include rem(font-size, 18px);
     display: block;
     position: relative;
-    width: 50%;
     height: 120px;
     padding: 0 6px;
     font-family: $font-primary;
@@ -300,8 +315,10 @@ $navigation-width-large: 600px;
       text-decoration: none;
       transition: $animation-speed;
       vertical-align: middle;
+      width: 25%;
 
       @include breakpoint($small) {
+        display: block;
         height: $menu-tile-height;
         line-height: $menu-tile-height;
       }
