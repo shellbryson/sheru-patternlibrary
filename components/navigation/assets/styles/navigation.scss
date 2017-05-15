@@ -196,10 +196,14 @@ $navigation-slider-large-width: 1200px;
 
       @include breakpoint($xsmall) {
         width: $navigation-slider-small-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
       }
 
       @include breakpoint($small) {
         width: $navigation-slider-medium-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
       }
 
       @include breakpoint($medium) {
@@ -218,13 +222,18 @@ $navigation-slider-large-width: 1200px;
     @include rem(font-size, 18px);
     display: block;
     position: relative;
-    height: 120px;
+    height: 100px;
     padding: 0 6px;
     font-family: $font-primary;
-    line-height: 120px;
+    line-height: 100px;
     text-align: center;
     text-decoration: none;
     transition: $animation-speed-slow;
+
+    @include breakpoint($medium) {
+      height: 120px;
+      line-height: 120px;
+    }
 
     .#{$c-navigation}__link-fixed,
     .#{$c-navigation}__link {
@@ -307,6 +316,14 @@ $navigation-slider-large-width: 1200px;
   // *****************************************************************************
   // * Primary menu
   // *****************************************************************************
+
+  &__primary-gutter {
+    position: fixed;
+    bottom: 0px;
+    height: 1px;
+    width: 100%;
+    z-index: 5;
+  }
 
   &__primary {
     // At 100%, Chrome leaves a very slight gap between menu elements
