@@ -12,16 +12,18 @@ $layout-search-field-height: 50px;
 
 .#{$c-navigation-search} {
 
-  @include clearfix;
-
   display: none;
   position: relative;
   width: 100%;
   border-bottom: 10px solid darken($color-title-open-bg, 10%);
   background-color: $color-title-open-bg;
 
-  @include small {
-    order: 1;
+  // As the navigation reorders nav/secondary/search, here we
+  // deliberate set the search to be 2nd item (directly above)
+  // primary nav at bottom of page) for easier access on mobile
+  order: 2;
+
+  @include breakpoint($small) {
     border-bottom: 0;
     opacity: $default-opacity;
     transform: translateY(40px);

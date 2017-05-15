@@ -41,9 +41,16 @@ $menu-tile-height: 40px;
   // *****************************************************************************
 
   &__wrapper {
+    // We flex the wrapper on mobile to enable us to reorder the content, sticking
+    // the primary menu at the bottom of the screen.
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
     @include breakpoint($small) {
+      // On desktop, we turn the menu wrapper back into a block allowing for
+      // natural document flow (so keyboard navigation works correctly)
+      display: block;
       position: absolute;
       z-index: 99;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
@@ -67,7 +74,7 @@ $menu-tile-height: 40px;
     flex-direction: row;
 
     @include breakpoint($small) {
-      height: 40px;
+      height: $menu-tile-height;
     }
 
     // Four wide
@@ -231,6 +238,7 @@ $menu-tile-height: 40px;
     // At 100%, Chrome leaves a very slight gap between menu elements
     width: 100%;
     height: $mobile-nav-height;
+    order: 3;
 
     @include breakpoint($small) {
       position: absolute;
@@ -239,6 +247,7 @@ $menu-tile-height: 40px;
       height: $menu-tile-height;
       line-height: $menu-tile-height;
       transition: $animation-speed-slow;
+      order: 1;
     }
 
     // *****************************************************************************
