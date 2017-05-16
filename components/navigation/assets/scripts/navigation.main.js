@@ -8,6 +8,9 @@ define(function (require) {
   const _navOnClass = 'su-navigation__menu-secondary--show';
   const _searchOnClass = 'su-navigation-search--show';
 
+  const pagePanel = document.querySelector(".js-wrapper");
+  const _pageMenuOnClass = "su-wrapper--menu-open";
+
   function initNavigation() {
     toggleMenu.addEventListener('click', function (e) {
       e.preventDefault();
@@ -20,6 +23,8 @@ define(function (require) {
         searchPanel.classList.remove(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "true");
         searchPanel.setAttribute("aria-expanded", "false");
+
+        pagePanel.classList.remove(_pageMenuOnClass);
       } else {
         // show
         navPanel.classList.add(_navOnClass);
@@ -29,6 +34,8 @@ define(function (require) {
         searchPanel.classList.add(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "false");
         searchPanel.setAttribute("aria-expanded", "true");
+
+        pagePanel.classList.add(_pageMenuOnClass);
       }
     });
 
@@ -39,11 +46,16 @@ define(function (require) {
         searchPanel.classList.remove(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "true");
         searchPanel.setAttribute("aria-expanded", "false");
+
+        pagePanel.classList.remove(_pageMenuOnClass);
       } else {
         // show
         searchPanel.classList.add(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "false");
         searchPanel.setAttribute("aria-expanded", "true");
+
+        pagePanel.classList.add(_pageMenuOnClass);
+
       }
     });
   }
