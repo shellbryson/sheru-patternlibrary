@@ -37,7 +37,7 @@ $navigation-slider-large-width: 1200px;
   // Tablet screens+
   @include breakpoint($small) {
     @include rem(top, 10px);
-    @include rem(left, -10px);
+    @include rem(left, 10px);
     display: block;
     position: absolute;
     right: auto;

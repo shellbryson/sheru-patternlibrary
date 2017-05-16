@@ -15,7 +15,8 @@
 
 // Inner wrapper, around all elemenents
 .#{$namespace}wrapper {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 100%;
   border: 1px solid $color-base-light;
