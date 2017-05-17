@@ -42,7 +42,7 @@ $color-bg-lane-primary: $color-base-dark;
 $color-shadows: rgba($color-black, .2);
 
 // Buttons
-$color-button-bg: #ffffff;
+$color-button-bg: $color-white;
 $color-button-fg: $color-base-dark;
 
 // Navigation
@@ -84,19 +84,15 @@ $color-tile-bg-list:
     darken($_ctl, 21%)
     darken($_ctl, 24%)
     darken($_ctl, 27%)
-    darken($_ctl, 30%);
-
-$colors-tile-fg-list:
-    lighten($_ctl, 30%)
-    lighten($_ctl, 27%)
-    lighten($_ctl, 24%)
-    lighten($_ctl, 21%)
-    lighten($_ctl, 18%)
-    lighten($_ctl, 15%)
-    lighten($_ctl, 12%)
-    lighten($_ctl, 9%)
-    lighten($_ctl, 6%)
-    lighten($_ctl, 3%);
+    darken($_ctl, 30%)
+    darken($_ctl, 31%)
+    darken($_ctl, 32%)
+    darken($_ctl, 33%)
+    darken($_ctl, 34%)
+    darken($_ctl, 35%)
+    darken($_ctl, 36%)
+    darken($_ctl, 37%)
+    darken($_ctl, 38%);
 
 $color-form-element-border: $color-black;
 $color-form-element-bg: darken($color-white, 2%);

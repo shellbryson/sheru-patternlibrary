@@ -6,6 +6,8 @@
 // *
 // *****************************************************************************
 
+$page-perspective: 800px;
+
 // Wraps everything to avoid page backgrounds messing with Fabric
 .#{$namespace}page  {
   @include rem(padding, 10px);
@@ -13,18 +15,41 @@
   background-color: $color-body-bg;
 }
 
-// Inner wrapper, around all elemenents
+// *****************************************************************************
+// * Animated wrapper
+// *****************************************************************************
+
 .#{$namespace}wrapper {
   display: flex;
   position: relative;
   min-height: 100%;
   border: 1px solid $color-base-light;
   background-color: $color-base-light;
-  transition: $animation-speed;
+  transition: $animation-speed-xslow;
   flex-direction: column;
 
-  @include breakpoint($xsmall) {
+  @include breakpoint($small) {
     @include rem(margin, 20px);
+    transform: perspective( $page-perspective ) rotateY( -2deg );
+  }
+
+  &:hover {
+    @include breakpoint($small) {
+      transform: perspective( $page-perspective ) rotateY( -2.5deg );
+    }
+  }
+
+  &--menu-open {
+    @include breakpoint($small) {
+      @include rem(margin, 20px);
+      transform: perspective( $page-perspective) rotateY( -4deg ) translateX(60px) translateY(30px);
+    }
+
+    &:hover {
+      @include breakpoint($small) {
+        transform: perspective( $page-perspective ) rotateY( -3deg ) translateX(50px) translateY(20px);
+      }
+    }
   }
 }
 
@@ -34,19 +59,19 @@
 
 // Hide on medium (display small only)
 .#{$namespace}display-small {
-  display: inherit;
+  display: inherit!important;
 
   @include breakpoint($small) {
-    display: none;
+    display: none!important;
   }
 }
 
 // Hide on small (display medium or above)
 .#{$namespace}display-medium {
-  display: none;
+  display: none!important;
 
   @include breakpoint($small) {
-    display: inherit;
+    display: inherit!important;
   }
 }
 

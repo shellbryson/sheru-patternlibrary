@@ -12,19 +12,25 @@ $layout-search-field-height: 50px;
 
 .#{$c-navigation-search} {
 
-  @include clearfix;
-
   display: none;
   position: relative;
   width: 100%;
   border-bottom: 10px solid darken($color-title-open-bg, 10%);
   background-color: $color-title-open-bg;
+  transition: $animation-speed;
 
-  @include small {
-    order: 1;
+  // As the navigation reorders nav/secondary/search, here we
+  // deliberate set the search to be 2nd item (directly above)
+  // primary nav at bottom of page) for easier access on mobile
+  order: 2;
+
+  @include breakpoint($small) {
     border-bottom: 0;
     opacity: $default-opacity;
-    transform: translateY(90px);
+
+    &:hover {
+      @include rem(margin, 4px 0);
+    }
   }
 
   &__input {
@@ -37,6 +43,8 @@ $layout-search-field-height: 50px;
     font-family: $font-primary;
     transition: $animation-speed;
     box-shadow: inset 4px 4px 50px rgba($color-title-open-bg, 0.3);
+
+    -webkit-appearance: none;
 
     &:focus,
     &:hover {

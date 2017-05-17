@@ -12,6 +12,18 @@ $small-default-rotation: 8deg;
 $small-hover-perspective: 800px;
 $small-hover-rotation: 10deg;
 
+$menu-tile-height: 40px;
+
+$navigation-width-small: 400px;
+$navigation-width-medium: 500px;
+$navigation-width-large: 600px;
+
+$navigation-slider-default-width: 800px;
+$navigation-slider-small-width: 1000px;
+$navigation-slider-medium-width: 1100px;
+$navigation-slider-large-width: 1200px;
+
+
 .#{$c-navigation} {
 
   // Mobile first
@@ -25,13 +37,21 @@ $small-hover-rotation: 10deg;
   // Tablet screens+
   @include breakpoint($small) {
     @include rem(top, 10px);
-    @include rem(left, -10px);
+    @include rem(left, 10px);
     display: block;
     position: absolute;
     right: auto;
     bottom: auto;
-    width: 50%;
+    width: $navigation-width-small;
     max-width: 800px;
+  }
+
+  @include breakpoint($medium) {
+    width: $navigation-width-medium;
+  }
+
+  @include breakpoint($large) {
+    width: $navigation-width-large;
   }
 
   // *****************************************************************************
@@ -39,9 +59,16 @@ $small-hover-rotation: 10deg;
   // *****************************************************************************
 
   &__wrapper {
+    // We flex the wrapper on mobile to enable us to reorder the content, sticking
+    // the primary menu at the bottom of the screen.
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
     @include breakpoint($small) {
+      // On desktop, we turn the menu wrapper back into a block allowing for
+      // natural document flow (so keyboard navigation works correctly)
+      display: block;
       position: absolute;
       z-index: 99;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
@@ -56,16 +83,46 @@ $small-hover-rotation: 10deg;
   }
 
   // *****************************************************************************
-  // * Buttons that are always visible (x4)
+  // * Accessible buttons
   // *****************************************************************************
 
-  &__primary-menu {
+  &__button {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include breakpoint($small) {
+      display: inline-block;
+      padding-top: 6px;
+      cursor: pointer;
+      vertical-align: top;
+    }
+
+    i {
+      font-size: 40px;
+      transition: $animation-speed;
+      vertical-align: middle;
+
+      @include breakpoint($small) {
+        font-size: 30px;
+      }
+    }
+
+  }
+
+  // *****************************************************************************
+  // * Primary menu (always visible)
+  // *****************************************************************************
+
+  &__menu-primary {
     display: flex;
     transition: $animation-speed;
     flex-direction: row;
 
     @include breakpoint($small) {
-      height: $brand-height;
+      height: $menu-tile-height;
     }
 
     // Four wide
@@ -77,10 +134,28 @@ $small-hover-rotation: 10deg;
   }
 
   // *****************************************************************************
-  // * The popup menu itself
+  // * Secondary menu (tile view)
   // *****************************************************************************
 
-  &__menu {
+  &__scroll {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    transition: $animation-speed;
+    -webkit-overflow-scrolling: touch;
+
+    @include breakpoint($small) {
+      &:hover {
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Secondary menu (tile view)
+  // *****************************************************************************
+
+  &__menu-secondary {
     display: none;
     width: 100%;
     margin: 0;
@@ -90,11 +165,9 @@ $small-hover-rotation: 10deg;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
-      transform: translateY(90px);
 
       &:hover {
-        transform: translateY(100px);
-        box-shadow: 0 10px 20px $color-shadows;
+        @include rem(margin, 4px 0 0);
       }
     }
 
@@ -111,180 +184,73 @@ $small-hover-rotation: 10deg;
 
     &--show {
 
-      // *****************************************************************************
-      // * Elements within the Tile Menu (small screen)
-      // *****************************************************************************
+      display: grid;
+      width: $navigation-slider-default-width;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      justify-items: stretch;
+      align-items: stretch;
 
-      display: flex;
-      flex-wrap: wrap;
-
-      a {
-        display: flex;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
-
-        // Need this z-index as Safari flickers badly on the hover
-        // transform without it.
-        z-index: 98;
-        text-align: center;
-        transform: perspective( 1200px ) rotateY( 1deg );
-        transition: $animation-speed-slow;
-
-        align-items: center;
-
-        &:hover {
-          top: -2px;
-          z-index: 99;
-          background-color: $color-title-open-bg;
-          transform: perspective( 1200px ) rotateY( -1deg ) scale(1.02);
-          box-shadow: 0 10px 20px $color-shadows;
-
-          @include breakpoint($small) {
-            top: 7px;
-            z-index: 99;
-            background-color: $color-title-open-bg;
-            transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
-            box-shadow: 0 10px 20px $color-shadows;
-          }
-        }
+      @include breakpoint($xsmall) {
+        width: $navigation-slider-small-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
       }
-
-      span {
-        width: 100%;
-        text-align: center;
-      }
-
-      // *****************************************************************************
-      // * Elements within the Tile Menu (larger screen)
-      // *****************************************************************************
 
       @include breakpoint($small) {
-
-        a {
-          transform: perspective( 1200px ) rotateY( 1deg );
-
-          &:hover {
-            top: 7px;
-            transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
-          }
-        }
-
+        width: $navigation-slider-medium-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
       }
+
+      @include breakpoint($medium) {
+        width: $navigation-slider-large-width;
+      }
+
     }
   }
 
   // *****************************************************************************
-  // * Elements within the popup menu
+  // * Tiles
   // *****************************************************************************
 
-  &__primary {
-    // At 100%, Chrome leaves a very slight gap between menu elements
-    width: 100%;
-    height: $mobile-nav-height;
-
-    @include breakpoint($small) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      line-height: $brand-height;
-      transition: $animation-speed-slow;
-    }
-
-    // *****************************************************************************
-    // * Fixed Menu, when header at page top
-    // *****************************************************************************
-
-    .#{$c-navigation}__item {
-      height: auto;
-      line-height: $mobile-nav-height;
-      color: $color-tile-fg;
-      text-align: center;
-      text-decoration: none;
-      transition: $animation-speed;
-      vertical-align: middle;
-
-      @include breakpoint($small) {
-        line-height: $brand-height;
-      }
-
-      // Animate reveal of Fixed Menu items
-      $increment: 0.25s;
-      @for $i from 1 through 4 {
-        &:nth-child( #{$i} ) {
-          animation-delay: (0.05 * $i) + $increment;
-          animation-duration: 300ms;
-        }
-      }
-
-      // The toggle icon triggering menu, inside the Fixed Menu
-      i {
-        font-size: 40px;
-        line-height: $brand-height;
-        transition: $animation-speed;
-        vertical-align: middle;
-      }
-
-      &--small {
-        display: none;
-
-        @include breakpoint($small) {
-          display: block;
-          width: 60px;
-          margin-right: -100px;
-
-          i {
-            font-size: 20px;
-          }
-        }
-
-      }
-    }
-
-  }
-
-  // *****************************************************************************
-  // * Regular menu items (in Tile Menu)
-  // *****************************************************************************
-
-  &__item {
+  &__tile {
     @include reset-list;
     @include rem(font-size, 18px);
     display: block;
     position: relative;
-    width: 50%;
-    height: 120px;
+    height: 100px;
     padding: 0 6px;
     font-family: $font-primary;
-    line-height: 120px;
+    line-height: 100px;
     text-align: center;
     text-decoration: none;
     transition: $animation-speed-slow;
 
-    a {
-      display: block;
+    @include breakpoint($medium) {
+      height: 120px;
+      line-height: 120px;
     }
 
-    @each $current-color in $colors-tile-fg-list {
-      $i: index($colors-tile-fg-list, $current-color);
+    .#{$c-navigation}__link-fixed,
+    .#{$c-navigation}__link {
+      &:link,
+      &:focus,
+      &:visited {
+        display: block;
+        color: $color-fg-on-dark;
+        text-decoration: none;
+      }
+    }
+
+    @each $current-color in $color-tile-bg-list {
+      $i: index($color-tile-bg-list, $current-color);
 
       &:nth-child( #{$i} ) {
-        color: $current-color;
-        background-color: nth($color-tile-bg-list, $i);
-
-        a,
-        &:visited {
-          color: $current-color;
-          text-decoration: none;
-        }
-
-        a,
-        &:focus,
-        &:hover {
-          color: $color-white;
-        }
+        background-color: $current-color;
       }
     }
 
@@ -307,10 +273,121 @@ $small-hover-rotation: 10deg;
   }
 
   // *****************************************************************************
-  // * Links in items (in Tile Menu)
+  // * Tile links
   // *****************************************************************************
 
   &__link {
+    transition: $animation-speed-slow;
+
+    align-items: center;
     vertical-align: middle;
+
+    @include breakpoint($small) {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      z-index: 98;
+      text-align: center;
+      transform: perspective( 1200px ) rotateY( 1deg );
+
+      transform: perspective( 1200px ) rotateY( 1deg );
+
+      &:hover {
+        top: 7px;
+        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
+      }
+    }
+
+    &:hover {
+      @include breakpoint($small) {
+        top: 7px;
+        z-index: 99;
+        background-color: $color-title-open-bg;
+        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
+
+  }
+
+  // *****************************************************************************
+  // * Primary menu
+  // *****************************************************************************
+
+  &__primary-gutter {
+    position: fixed;
+    bottom: 0px;
+    height: 1px;
+    width: 100%;
+    z-index: 5;
+  }
+
+  &__primary {
+    // At 100%, Chrome leaves a very slight gap between menu elements
+    width: 100%;
+    height: $mobile-nav-height;
+    order: 3;
+
+    @include breakpoint(700px) {
+      height: 50px;
+    }
+
+    @include breakpoint($small) {
+      height: $menu-tile-height;
+      line-height: $menu-tile-height;
+      transition: $animation-speed-slow;
+      order: 1;
+    }
+
+    // *****************************************************************************
+    // * Fixed Menu, when header at page top
+    // *****************************************************************************
+
+    .#{$c-navigation}__tile {
+      width: 25%;
+      height: auto;
+      line-height: $mobile-nav-height;
+      color: $color-tile-fg;
+      text-align: center;
+      text-decoration: none;
+      transition: $animation-speed;
+      vertical-align: middle;
+
+      @include breakpoint(700px) {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      @include breakpoint($small) {
+        display: block;
+        height: $menu-tile-height;
+        line-height: $menu-tile-height;
+      }
+
+      // Animate reveal of Fixed Menu items
+      $increment: 0.25s;
+      @for $i from 1 through 4 {
+        &:nth-child( #{$i} ) {
+          animation-delay: (0.05 * $i) + $increment;
+          animation-duration: 300ms;
+        }
+      }
+
+      &--small {
+        display: none;
+
+        @include breakpoint($small) {
+          display: block;
+          width: 60px;
+          margin-right: -100px;
+        }
+      }
+
+    }
+
   }
 }

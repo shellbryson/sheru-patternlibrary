@@ -1,10 +1,12 @@
 <div class="su-page">
-  <div class="su-wrapper">
 
-    {{page-header}}
+  {{navigation}}
 
-    <div class="su-lane-primary">
-      <section class="su-lane-primary__splash">
+  <div class="su-wrapper js-wrapper">
+
+    <div class="su-lane su-lane--primary su-lane--first">
+      <section class="su-lane__main">
+
 
         {{project-spinner}}
 
@@ -23,10 +25,18 @@
         </div>
 
       </section>
-      <section class="su-lane-primary__content">
+      <section class="su-lane__side">
 
         {{latest}}
         {{project-grid}}
+
+      </section>
+    </div>
+
+    <div class="su-lane su-lane--span">
+      <section class="su-lane__main">
+
+        This is another lane (spanned). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a massa aliquet erat malesuada commodo. Proin id condimentum enim. Quisque tristique lacus sit amet nisl consectetur viverra vestibulum eget ante. Proin viverra nisl sit amet purus sodales, eget dictum leo sodales. Duis a ipsum vel lacus faucibus laoreet at non mauris. Quisque vitae scelerisque nulla. Integer volutpat ut sapien pharetra facilisis. Duis ex lacus, iaculis a egestas eget, aliquet nec nisl. Curabitur luctus nibh lectus, sed iaculis nisi vulputate nec.
 
       </section>
     </div>
