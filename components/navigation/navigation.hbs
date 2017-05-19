@@ -4,172 +4,49 @@
 
     {{site-header-brand}}
 
-    <div class="su-navigation__primary">
-
-      <ol class="su-navigation__menu-primary">
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/code-tips" class="su-navigation__link-fixed">Code</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/blog" class="su-navigation__link-fixed">Projects</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/projects" class="su-navigation__link-fixed">Blog</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein js-toggleMenu">
-          <button class="su-navigation__button"
-            aria-haspopup="true"
-            aria-owns="navigation-secondary"
-            aria-controls="navigation-secondary">
-            <span class="sr-only">Toggle expanded navigation</span>
-            <i class="fa fa-th-large su-display-small"></i>
-            <i class="fa fa-bars su-display-medium"></i>
-          </button>
-        </li>
-        <li class="su-navigation__tile su-navigation__tile--small animation-fadein js-toggleSearch">
-          <button class="su-navigation__button"
-            aria-haspopup="true"
-            aria-owns="navigation-search"
-            aria-controls="navigation-search">
-            <span class="sr-only">Toggle search form</span>
-            <i class="fa fa-search su-display-medium"></i>
-          </button>
-        </li>
-      </ol>
-
-    </div>
+    <ol class="su-navigation__primary">
+      <li class="su-navigation__primary-tile animation-fadein">
+        <a href="/code-tips" class="su-navigation__primary-tile-link">Code</a>
+      </li>
+      <li class="su-navigation__primary-tile animation-fadein">
+        <a href="/blog" class="su-navigation__primary-tile-link">Projects</a>
+      </li>
+      <li class="su-navigation__primary-tile animation-fadein">
+        <a href="/projects" class="su-navigation__primary-tile-link">Blog</a>
+      </li>
+      <li class="su-navigation__primary-tile animation-fadein js-toggleMenu">
+        <button class="su-navigation__button"
+          aria-haspopup="true"
+          aria-owns="navigation-secondary"
+          aria-controls="navigation-secondary">
+          <span class="sr-only">Toggle expanded navigation</span>
+          <i class="fa fa-th-large su-display-small"></i>
+          <i class="fa fa-bars su-display-medium"></i>
+        </button>
+      </li>
+      <li class="su-navigation__primary-tile su-navigation__primary-tile--small animation-fadein js-toggleSearch">
+        <button class="su-navigation__button"
+          aria-haspopup="true"
+          aria-owns="navigation-search"
+          aria-controls="navigation-search">
+          <span class="sr-only">Toggle search form</span>
+          <i class="fa fa-search su-display-medium"></i>
+        </button>
+      </li>
+    </ol>
 
     {{navigation-search}}
 
     <div class="su-navigation__scroll">
 
-      <ol class="su-navigation__menu-secondary js-navigation" aria-expanded="false" aria-hidden="true" id="navigation-secondary">
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 1
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
+      <ol class="su-navigation__secondary js-navigation" aria-expanded="false" aria-hidden="true" id="navigation-secondary">
+        {{#each secondaryNav}}
+
+        <li class="su-navigation__tile-wrapper">
+          {{>navigation-tile ctxTile}}
         </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 2
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 3
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 4
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 5
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 6
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 7
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 8
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 9
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 10
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 11
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 12
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 13
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 14
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 15
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 16
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 17
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 18
-          </a>
-          <div class="su-navigation__shard-a"></div>
-          <div class="su-navigation__shard-b"></div>
-        </li>
+
+        {{/each}}
       </ol>
 
     </div>

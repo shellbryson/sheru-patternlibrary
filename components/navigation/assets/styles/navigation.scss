@@ -115,25 +115,65 @@ $navigation-slider-large-width: 1200px;
   // * Primary menu (always visible)
   // *****************************************************************************
 
-  &__menu-primary {
+  &__primary {
+
     display: flex;
     transition: $animation-speed;
     flex-direction: row;
 
+    width: 100%;
+    //height: $mobile-nav-height;
+    order: 3;
+
+
     @include breakpoint($small) {
-      height: $menu-tile-height;
+      //height: $menu-tile-height;
     }
 
-    // Four wide
-    .#{$c-navigation}__item {
-      @include reset-list;
-      width: 25%;
-      text-align: center;
+    @include breakpoint(700px) {
+      //height: 50px;
+    }
+
+    @include breakpoint($small) {
+      //height: $menu-tile-height;
+      //line-height: $menu-tile-height;
+      transition: $animation-speed-slow;
+      order: 1;
+    }
+
+  }
+
+  // *****************************************************************************
+  // * Primary titles (always visible)
+  // *****************************************************************************
+
+  &__primary-tile {
+    @include reset-list;
+
+    @each $current-color in $color-tile-bg-list {
+      $i: index($color-tile-bg-list, $current-color);
+
+      &:nth-child( #{$i} ) {
+        background-color: $current-color;
+      }
     }
   }
 
   // *****************************************************************************
-  // * Secondary menu (tile view)
+  // * Primary links
+  // *****************************************************************************
+
+  &__primary-tile-link {
+    transition: $animation-speed-slow;
+
+    align-items: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  // *****************************************************************************
+  // * Scroll area wrapping secondary navigation
   // *****************************************************************************
 
   &__scroll {
@@ -151,10 +191,10 @@ $navigation-slider-large-width: 1200px;
   }
 
   // *****************************************************************************
-  // * Secondary menu (tile view)
+  // * Secondary navigation (default, hidden)
   // *****************************************************************************
 
-  &__menu-secondary {
+  &__secondary {
     display: none;
     width: 100%;
     margin: 0;
@@ -214,36 +254,11 @@ $navigation-slider-large-width: 1200px;
 
   // *****************************************************************************
   // * Tiles
+  // * Tiles can be found in navigation-tiles.scss
   // *****************************************************************************
 
-  &__tile {
+  &__tile-wrapper {
     @include reset-list;
-    @include rem(font-size, 18px);
-    display: block;
-    position: relative;
-    height: 100px;
-    padding: 0 6px;
-    font-family: $font-primary;
-    line-height: 100px;
-    text-align: center;
-    text-decoration: none;
-    transition: $animation-speed-slow;
-
-    @include breakpoint($medium) {
-      height: 120px;
-      line-height: 120px;
-    }
-
-    .#{$c-navigation}__link-fixed,
-    .#{$c-navigation}__link {
-      &:link,
-      &:focus,
-      &:visited {
-        display: block;
-        color: $color-fg-on-dark;
-        text-decoration: none;
-      }
-    }
 
     @each $current-color in $color-tile-bg-list {
       $i: index($color-tile-bg-list, $current-color);
@@ -252,64 +267,6 @@ $navigation-slider-large-width: 1200px;
         background-color: $current-color;
       }
     }
-
-    @include breakpoint($small) {
-      @include rem(font-size, 19px);
-      display: block;
-      line-height: $brand-height;
-      background-color: transparent;
-    }
-
-    @include breakpoint($medium) {
-      @include rem(font-size, 21px);
-    }
-
-    @include breakpoint($large) {
-      @include rem(font-size, 22px);
-      height: 160px;
-    }
-
-  }
-
-  // *****************************************************************************
-  // * Tile links
-  // *****************************************************************************
-
-  &__link {
-    transition: $animation-speed-slow;
-
-    align-items: center;
-    vertical-align: middle;
-
-    @include breakpoint($small) {
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      bottom: 10px;
-      left: 10px;
-      z-index: 98;
-      text-align: center;
-      transform: perspective( 1200px ) rotateY( 1deg );
-
-      transform: perspective( 1200px ) rotateY( 1deg );
-
-      &:hover {
-        top: 7px;
-        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
-      }
-    }
-
-    &:hover {
-      @include breakpoint($small) {
-        top: 7px;
-        z-index: 99;
-        background-color: $color-title-open-bg;
-        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
-        box-shadow: 0 10px 20px $color-shadows;
-      }
-    }
-
   }
 
   // *****************************************************************************
@@ -325,27 +282,12 @@ $navigation-slider-large-width: 1200px;
   }
 
   &__primary {
-    // At 100%, Chrome leaves a very slight gap between menu elements
-    width: 100%;
-    height: $mobile-nav-height;
-    order: 3;
-
-    @include breakpoint(700px) {
-      height: 50px;
-    }
-
-    @include breakpoint($small) {
-      height: $menu-tile-height;
-      line-height: $menu-tile-height;
-      transition: $animation-speed-slow;
-      order: 1;
-    }
 
     // *****************************************************************************
     // * Fixed Menu, when header at page top
     // *****************************************************************************
 
-    .#{$c-navigation}__tile {
+    .#{$c-navigation}__primary-tile {
       width: 25%;
       height: auto;
       line-height: $mobile-nav-height;
@@ -391,53 +333,4 @@ $navigation-slider-large-width: 1200px;
 
   }
 
-  .#{$c-navigation}__shard-a {
-    @include breakpoint(700px) {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(darken($color-title-open-bg, 8%), 0.5);
-      -webkit-clip-path: polygon(2% 2%, 2% 98%, 96% 98%);
-      clip-path: polygon(2% 2%, 2% 98%, 96% 98%);
-      z-index: 2;
-      transform: scale(0.95);
-      animation: shard ease-in-out infinite;
-      animation-direction: alternate;
-      animation-fill-mode: forwards;
-      animation-duration: 3s;
-    }
-  }
-
-  .#{$c-navigation}__shard-b {
-    @include breakpoint(700px) {
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(darken($color-title-open-bg, 12%), 0.5);
-      -webkit-clip-path: polygon(6% 2%, 98% 2%, 98% 96%);
-      clip-path: polygon(6% 2%, 98% 2%, 98% 96%);
-      z-index: 3;
-      transform: scale(0.95);
-      animation: shard ease-in-out infinite;
-      animation-direction: alternate;
-      animation-fill-mode: forwards;
-      animation-duration: 4s;
-    }
-  }
-
-}
-
-@keyframes shard {
-  from {
-    transform: scale(0.95);
-  }
-  to {
-    transform: scale(0.8);
-  }
 }
