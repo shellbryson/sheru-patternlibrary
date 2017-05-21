@@ -1,7 +1,8 @@
-<div class="su-navigation__secondary-tile">
-  <a href="{{url}}" class="su-navigation__secondary-tile-link">
-    {{title}}
+<div class="su-nav__secondary-tile">
+
+  <a href="{{url}}" class="su-nav__secondary-tile-link {{#if long}}su-nav__secondary-tile-link--long{{/if}}">
+    <span>{{title}}</span>
+    <span class="divider"></span>
   </a>
-  <div class="su-navigation__shard-a"></div>
-  <div class="su-navigation__shard-b"></div>
+  <span class="su-nav__shard"></span>
 </div>

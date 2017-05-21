@@ -1,34 +1,34 @@
-<div class="su-navigation">
+<div class="su-nav">
 
-  <nav class="su-navigation__wrapper">
+  <nav class="su-nav__wrapper">
 
     {{site-header-brand}}
 
-    <ol class="su-navigation__primary">
-      <li class="su-navigation__primary-tile animation-fadein">
-        <a href="/code-tips" class="su-navigation__primary-tile-link">Code</a>
+    <ol class="su-nav__primary">
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/code-tips" class="su-nav__primary-tile-link">Code</a>
       </li>
-      <li class="su-navigation__primary-tile animation-fadein">
-        <a href="/blog" class="su-navigation__primary-tile-link">Projects</a>
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/blog" class="su-nav__primary-tile-link">Projects</a>
       </li>
-      <li class="su-navigation__primary-tile animation-fadein">
-        <a href="/projects" class="su-navigation__primary-tile-link">Blog</a>
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/projects" class="su-nav__primary-tile-link">Blog</a>
       </li>
-      <li class="su-navigation__primary-tile animation-fadein js-toggleMenu">
-        <button class="su-navigation__button"
+      <li class="su-nav__primary-tile animation-fadein js-toggleMenu">
+        <button class="su-nav__button"
           aria-haspopup="true"
-          aria-owns="navigation-secondary"
-          aria-controls="navigation-secondary">
-          <span class="sr-only">Toggle expanded navigation</span>
+          aria-owns="nav-secondary"
+          aria-controls="nav-secondary">
+          <span class="sr-only">Toggle expanded nav</span>
           <i class="fa fa-th-large su-display-small"></i>
           <i class="fa fa-bars su-display-medium"></i>
         </button>
       </li>
-      <li class="su-navigation__primary-tile su-navigation__primary-tile--small animation-fadein js-toggleSearch">
-        <button class="su-navigation__button"
+      <li class="su-nav__primary-tile su-nav__primary-tile--small animation-fadein js-toggleSearch">
+        <button class="su-nav__button"
           aria-haspopup="true"
-          aria-owns="navigation-search"
-          aria-controls="navigation-search">
+          aria-owns="nav-search"
+          aria-controls="nav-search">
           <span class="sr-only">Toggle search form</span>
           <i class="fa fa-search su-display-medium"></i>
         </button>
@@ -36,20 +36,25 @@
     </ol>
 
     {{navigation-search}}
+    <div class="su-nav__scroll-wrap">
+      <div class="su-nav__scroll">
 
-    <div class="su-navigation__scroll">
+        <div class="su-nav__action js-nav-control">
+          <i class="fa fa-arrow-right"></i>
+        </div>
 
-      <ol class="su-navigation__secondary js-navigation" aria-expanded="false" aria-hidden="true" id="navigation-secondary">
-        {{#each secondaryNav}}
+        <ol class="su-nav__secondary js-nav" aria-expanded="false" aria-hidden="true" id="nav-secondary">
+          {{#each secondaryNav}}
 
-        <li class="su-navigation__tile-wrapper">
-          {{>navigation-tile ctxTile}}
-        </li>
+          <li class="su-nav__tile-wrapper">
+            {{>navigation-tile ctxTile}}
+          </li>
 
-        {{/each}}
-      </ol>
+          {{/each}}
+        </ol>
 
-    </div>
+      </div>
+    </div>  
 
   </nav>
 </div>

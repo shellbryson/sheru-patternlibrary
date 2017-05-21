@@ -1,17 +1,18 @@
 define(function (require) {
   'use strict';
 
-  const navPanel = document.querySelector('.js-navigation');
+  const navPanel = document.querySelector('.js-nav');
+  const navPanelControls = document.querySelector('.js-nav-control');
   const searchPanel = document.querySelector('.js-search');
   const toggleMenu = document.querySelector('.js-toggleMenu');
   const toggleSearch = document.querySelector('.js-toggleSearch');
-  const _navOnClass = 'su-navigation__secondary--show';
-  const _searchOnClass = 'su-navigation-search--show';
+  const _navOnClass = 'su-nav__secondary--show';
+  const _searchOnClass = 'su-nav-search--show';
 
   const pagePanel = document.querySelector(".js-wrapper");
   const _pageMenuOnClass = "su-wrapper--menu-open";
 
-  function initNavigation() {
+  function initnav() {
     toggleMenu.addEventListener('click', function (e) {
       e.preventDefault();
       if (navPanel.classList.contains(_navOnClass)) {
@@ -60,6 +61,6 @@ define(function (require) {
     });
   }
 
-  initNavigation();
+  initnav();
 
 });

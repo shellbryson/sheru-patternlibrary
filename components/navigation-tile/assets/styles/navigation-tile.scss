@@ -6,6 +6,11 @@
 // *
 // *****************************************************************************
 
+$tile-border-vertical: 2px;
+$tile-border-horizontal: 1px;
+$tile-color-border-low: rgba($color-tile-border, 0.1);
+$tile-color-border-high: rgba($color-tile-border, 0.3);
+
 .#{$c-navigation} {
 
   &__secondary-tile {
@@ -16,31 +21,46 @@
     position: relative;
     height: 100px;
     padding: 0 6px;
-    font-family: $font-primary;
-    line-height: 100px;
-    text-align: center;
-    text-decoration: none;
-    transition: $animation-speed-slow;
 
-    @include breakpoint($medium) {
-      height: 120px;
-      line-height: 120px;
-    }
+    border-top: $tile-border-vertical solid $tile-color-border-high;
+    border-right: $tile-border-horizontal solid $tile-color-border-low;
+
+    transition: $animation-speed-slow;
 
     @include breakpoint($small) {
       @include rem(font-size, 19px);
       display: block;
+      border-bottom: $tile-border-vertical solid $tile-color-border-high;
+      border-left: $tile-border-horizontal solid $tile-color-border-low;
       line-height: $brand-height;
       background-color: transparent;
     }
 
-    @include breakpoint($medium) {
-      @include rem(font-size, 21px);
+    &::before,
+    &::after {
+      @include breakpoint($small) {
+        display: block;
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        content: "";
+        background-color: rgba($color-tile-border, 0.4);
+      }
     }
 
-    @include breakpoint($large) {
-      @include rem(font-size, 22px);
-      height: 160px;
+    &::before {
+      top: -$tile-border-vertical;
+      right: -$tile-border-horizontal;
+    }
+
+    &::after {
+      bottom: -$tile-border-vertical;
+      left: -$tile-border-horizontal;
+    }
+
+    &:hover,
+    &:focus {
+      border-top-color: $color-highlight;
     }
   }
 
@@ -51,81 +71,67 @@
 
   &__secondary-tile-link {
     display: block;
-    transition: $animation-speed-slow;
-
-    align-items: center;
-    vertical-align: middle;
+    font-family: $font-primary;
+    text-align: left;
     text-decoration: none;
+    transition: $animation-speed-slow;
+    vertical-align: top;
+    align-items: left;
 
-    color: $color-white;
+    span {
+      color: $color-white;
+    }
+
+    .divider {
+      @include breakpoint($small) {
+        display: block;
+        width: 70%;
+        height: 1px;
+        background: linear-gradient(to right, $tile-color-border-high 0%, rgba(137,186,217,1) 95%, rgba(161,219,255,0) 100%);
+        transition: $animation-speed;
+
+        &::before {
+          display: block;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          margin-top: -4px;
+          content: "";
+          background-color: rgba($color-tile-border, 0.4);
+        }
+      }
+    }
 
     @include breakpoint($small) {
       display: block;
       position: absolute;
-      top: 10px;
-      right: 10px;
-      bottom: 10px;
-      left: 10px;
+      top: 0;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
       z-index: 98;
-      text-align: center;
-      transform: perspective( 1200px ) rotateY( 1deg );
-
-      &:hover {
-        top: 7px;
-        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.15);
-      }
-    }
-
-    &:hover {
-      @include breakpoint($small) {
-        top: 7px;
-        z-index: 99;
-        background-color: $color-title-open-bg;
-        transform: perspective( 1200px ) rotateY( -1deg ) scale(1.12);
-        box-shadow: 0 10px 20px $color-shadows;
-      }
     }
 
   }
 }
 
-.#{$c-navigation}__shard-a {
+.#{$c-navigation}__shard {
   @include breakpoint(700px) {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
-    background-color: rgba(darken($color-title-open-bg, 8%), 0.5);
-    -webkit-clip-path: polygon(2% 2%, 2% 98%, 96% 98%);
-    clip-path: polygon(2% 2%, 2% 98%, 96% 98%);
-    z-index: 2;
-    transform: scale(0.95);
+    background-color: rgba(0,0,0,0.08);
     animation: shard ease-in-out infinite;
+    transform: scale(0.98);
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-duration: 3s;
-  }
-}
-
-.#{$c-navigation}__shard-b {
-  @include breakpoint(700px) {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(darken($color-title-open-bg, 12%), 0.5);
-    -webkit-clip-path: polygon(6% 2%, 98% 2%, 98% 96%);
-    clip-path: polygon(6% 2%, 98% 2%, 98% 96%);
-    z-index: 3;
-    transform: scale(0.98);
-    animation: shard ease-in-out infinite;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-duration: 4s;
+    -webkit-clip-path: polygon(100% 60%, 100% 100%, 60% 100%);
+    clip-path: polygon(100% 60%, 100% 100%, 60% 100%);
   }
 }
 
@@ -134,6 +140,6 @@
     transform: scale(0.98);
   }
   to {
-    transform: scale(0.9);
+    transform: scale(0.96);
   }
 }

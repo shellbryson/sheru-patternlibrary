@@ -118,25 +118,13 @@ $navigation-slider-large-width: 1200px;
   &__primary {
 
     display: flex;
+    width: 100%;
+    margin: 0;
     transition: $animation-speed;
     flex-direction: row;
-
-    width: 100%;
-    //height: $mobile-nav-height;
     order: 3;
 
-
     @include breakpoint($small) {
-      //height: $menu-tile-height;
-    }
-
-    @include breakpoint(700px) {
-      //height: 50px;
-    }
-
-    @include breakpoint($small) {
-      //height: $menu-tile-height;
-      //line-height: $menu-tile-height;
       transition: $animation-speed-slow;
       order: 1;
     }
@@ -164,24 +152,47 @@ $navigation-slider-large-width: 1200px;
   // *****************************************************************************
 
   &__primary-tile-link {
-    transition: $animation-speed-slow;
 
-    align-items: center;
-    vertical-align: middle;
-    text-decoration: none;
     color: $color-white;
+    text-decoration: none;
+    transition: $animation-speed-slow;
+    vertical-align: middle;
   }
 
   // *****************************************************************************
   // * Scroll area wrapping secondary navigation
   // *****************************************************************************
 
+  &__scroll-wrap {
+    position: relative;
+
+    @include breakpoint($small) {
+      margin-left: 3px;
+      padding: 0 4px;
+      border-right: 2px solid rgba($color-tile-border, 0.3);
+      border-left: 1px solid rgba($color-tile-border, 0.3);
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 4px;
+      height: 4px;
+      content: "";
+      background-color: rgba($color-tile-border, 0.4);
+    }
+  }
+
   &__scroll {
     display: block;
     overflow: auto;
+    position: relative;
     width: 100%;
-    transition: $animation-speed;
+    margin-top: 10px;
     -webkit-overflow-scrolling: touch;
+    transition: $animation-speed;
 
     @include breakpoint($small) {
       &:hover {
@@ -204,10 +215,6 @@ $navigation-slider-large-width: 1200px;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
-
-      &:hover {
-        @include rem(margin, 4px 0 0);
-      }
     }
 
     i {
@@ -228,10 +235,9 @@ $navigation-slider-large-width: 1200px;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      grid-column-gap: 0;
-      grid-row-gap: 0;
       justify-items: stretch;
       align-items: stretch;
+      transition: $animation-speed;
 
       @include breakpoint($xsmall) {
         width: $navigation-slider-small-width;
@@ -243,6 +249,8 @@ $navigation-slider-large-width: 1200px;
         width: $navigation-slider-medium-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
       }
 
       @include breakpoint($medium) {
@@ -270,16 +278,28 @@ $navigation-slider-large-width: 1200px;
   }
 
   // *****************************************************************************
-  // * Primary menu
+  // * Scroll controls
   // *****************************************************************************
 
-  &__primary-gutter {
-    position: fixed;
-    bottom: 0px;
-    height: 1px;
-    width: 100%;
-    z-index: 5;
+  &__action {
+    display: none;
+
+    @include breakpoint($small) {
+      //display: block;
+      position: absolute;
+      z-index: 9999;
+      right: -20px;
+      bottom: -20px;
+      width: 30px;
+      height: 80px;
+      background-color: $color-white;
+    }
   }
+
+
+  // *****************************************************************************
+  // * Primary menu
+  // *****************************************************************************
 
   &__primary {
 
