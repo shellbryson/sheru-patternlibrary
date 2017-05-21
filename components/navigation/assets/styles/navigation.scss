@@ -243,8 +243,6 @@ $navigation-slider-large-width: 1200px;
         width: $navigation-slider-small-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-column-gap: 4px;
-        grid-row-gap: 4px;
       }
 
       @include breakpoint($small) {
@@ -287,14 +285,24 @@ $navigation-slider-large-width: 1200px;
     display: none;
 
     @include breakpoint($small) {
-      //display: block;
       position: absolute;
       z-index: 9999;
-      right: -20px;
-      bottom: -20px;
-      width: 30px;
-      height: 80px;
-      background-color: $color-white;
+      right: -26px;
+      width: 20px;
+      height: 40px;
+      color: $color-fg-on-dark;
+      background-color: $color-highlight;
+      cursor: pointer;
+      transition: $animation-speed;
+
+      &:hover {
+        height: 60px;
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
+
+    &--show {
+      display: block;
     }
   }
 

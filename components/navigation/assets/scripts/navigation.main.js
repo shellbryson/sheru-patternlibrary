@@ -9,6 +9,7 @@ define(function (require) {
   const toggleSearch = document.querySelector('.js-toggleSearch');
   const _navOnClass = 'su-nav__secondary--show';
   const _searchOnClass = 'su-nav-search--show';
+  const _navOnControlOnClass = 'su-nav__action--show';
   const _mask = 'su-mask';
 
   const pagePanel = document.querySelector(".js-wrapper");
@@ -23,6 +24,8 @@ define(function (require) {
         navPanel.setAttribute("aria-hidden", "true");
         navPanel.setAttribute("aria-expanded", "false");
 
+        navPanelControls.classList.remove(_navOnControlOnClass);
+
         searchPanel.classList.remove(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "true");
         searchPanel.setAttribute("aria-expanded", "false");
@@ -35,6 +38,8 @@ define(function (require) {
         navPanel.classList.add(_navOnClass);
         navPanel.setAttribute("aria-hidden", "false");
         navPanel.setAttribute("aria-expanded", "true");
+
+        navPanelControls.classList.add(_navOnControlOnClass);
 
         searchPanel.classList.add(_searchOnClass);
         searchPanel.setAttribute("aria-hidden", "false");
@@ -67,6 +72,7 @@ define(function (require) {
         pagePanel.classList.add(_pageMenuOnClass);
 
         body.classList.add(_mask);
+
       }
     });
   }
