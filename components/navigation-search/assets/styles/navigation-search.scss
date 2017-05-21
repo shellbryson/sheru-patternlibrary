@@ -36,7 +36,7 @@ $layout-search-field-height: 50px;
   &__input {
     @include rem(padding, 0 10px);
     @include rem(line-height, 40px);
-    @include rem(font-size, 24px);
+    @include rem(font-size, 16px);
     width: 100%;
     margin: 6px 0 6px 6px;
     border: 1px solid $color-form-element-border;

@@ -75,6 +75,7 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 // *****************************************************************************
 
   &__secondary-tile-link {
+    @include rem(font-size, 16px);
     display: block;
     font-family: $font-primary;
     text-align: left;
@@ -199,7 +200,7 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 $increment: 0.25s;
 @for $i from 1 through 6 {
   .#{$c-navigation}__shard:nth-of-type( #{$i} ) {
-    animation-delay: (0.05 * $i) + $increment;
+    animation-delay: (0.15 * $i) + $increment;
     animation-duration: 2s;
   }
 }

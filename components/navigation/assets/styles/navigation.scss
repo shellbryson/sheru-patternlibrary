@@ -152,7 +152,7 @@ $navigation-slider-large-width: 1200px;
   // *****************************************************************************
 
   &__primary-tile-link {
-
+    @include rem(font-size, 16px);
     color: $color-white;
     text-decoration: none;
     transition: $animation-speed-slow;
@@ -243,6 +243,8 @@ $navigation-slider-large-width: 1200px;
         width: $navigation-slider-small-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;
       }
 
       @include breakpoint($small) {
