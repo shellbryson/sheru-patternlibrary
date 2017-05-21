@@ -131,52 +131,79 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
     width: 100%;
     height: 100%;
     animation: shard ease-in-out infinite;
-    transform: scale(0.98);
+    transform-origin: bottom right;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-duration: 3s;
+    transition: $animation-speed-slow;
   }
 }
 
-.#{$c-navigation}__secondary .#{$c-navigation}__shard {
-  animation: shard ease-in-out infinite;
-  transform: scale(0.98);
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-duration: 3s;
-}
-
-.#{$c-navigation}__secondary {
+.#{$c-navigation}__secondary-tile {
   .#{$c-navigation}__shard:nth-of-type(1) {
-    @include color-poly(rgba(0,0,0,0.1), 65.65% 79%, 100% 100%, 50% 100%);
+    @include color-poly(rgba(0,0,0,0.04), 65.65% 79%, 100% 100%, 50% 100%);
   }
 
   .#{$c-navigation}__shard:nth-of-type(2)  {
-    @include color-poly(rgba(0,0,0,0.2), 65.65% 79%, 100% 100%, 83% 70.93%);
+    @include color-poly(rgba(0,0,0,0.06), 65.65% 79%, 100% 100%, 83% 70.93%);
   }
 
   .#{$c-navigation}__shard:nth-of-type(3)  {
-    @include color-poly(rgba(0,0,0,0.3), 83% 70.93%, 100% 100%, 86.87% 64.33%);
+    @include color-poly(rgba(0,0,0,0.08), 83% 70.93%, 100% 100%, 86.87% 64.33%);
   }
 
   .#{$c-navigation}__shard:nth-of-type(4)  {
-    @include color-poly(rgba(0,0,0,0.4), 72% 24.23%, 100% 100%, 81.33% 18%);
+    @include color-poly(rgba(0,0,0,0.1), 72% 24.23%, 100% 100%, 81.33% 18%);
   }
 
   .#{$c-navigation}__shard:nth-of-type(5)  {
-    @include color-poly(rgba(0,0,0,0.5), 90.28% 57.27%, 100% 100%, 95.14% 56.13%);
+    @include color-poly(rgba(0,0,0,0.12), 90.28% 57.27%, 100% 100%, 95.14% 56.13%);
   }
 
   .#{$c-navigation}__shard:nth-of-type(6)  {
-    @include color-poly(rgba(0,0,0,0.6), 100% 45%, 100% 100%, 95.14% 56.13%);
+    @include color-poly(rgba(0,0,0,0.14), 95.14% 56.13%, 100% 100%, 100% 45% );
+  }
+
+  &:hover {
+    .#{$c-navigation}__shard:nth-of-type(1) {
+      @include color-poly(rgba(0,0,0,0.04), 69.05% 81%, 100% 100%, 50% 100%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(2)  {
+      @include color-poly(rgba(0,0,0,0.06), 69.05% 81%, 100% 100%, 81.32% 69%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(3)  {
+      @include color-poly(rgba(0,0,0,0.08), 81.32% 69%, 100% 100%, 86.86% 63.77%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(4)  {
+      @include color-poly(rgba(0,0,0,0.1), 86.86% 63.77%, 100% 100%, 91% 60%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(5)  {
+      @include color-poly(rgba(0,0,0,0.12), 91% 60%, 100% 100%, 95.15% 56.15%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(6)  {
+      @include color-poly(rgba(0,0,0,0.14), 95.15% 56.15%, 100% 100%, 100% 51.55%);
+    }
+  }
+}
+
+$increment: 0.25s;
+@for $i from 1 through 6 {
+  .#{$c-navigation}__shard:nth-of-type( #{$i} ) {
+    animation-delay: (0.05 * $i) + $increment;
+    animation-duration: 2s;
   }
 }
 
 @keyframes shard {
   from {
-    transform: scale(0.98);
+    transform: scale(1, 1);
   }
   to {
-    transform: scale(0.96);
+    transform: scale(1, 1.1);
   }
 }
