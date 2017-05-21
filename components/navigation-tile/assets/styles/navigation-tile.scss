@@ -11,10 +11,9 @@ $tile-border-horizontal: 1px;
 $tile-color-border-low: rgba($color-tile-border, 0.1);
 $tile-color-border-high: rgba($color-tile-border, 0.3);
 
-@mixin color-poly($color, $p1, $p2, $p3) {
+@mixin poly($p1, $p2, $p3) {
   -webkit-clip-path: polygon($p1, $p2, $p3);
   clip-path: polygon($p1, $p2, $p3);
-  background-color: $color;
 }
 
 .#{$c-navigation} {
@@ -141,52 +140,58 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 
 .#{$c-navigation}__secondary-tile {
   .#{$c-navigation}__shard:nth-of-type(1) {
-    @include color-poly(rgba(0,0,0,0.04), 65.65% 79%, 100% 100%, 50% 100%);
+    @include poly(65.65% 79%, 100% 100%, 50% 100%);
+    background-color: rgba(0,0,0,0.05);
   }
 
   .#{$c-navigation}__shard:nth-of-type(2)  {
-    @include color-poly(rgba(0,0,0,0.06), 65.65% 79%, 100% 100%, 83% 70.93%);
+    @include poly(65.65% 79%, 100% 100%, 83% 70.93%);
+    background-color: rgba(0,0,0,0.10);
   }
 
   .#{$c-navigation}__shard:nth-of-type(3)  {
-    @include color-poly(rgba(0,0,0,0.08), 83% 70.93%, 100% 100%, 86.87% 64.33%);
+    @include poly(83% 70.93%, 100% 100%, 86.87% 64.33%);
+    background-color: rgba(0,0,0,0.15);
   }
 
   .#{$c-navigation}__shard:nth-of-type(4)  {
-    @include color-poly(rgba(0,0,0,0.1), 72% 24.23%, 100% 100%, 81.33% 18%);
+    @include poly(72% 24.23%, 100% 100%, 81.33% 18%);
+    background-color: rgba(0,0,0,0.20);
   }
 
   .#{$c-navigation}__shard:nth-of-type(5)  {
-    @include color-poly(rgba(0,0,0,0.12), 90.28% 57.27%, 100% 100%, 95.14% 56.13%);
+    @include poly(90.28% 57.27%, 100% 100%, 95.14% 56.13%);
+    background-color: rgba(0,0,0,0.25);
   }
 
   .#{$c-navigation}__shard:nth-of-type(6)  {
-    @include color-poly(rgba(0,0,0,0.14), 95.14% 56.13%, 100% 100%, 100% 45% );
+    @include poly(95.14% 56.13%, 100% 100%, 100% 45% );
+    background-color: rgba(0,0,0,0.30);
   }
 
   &:hover {
     .#{$c-navigation}__shard:nth-of-type(1) {
-      @include color-poly(rgba(0,0,0,0.04), 69.05% 81%, 100% 100%, 50% 100%);
+      @include poly(69.05% 81%, 100% 100%, 50% 100%);
     }
 
     .#{$c-navigation}__shard:nth-of-type(2)  {
-      @include color-poly(rgba(0,0,0,0.06), 69.05% 81%, 100% 100%, 81.32% 69%);
+      @include poly(69.05% 81%, 100% 100%, 81.32% 69%);
     }
 
     .#{$c-navigation}__shard:nth-of-type(3)  {
-      @include color-poly(rgba(0,0,0,0.08), 81.32% 69%, 100% 100%, 86.86% 63.77%);
+      @include poly(81.32% 69%, 100% 100%, 86.86% 63.77%);
     }
 
     .#{$c-navigation}__shard:nth-of-type(4)  {
-      @include color-poly(rgba(0,0,0,0.1), 86.86% 63.77%, 100% 100%, 91% 60%);
+      @include poly(86.86% 63.77%, 100% 100%, 91% 60%);
     }
 
     .#{$c-navigation}__shard:nth-of-type(5)  {
-      @include color-poly(rgba(0,0,0,0.12), 91% 60%, 100% 100%, 95.15% 56.15%);
+      @include poly(91% 60%, 100% 100%, 95.15% 56.15%);
     }
 
     .#{$c-navigation}__shard:nth-of-type(6)  {
-      @include color-poly(rgba(0,0,0,0.14), 95.15% 56.15%, 100% 100%, 100% 51.55%);
+      @include poly(95.15% 56.15%, 100% 100%, 100% 51.55%);
     }
   }
 }
