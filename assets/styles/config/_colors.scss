@@ -22,6 +22,7 @@ $color-base-dark: #3e3e3e;
 $color-base-light: #ffffff;
 $color-body-bg: #385978;
 $color-page-bg: #ffffff;
+$color-highlight: #73bd2f;
 
 // *****************************************************************************
 // * Element colors
@@ -64,10 +65,14 @@ $color-head-bg: darken($color-base-light, 10%);
 $color-brand-bg: $color-black;
 $color-brand-fg: darken($color-white, 50%);
 $color-toggle-fg: $color-base-light;
+
+// Tiles (navigation)
+$color-tile-border: $color-white;
 $color-tile-bg: $color-black;
 $color-tile-fg: $color-base-light;
 $color-title-open-bg: $color-tint;
 
+// Other
 $color-divider: $color-tint;
 
 $color-sidebar-bg: rgba($color-tint, 0.1);

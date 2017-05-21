@@ -20,6 +20,9 @@
     line-height: $brand-height;
     background-color: darken($color-tint, 21%);
     transition: $animation-speed;
+
+    border-top: 2px solid rgba($color-tile-border, 0.3);
+    border-bottom: 1px solid rgba($color-tile-border, 0.2);
   }
 
   // Containers
@@ -31,7 +34,7 @@
 
   &__title {
     @include rem(font-size, 20px);
-    @include rem(padding, 0 20px);
+    @include rem(padding-left, 10px);
 
     display: flex;
     width: 100%;

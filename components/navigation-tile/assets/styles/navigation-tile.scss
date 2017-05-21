@@ -1,0 +1,215 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _navigation-tile.scss
+// *
+// *****************************************************************************
+
+$tile-border-vertical: 2px;
+$tile-border-horizontal: 1px;
+$tile-color-border-low: rgba($color-tile-border, 0.1);
+$tile-color-border-high: rgba($color-tile-border, 0.3);
+
+@mixin poly($p1, $p2, $p3) {
+  -webkit-clip-path: polygon($p1, $p2, $p3);
+  clip-path: polygon($p1, $p2, $p3);
+}
+
+.#{$c-navigation} {
+
+  &__secondary-tile {
+    @include reset-list;
+    @include rem(font-size, 18px);
+
+    display: block;
+    position: relative;
+    height: 100px;
+    padding: 0 6px;
+
+    border-top: $tile-border-vertical solid $tile-color-border-high;
+    border-right: $tile-border-horizontal solid $tile-color-border-low;
+
+    transition: $animation-speed-slow;
+
+    @include breakpoint($small) {
+      @include rem(font-size, 19px);
+      display: block;
+      border-bottom: $tile-border-vertical solid $tile-color-border-high;
+      border-left: $tile-border-horizontal solid $tile-color-border-low;
+      line-height: $brand-height;
+      background-color: transparent;
+    }
+
+    &::before,
+    &::after {
+      @include breakpoint($small) {
+        display: block;
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        content: "";
+        background-color: rgba($color-tile-border, 0.4);
+      }
+    }
+
+    &::before {
+      top: -$tile-border-vertical;
+      right: -$tile-border-horizontal;
+    }
+
+    &::after {
+      bottom: -$tile-border-vertical;
+      left: -$tile-border-horizontal;
+    }
+
+    &:hover,
+    &:focus {
+      border-top-color: $color-highlight;
+    }
+  }
+
+
+// *****************************************************************************
+// * Tile links
+// *****************************************************************************
+
+  &__secondary-tile-link {
+    @include rem(font-size, 16px);
+    display: block;
+    font-family: $font-primary;
+    text-align: left;
+    text-decoration: none;
+    transition: $animation-speed-slow;
+    vertical-align: top;
+    align-items: left;
+
+    span {
+      color: $color-white;
+    }
+
+    .divider {
+      @include breakpoint($small) {
+        display: block;
+        width: 70%;
+        height: 1px;
+        background: linear-gradient(to right, $tile-color-border-high 0%, rgba(137,186,217,1) 95%, rgba(161,219,255,0) 100%);
+        transition: $animation-speed;
+
+        &::before {
+          display: block;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          margin-top: -4px;
+          content: "";
+          background-color: rgba($color-tile-border, 0.4);
+        }
+      }
+    }
+
+    @include breakpoint($small) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+      z-index: 98;
+    }
+
+  }
+}
+
+.#{$c-navigation}__shard {
+  @include breakpoint(700px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    animation: shard ease-in-out infinite;
+    transform-origin: bottom right;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+    transition: $animation-speed-slow;
+  }
+}
+
+.#{$c-navigation}__secondary-tile {
+  .#{$c-navigation}__shard:nth-of-type(1) {
+    @include poly(65.65% 79%, 100% 100%, 50% 100%);
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  .#{$c-navigation}__shard:nth-of-type(2)  {
+    @include poly(65.65% 79%, 100% 100%, 83% 70.93%);
+    background-color: rgba(0,0,0,0.10);
+  }
+
+  .#{$c-navigation}__shard:nth-of-type(3)  {
+    @include poly(83% 70.93%, 100% 100%, 86.87% 64.33%);
+    background-color: rgba(0,0,0,0.15);
+  }
+
+  .#{$c-navigation}__shard:nth-of-type(4)  {
+    @include poly(86.87% 64.33%, 100% 100%, 90.28% 57.27%);
+    background-color: rgba(0,0,0,0.20);
+  }
+
+  .#{$c-navigation}__shard:nth-of-type(5)  {
+    @include poly(90.28% 57.27%, 100% 100%, 95.14% 56.13%);
+    background-color: rgba(0,0,0,0.25);
+  }
+
+  .#{$c-navigation}__shard:nth-of-type(6)  {
+    @include poly(95.14% 56.13%, 100% 100%, 100% 45% );
+    background-color: rgba(0,0,0,0.30);
+  }
+
+  &:hover {
+    .#{$c-navigation}__shard:nth-of-type(1) {
+      @include poly(69.05% 81%, 100% 100%, 50% 100%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(2)  {
+      @include poly(69.05% 81%, 100% 100%, 81.32% 69%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(3)  {
+      @include poly(81.32% 69%, 100% 100%, 86.86% 63.77%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(4)  {
+      @include poly(86.86% 63.77%, 100% 100%, 91% 60%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(5)  {
+      @include poly(91% 60%, 100% 100%, 95.15% 56.15%);
+    }
+
+    .#{$c-navigation}__shard:nth-of-type(6)  {
+      @include poly(95.15% 56.15%, 100% 100%, 100% 51.55%);
+    }
+  }
+}
+
+$increment: 0.25s;
+@for $i from 1 through 6 {
+  .#{$c-navigation}__shard:nth-of-type( #{$i} ) {
+    animation-delay: (0.15 * $i) + $increment;
+    animation-duration: 2s;
+  }
+}
+
+@keyframes shard {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1, 1.1);
+  }
+}

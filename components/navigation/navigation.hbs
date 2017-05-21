@@ -1,141 +1,58 @@
-<div class="su-navigation">
+<div class="su-nav">
 
-  <nav class="su-navigation__wrapper">
+  <nav class="su-nav__wrapper">
 
     {{site-header-brand}}
 
-    <div class="su-navigation__primary">
-
-      <ol class="su-navigation__menu-primary">
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/code-tips" class="su-navigation__link-fixed">Code</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/blog" class="su-navigation__link-fixed">Projects</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein">
-          <a href="/projects" class="su-navigation__link-fixed">Blog</a>
-        </li>
-        <li class="su-navigation__tile animation-fadein js-toggleMenu">
-          <button class="su-navigation__button"
-            aria-haspopup="true"
-            aria-owns="navigation-secondary"
-            aria-controls="navigation-secondary">
-            <span class="sr-only">Toggle expanded navigation</span>
-            <i class="fa fa-th-large su-display-small"></i>
-            <i class="fa fa-bars su-display-medium"></i>
-          </button>
-        </li>
-        <li class="su-navigation__tile su-navigation__tile--small animation-fadein js-toggleSearch">
-          <button class="su-navigation__button"
-            aria-haspopup="true"
-            aria-owns="navigation-search"
-            aria-controls="navigation-search">
-            <span class="sr-only">Toggle search form</span>
-            <i class="fa fa-search su-display-medium"></i>
-          </button>
-        </li>
-      </ol>
-
-    </div>
+    <ol class="su-nav__primary">
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/code-tips" class="su-nav__primary-tile-link">Code</a>
+      </li>
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/blog" class="su-nav__primary-tile-link">Projects</a>
+      </li>
+      <li class="su-nav__primary-tile animation-fadein">
+        <a href="/projects" class="su-nav__primary-tile-link">Blog</a>
+      </li>
+      <li class="su-nav__primary-tile animation-fadein js-toggleMenu">
+        <button class="su-nav__button"
+          aria-haspopup="true"
+          aria-owns="nav-secondary"
+          aria-controls="nav-secondary">
+          <span class="sr-only">Toggle expanded navigation</span>
+          <i class="fa fa-th-large su-display-small"></i>
+          <i class="fa fa-bars su-display-medium"></i>
+        </button>
+      </li>
+      <li class="su-nav__primary-tile su-nav__primary-tile--small animation-fadein js-toggleSearch">
+        <button class="su-nav__button"
+          aria-haspopup="true"
+          aria-owns="nav-search"
+          aria-controls="nav-search">
+          <span class="sr-only">Toggle search form</span>
+          <i class="fa fa-search su-display-medium"></i>
+        </button>
+      </li>
+    </ol>
 
     {{navigation-search}}
+    <div class="su-nav__scroll-wrap">
 
-    <div class="su-navigation__scroll">
+      <div class="su-nav__action js-nav-control">
+        {{!-- <i class="fa fa-arrow-right"></i> --}}
+      </div>
 
-      <ol class="su-navigation__menu-secondary js-navigation" aria-expanded="false" aria-hidden="true" id="navigation-secondary">
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 1
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 2
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 3
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 4
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 5
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 6
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 7
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 8
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 9
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 10
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 11
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 12
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 13
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 14
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 15
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 16
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 17
-          </a>
-        </li>
-        <li class="su-navigation__tile">
-          <a href="#" class="su-navigation__link">
-            Menu tile 18
-          </a>
-        </li>
-        </li>
-      </ol>
+      <div class="su-nav__scroll su-scrollbar">
+        <ol class="su-nav__secondary js-nav" aria-expanded="false" aria-hidden="true" id="nav-secondary">
+          {{#each secondaryNav}}
+
+          <li class="su-nav__tile-wrapper">
+            {{>navigation-tile ctxTile}}
+          </li>
+
+          {{/each}}
+        </ol>
+      </div>
 
     </div>
 
