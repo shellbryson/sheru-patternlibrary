@@ -1,6 +1,7 @@
 define(function (require) {
   'use strict';
 
+  const body = document.querySelector('body');
   const navPanel = document.querySelector('.js-nav');
   const navPanelControls = document.querySelector('.js-nav-control');
   const searchPanel = document.querySelector('.js-search');
@@ -8,6 +9,7 @@ define(function (require) {
   const toggleSearch = document.querySelector('.js-toggleSearch');
   const _navOnClass = 'su-nav__secondary--show';
   const _searchOnClass = 'su-nav-search--show';
+  const _mask = 'su-mask';
 
   const pagePanel = document.querySelector(".js-wrapper");
   const _pageMenuOnClass = "su-wrapper--menu-open";
@@ -26,6 +28,8 @@ define(function (require) {
         searchPanel.setAttribute("aria-expanded", "false");
 
         pagePanel.classList.remove(_pageMenuOnClass);
+
+        body.classList.remove(_mask);
       } else {
         // show
         navPanel.classList.add(_navOnClass);
@@ -37,6 +41,8 @@ define(function (require) {
         searchPanel.setAttribute("aria-expanded", "true");
 
         pagePanel.classList.add(_pageMenuOnClass);
+
+        body.classList.add(_mask);
       }
     });
 
@@ -49,6 +55,9 @@ define(function (require) {
         searchPanel.setAttribute("aria-expanded", "false");
 
         pagePanel.classList.remove(_pageMenuOnClass);
+
+        body.classList.remove(_mask);
+
       } else {
         // show
         searchPanel.classList.add(_searchOnClass);
@@ -57,6 +66,7 @@ define(function (require) {
 
         pagePanel.classList.add(_pageMenuOnClass);
 
+        body.classList.add(_mask);
       }
     });
   }

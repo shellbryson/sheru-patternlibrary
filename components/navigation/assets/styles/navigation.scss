@@ -356,3 +356,21 @@ $navigation-slider-large-width: 1200px;
   }
 
 }
+
+// This is hidden for now as overlays don't work well with our 3D
+.su-mask {
+  &::after {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: 2;
+    background-image: linear-gradient(rgba($color-body-bg, 0.5) 0%, rgba($color-body-bg, 0.2) 100%);
+    overflow: hidden;
+  }
+}
