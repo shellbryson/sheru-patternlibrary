@@ -6,7 +6,7 @@
 // *
 // *****************************************************************************
 
-$page-perspective: 3000px;
+$page-perspective: 10000px;
 
 // Wraps everything to avoid page backgrounds messing with Fabric
 .#{$namespace}page  {
@@ -27,16 +27,16 @@ $page-perspective: 3000px;
   background-color: $color-base-light;
   transition: $animation-speed-xslow;
   flex-direction: column;
-  transform-origin: 50% 50%;
+  transform-origin: 100% 50%;
 
   @include breakpoint($small) {
     @include rem(margin, 20px);
-    transform: perspective( $page-perspective ) rotateY( -2deg );
+    transform: perspective( $page-perspective ) rotateY( -3deg );
   }
 
   &:hover {
     @include breakpoint($small) {
-      transform: perspective( $page-perspective ) rotateY( -2.5deg );
+      transform: perspective( $page-perspective ) rotateY( -5deg );
     }
   }
 
@@ -44,12 +44,12 @@ $page-perspective: 3000px;
 
     @include breakpoint($small) {
       @include rem(margin, 20px);
-      transform: perspective( $page-perspective) rotateY( -4deg ) translateX(60px) translateY(30px);
+      transform: perspective( $page-perspective ) rotateY( -10deg ) translateX( 60px ) translateY( 10px );
     }
 
     &:hover {
       @include breakpoint($small) {
-        transform: perspective( $page-perspective ) rotateY( -3deg ) translateX(50px) translateY(20px);
+        transform: perspective( $page-perspective ) rotateY( -8deg ) translateX( 40px ) translateY( 10px );
       }
     }
 
