@@ -25,16 +25,14 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
     display: block;
     position: relative;
     height: 100px;
-    padding: 0 6px;
-
-    border-top: $tile-border-vertical solid $tile-color-border-high;
-    border-right: $tile-border-horizontal solid $tile-color-border-low;
-
     transition: $animation-speed-slow;
 
     @include breakpoint($small) {
       @include rem(font-size, 19px);
       display: block;
+      padding: 0 6px;
+      border-top: $tile-border-vertical solid $tile-color-border-high;
+      border-right: $tile-border-horizontal solid $tile-color-border-low;
       border-bottom: $tile-border-vertical solid $tile-color-border-high;
       border-left: $tile-border-horizontal solid $tile-color-border-low;
       line-height: $brand-height;
@@ -75,14 +73,20 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 // *****************************************************************************
 
   &__secondary-tile-link {
+    @include rem(padding, 4px);
     @include rem(font-size, 16px);
     display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 98;
     font-family: $font-primary;
     text-align: left;
     text-decoration: none;
     transition: $animation-speed-slow;
     vertical-align: top;
-    align-items: left;
 
     span {
       color: $color-white;
@@ -108,23 +112,12 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
       }
     }
 
-    @include breakpoint($small) {
-      @include rem(padding, 4px);
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 98;
-    }
-
   }
 }
 
 .#{$c-navigation}__shard {
 
-  @include breakpoint(700px) {
+  @include breakpoint($small) {
     display: block;
     position: absolute;
     top: 0;
@@ -141,7 +134,7 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 }
 
 .#{$c-navigation}__secondary {
-  //width: 100%;
+
   .#{$c-navigation}__shard:nth-of-type(1) {
     @include poly(65.65% 79%, 100% 100%, 50% 100%);
     background-color: rgba(0,0,0,0.05);

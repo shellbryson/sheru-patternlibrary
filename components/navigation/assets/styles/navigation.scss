@@ -127,6 +127,7 @@ $navigation-slider-large-width: 1200px;
     order: 3;
 
     @include breakpoint($small) {
+      opacity: $default-opacity;
       transition: $animation-speed-slow;
       order: 1;
     }
