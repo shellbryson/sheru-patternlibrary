@@ -109,12 +109,13 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
     }
 
     @include breakpoint($small) {
+      @include rem(padding, 4px);
       display: block;
       position: absolute;
       top: 0;
-      right: 4px;
-      bottom: 4px;
-      left: 4px;
+      right: 0;
+      bottom: 0;
+      left: 0;
       z-index: 98;
     }
 
@@ -122,24 +123,25 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
 }
 
 .#{$c-navigation}__shard {
+
   @include breakpoint(700px) {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
     width: 100%;
     height: 100%;
     animation: shard ease-in-out infinite;
+    transition: $animation-speed-slow;
     transform-origin: bottom right;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-duration: 3s;
-    transition: $animation-speed-slow;
   }
 }
 
-.#{$c-navigation}__secondary-tile {
+.#{$c-navigation}__secondary {
+  //width: 100%;
   .#{$c-navigation}__shard:nth-of-type(1) {
     @include poly(65.65% 79%, 100% 100%, 50% 100%);
     background-color: rgba(0,0,0,0.05);

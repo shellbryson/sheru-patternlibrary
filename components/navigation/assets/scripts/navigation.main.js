@@ -35,7 +35,7 @@ define(function (require) {
   }
 
   function handleKeys(e) {
-    var keyCode = e.keyCode;
+    let keyCode = e.keyCode;
     if ( keyCode==27 ) {
       closeNavigation();
     }

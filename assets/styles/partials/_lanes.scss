@@ -12,6 +12,11 @@ $menu-offset: 60px;
 
   $this: &;
 
+  p {
+    display: block;
+    margin-bottom: 20px;
+  }
+
   @include small {
     display: flex;
   }
