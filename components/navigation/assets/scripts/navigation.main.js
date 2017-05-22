@@ -46,7 +46,7 @@ define(function (require) {
     navPanel.setAttribute("aria-hidden", "false");
     navPanel.setAttribute("aria-expanded", "true");
     navPanelControls.classList.add(_navOnControlOnClass);
-    body.classList.add(_showMenu);
+    openSearch();
   }
 
   function closeNavigation() {
@@ -54,7 +54,7 @@ define(function (require) {
     navPanel.setAttribute("aria-hidden", "true");
     navPanel.setAttribute("aria-expanded", "false");
     navPanelControls.classList.remove(_navOnControlOnClass);
-    body.classList.remove(_showMenu);
+    closeSearch();
   }
 
   function openSearch() {
@@ -68,7 +68,7 @@ define(function (require) {
     searchPanel.classList.remove(_searchOnClass);
     searchPanel.setAttribute("aria-hidden", "true");
     searchPanel.setAttribute("aria-expanded", "false");
-    body.classList.add(_showMenu);
+    body.classList.remove(_showMenu);
   }
 
   initnav();

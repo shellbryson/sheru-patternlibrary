@@ -177,14 +177,16 @@ $navigation-slider-large-width: 1200px;
     }
 
     &::before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -5px;
-      width: 4px;
-      height: 4px;
-      content: "";
-      background-color: rgba($color-tile-border, 0.4);
+      @include breakpoint($small) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: 4px;
+        height: 4px;
+        content: "";
+        background-color: rgba($color-tile-border, 0.4);
+      }
     }
   }
 
@@ -193,11 +195,11 @@ $navigation-slider-large-width: 1200px;
     overflow: auto;
     position: relative;
     width: 100%;
-    margin-top: 10px;
     -webkit-overflow-scrolling: touch;
     transition: $animation-speed;
 
     @include breakpoint($small) {
+      margin-top: 10px;
       &:hover {
         box-shadow: 0 10px 20px $color-shadows;
       }
