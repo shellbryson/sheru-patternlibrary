@@ -11,7 +11,7 @@ require.config({
 
     // Components
     'navigation':           'components/navigation/assets/scripts/navigation.main',
-    'project-spinner':      'components/project-spinner/assets/scripts/project-spinner.main',
+    'project-spinner':      'components/lane-primary-interaction/assets/scripts/project-spinner.main',
   },
   shim: {
     'modernizr': {

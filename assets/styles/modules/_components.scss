@@ -24,11 +24,12 @@
 @import "../../../components/widget/assets/styles/widget";
 
 // Page components
-@import "../../../components/latest/assets/styles/latest";
-@import "../../../components/project-grid/assets/styles/project-grid";
-@import "../../../components/project-spinner/assets/styles/project-spinner";
-
-@import "../../../components/page-content/assets/styles/content";
 @import "../../../components/article/assets/styles/article";
+@import "../../../components/page-content/assets/styles/content";
 @import "../../../components/projects/assets/styles/projects";
 @import "../../../components/project/assets/styles/project";
+
+// Lanes
+@import "../../../components/lane-primary-article-recent/assets/styles/lane-primary-article-recent";
+@import "../../../components/lane-primary-project-grid/assets/styles/lane-primary-project-grid";
+@import "../../../components/lane-primary-interaction/assets/styles/lane-primary-interaction";

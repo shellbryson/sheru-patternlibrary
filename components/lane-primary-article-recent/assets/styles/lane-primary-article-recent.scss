@@ -2,15 +2,11 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _latest.scss
+// * @name: Primary Recent Article
 // *
 // *****************************************************************************
 
-.#{$c-latest} {
-
-  &__title {
-    color: $color-fg-on-dark;
-  }
+.su-primary-recent {
 
   &__content {
     @include chip;
