@@ -12,9 +12,14 @@ $menu-offset: 60px;
 
   $this: &;
 
+  color: $color-fg-on-dark;
+  background-color: $color-bg-lane-standard;
+
+  // This is temporary
   p {
     display: block;
     margin-bottom: 20px;
+    line-height: 1.5;
   }
 
   @include small {
@@ -22,7 +27,7 @@ $menu-offset: 60px;
   }
 
   // Standard lane split
-  #{$this}__main {
+  &__main {
 
     @include rem(padding, 20px);
 
@@ -32,7 +37,7 @@ $menu-offset: 60px;
     }
   }
 
-  #{$this}__side {
+  &__side {
 
     @include rem(padding, 20px);
 

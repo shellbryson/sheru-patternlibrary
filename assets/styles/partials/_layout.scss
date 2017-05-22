@@ -2,24 +2,24 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _layout.scss
+// * @name: Main Layout
 // *
 // *****************************************************************************
 
 $page-perspective: 10000px;
 
 // Wraps everything to avoid page backgrounds messing with Fabric
-.#{$namespace}page  {
+.su-page  {
   @include rem(padding, 10px);
   min-height: 100%;
-  background-color: $color-body-bg;
+  background: $color-body-bg linear-gradient(135deg, $color-page-bg-start 0%, $color-page-bg-end 100%);
 }
 
 // *****************************************************************************
 // * Animated wrapper
 // *****************************************************************************
 
-.#{$namespace}wrapper {
+.su-wrapper {
   display: flex;
   position: relative;
   min-height: 100%;
@@ -28,6 +28,7 @@ $page-perspective: 10000px;
   transition: $animation-speed-xslow;
   flex-direction: column;
   transform-origin: 100% 50%;
+  box-shadow: 0 20px 20px $color-shadows;
 
   @include breakpoint($small) {
     @include rem(margin, 20px);
@@ -58,11 +59,30 @@ $page-perspective: 10000px;
 }
 
 // *****************************************************************************
+// * Component base
+// *****************************************************************************
+
+.su-component {
+
+  color: $color-fg;
+
+  .su-lane-primary__content & {
+    color: $color-fg-on-dark;
+  }
+
+  &__title {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+// *****************************************************************************
 // * Helpers
 // *****************************************************************************
 
 // Hide on medium (display small only)
-.#{$namespace}display-small {
+.su-display-small {
   display: inherit!important;
 
   @include breakpoint($small) {
@@ -71,7 +91,7 @@ $page-perspective: 10000px;
 }
 
 // Hide on small (display medium or above)
-.#{$namespace}display-medium {
+.su-display-medium {
   display: none!important;
 
   @include breakpoint($small) {

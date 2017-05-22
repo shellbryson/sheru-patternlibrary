@@ -2,12 +2,13 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _foot.scss
+// * @name: Footer
 // *
 // *****************************************************************************
 
-.#{$c-foot} {
+.su-foot {
 
-  display: flex;
+  display: block;
+  background-color: $color-bg-lane-primary;
 
 }

@@ -29,6 +29,11 @@ $color-highlight: #73bd2f;
 // * Colors generated from the base colors defined above.
 // *****************************************************************************
 
+// Page gradient
+$color-page-bg-start: rgba(56,89,120,1);
+$color-page-bg-end: rgba(125, 185, 232, 1);
+
+// Defaults
 $color-fg: $color-base-dark;
 $color-fg-on-dark: $color-base-light;
 
@@ -38,6 +43,7 @@ $color-body-text: $color-black;
 // Lanes
 $color-bg-lane: $color-base-light;
 $color-bg-lane-primary: $color-base-dark;
+$color-bg-lane-standard: darken($color-bg-lane-primary, 10%);
 
 // Shadows
 $color-shadows: rgba($color-black, .2);

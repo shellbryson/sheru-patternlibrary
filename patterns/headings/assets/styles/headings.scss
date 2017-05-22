@@ -41,6 +41,10 @@
   color: $color-fg;
   text-align: left;
 
+  font-family: $font-title;
+  font-weight: 300;
+  text-transform: uppercase;
+
   &--light {
     color: $color-fg-on-dark;
   }
