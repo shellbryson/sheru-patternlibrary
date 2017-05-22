@@ -39,7 +39,8 @@ $page-perspective: 800px;
     }
   }
 
-  &--menu-open {
+  .su-menu-open & {
+
     @include breakpoint($small) {
       @include rem(margin, 20px);
       transform: perspective( $page-perspective) rotateY( -4deg ) translateX(60px) translateY(30px);
@@ -50,7 +51,9 @@ $page-perspective: 800px;
         transform: perspective( $page-perspective ) rotateY( -3deg ) translateX(50px) translateY(20px);
       }
     }
+
   }
+
 }
 
 // *****************************************************************************

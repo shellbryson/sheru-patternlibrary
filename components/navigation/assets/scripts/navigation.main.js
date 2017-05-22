@@ -5,76 +5,70 @@ define(function (require) {
   const navPanel = document.querySelector('.js-nav');
   const navPanelControls = document.querySelector('.js-nav-control');
   const searchPanel = document.querySelector('.js-search');
-  const toggleMenu = document.querySelector('.js-toggleMenu');
+  const toggleNavigation = document.querySelector('.js-toggleMenu');
   const toggleSearch = document.querySelector('.js-toggleSearch');
   const _navOnClass = 'su-nav__secondary--show';
   const _searchOnClass = 'su-nav-search--show';
   const _navOnControlOnClass = 'su-nav__action--show';
-  const _mask = 'su-mask';
-
-  const pagePanel = document.querySelector(".js-wrapper");
-  const _pageMenuOnClass = "su-wrapper--menu-open";
+  const _showMenu = 'su-menu-open';
 
   function initnav() {
-    toggleMenu.addEventListener('click', function (e) {
+    document.addEventListener("keydown", handleKeys, false);
+
+    toggleNavigation.addEventListener('click', function (e) {
       e.preventDefault();
       if (navPanel.classList.contains(_navOnClass)) {
-        // hide
-        navPanel.classList.remove(_navOnClass);
-        navPanel.setAttribute("aria-hidden", "true");
-        navPanel.setAttribute("aria-expanded", "false");
-
-        navPanelControls.classList.remove(_navOnControlOnClass);
-
-        searchPanel.classList.remove(_searchOnClass);
-        searchPanel.setAttribute("aria-hidden", "true");
-        searchPanel.setAttribute("aria-expanded", "false");
-
-        pagePanel.classList.remove(_pageMenuOnClass);
-
-        body.classList.remove(_mask);
+        closeNavigation();
       } else {
-        // show
-        navPanel.classList.add(_navOnClass);
-        navPanel.setAttribute("aria-hidden", "false");
-        navPanel.setAttribute("aria-expanded", "true");
-
-        navPanelControls.classList.add(_navOnControlOnClass);
-
-        searchPanel.classList.add(_searchOnClass);
-        searchPanel.setAttribute("aria-hidden", "false");
-        searchPanel.setAttribute("aria-expanded", "true");
-
-        pagePanel.classList.add(_pageMenuOnClass);
-
-        body.classList.add(_mask);
+        openNavigation();
       }
     });
 
     toggleSearch.addEventListener('click', function (e) {
       e.preventDefault();
       if (searchPanel.classList.contains(_searchOnClass)) {
-        // hide
-        searchPanel.classList.remove(_searchOnClass);
-        searchPanel.setAttribute("aria-hidden", "true");
-        searchPanel.setAttribute("aria-expanded", "false");
-
-        pagePanel.classList.remove(_pageMenuOnClass);
-
-        body.classList.remove(_mask);
-
+        closeSearch();
       } else {
-        // show
-        searchPanel.classList.add(_searchOnClass);
-        searchPanel.setAttribute("aria-hidden", "false");
-        searchPanel.setAttribute("aria-expanded", "true");
-
-        pagePanel.classList.add(_pageMenuOnClass);
-
-        body.classList.add(_mask);
-
+        openSearch();
       }
     });
+  }
+
+  function handleKeys(e) {
+    var keyCode = e.keyCode;
+    if ( keyCode==27 ) {
+      closeNavigation();
+    }
+  }
+
+  function closeNavigation() {
+    navPanel.classList.remove(_navOnClass);
+    navPanel.setAttribute("aria-hidden", "true");
+    navPanel.setAttribute("aria-expanded", "false");
+    navPanelControls.classList.remove(_navOnControlOnClass);
+    body.classList.remove(_showMenu);
+  }
+
+  function openNavigation() {
+    navPanel.classList.add(_navOnClass);
+    navPanel.setAttribute("aria-hidden", "false");
+    navPanel.setAttribute("aria-expanded", "true");
+    navPanelControls.classList.add(_navOnControlOnClass);
+    body.classList.add(_showMenu);
+  }
+
+  function openSearch() {
+    searchPanel.classList.add(_searchOnClass);
+    searchPanel.setAttribute("aria-hidden", "false");
+    searchPanel.setAttribute("aria-expanded", "true");
+    body.classList.add(_showMenu);
+  }
+
+  function closeSearch() {
+    searchPanel.classList.remove(_searchOnClass);
+    searchPanel.setAttribute("aria-hidden", "true");
+    searchPanel.setAttribute("aria-expanded", "false");
+    body.classList.add(_showMenu);
   }
 
   initnav();

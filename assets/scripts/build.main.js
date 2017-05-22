@@ -4,6 +4,8 @@ define(function (require) {
   require('navigation');
   require('project-spinner');
 
+  const body = document.querySelector('body');
+
   // TODO Remove this font hack once Fabric supports fully custom headers
   if (location.hostname === 'localhost' ||
       location.hostname === '127.0.0.1' ||
@@ -21,4 +23,5 @@ define(function (require) {
     head.append(font);
     head.append(icons);
   }
+
 });
