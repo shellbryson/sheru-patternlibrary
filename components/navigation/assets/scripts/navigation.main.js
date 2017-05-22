@@ -41,20 +41,20 @@ define(function (require) {
     }
   }
 
-  function closeNavigation() {
-    navPanel.classList.remove(_navOnClass);
-    navPanel.setAttribute("aria-hidden", "true");
-    navPanel.setAttribute("aria-expanded", "false");
-    navPanelControls.classList.remove(_navOnControlOnClass);
-    body.classList.remove(_showMenu);
-  }
-
   function openNavigation() {
     navPanel.classList.add(_navOnClass);
     navPanel.setAttribute("aria-hidden", "false");
     navPanel.setAttribute("aria-expanded", "true");
     navPanelControls.classList.add(_navOnControlOnClass);
     body.classList.add(_showMenu);
+  }
+
+  function closeNavigation() {
+    navPanel.classList.remove(_navOnClass);
+    navPanel.setAttribute("aria-hidden", "true");
+    navPanel.setAttribute("aria-expanded", "false");
+    navPanelControls.classList.remove(_navOnControlOnClass);
+    body.classList.remove(_showMenu);
   }
 
   function openSearch() {
