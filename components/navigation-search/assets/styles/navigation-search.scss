@@ -15,7 +15,7 @@ $layout-search-field-height: 50px;
   display: none;
   position: relative;
   width: 100%;
-  background-color: $color-title-open-bg;
+  background-color: $color-tile-open-bg;
   transition: $animation-speed;
 
   // As the navigation reorders nav/secondary/search, here we
@@ -41,7 +41,7 @@ $layout-search-field-height: 50px;
     border: 1px solid $color-form-element-border;
     font-family: $font-primary;
     transition: $animation-speed;
-    box-shadow: inset 4px 4px 50px rgba($color-title-open-bg, 0.3);
+    box-shadow: inset 4px 4px 50px rgba($color-tile-open-bg, 0.3);
 
     -webkit-appearance: none;
 
@@ -61,7 +61,7 @@ $layout-search-field-height: 50px;
     @include rem(font-size, 20px);
     border: 0;
     color: $color-white;
-    background-color: $color-title-open-bg;
+    background-color: $color-tile-open-bg;
   }
 
   &__label {

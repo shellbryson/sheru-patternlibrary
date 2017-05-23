@@ -8,8 +8,6 @@
 
 $tile-border-vertical: 2px;
 $tile-border-horizontal: 1px;
-$tile-color-border-low: rgba($color-tile-border, 0.1);
-$tile-color-border-high: rgba($color-tile-border, 0.3);
 
 @mixin poly($p1, $p2, $p3) {
   -webkit-clip-path: polygon($p1, $p2, $p3);
@@ -31,10 +29,10 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
       @include rem(font-size, 19px);
       display: block;
       padding: 0 6px;
-      border-top: $tile-border-vertical solid $tile-color-border-high;
-      border-right: $tile-border-horizontal solid $tile-color-border-low;
-      border-bottom: $tile-border-vertical solid $tile-color-border-high;
-      border-left: $tile-border-horizontal solid $tile-color-border-low;
+      border-top: $tile-border-vertical solid $color-tile-border-high;
+      border-right: $tile-border-horizontal solid $color-tile-border-low;
+      border-bottom: $tile-border-vertical solid $color-tile-border-high;
+      border-left: $tile-border-horizontal solid $color-tile-border-low;
       line-height: $brand-height;
       background-color: transparent;
     }
@@ -97,7 +95,7 @@ $tile-color-border-high: rgba($color-tile-border, 0.3);
         display: block;
         width: 70%;
         height: 1px;
-        background: linear-gradient(to right, $tile-color-border-high 0%, rgba(137,186,217,1) 95%, rgba(161,219,255,0) 100%);
+        background: linear-gradient(to right, $color-tile-border-high 0%, rgba(137,186,217,1) 95%, rgba(161,219,255,0) 100%);
         transition: $animation-speed;
 
         &::before {

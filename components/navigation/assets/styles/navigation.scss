@@ -200,6 +200,7 @@ $navigation-slider-large-width: 1200px;
 
     @include breakpoint($small) {
       margin-top: 10px;
+
       &:hover {
         box-shadow: 0 10px 20px $color-shadows;
       }
@@ -293,13 +294,11 @@ $navigation-slider-large-width: 1200px;
 
     @include breakpoint($small) {
       position: absolute;
+      right: -25px;
       z-index: 9999;
-      right: -26px;
-      width: 20px;
+      width: 24px;
       height: 40px;
-      color: $color-fg-on-dark;
-      background-color: $color-highlight;
-      cursor: pointer;
+      background-color: $color-tile-border-high;
       transition: $animation-speed;
 
       &:hover {
@@ -311,6 +310,16 @@ $navigation-slider-large-width: 1200px;
     &--show {
       display: block;
     }
+  }
+
+  &__action-inner {
+    display: block;
+    width: 20px;
+    height: 100%;
+    margin-left: 10px;
+    color: $color-fg-on-dark;
+    background-color: $color-highlight;
+    cursor: pointer;
   }
 
 

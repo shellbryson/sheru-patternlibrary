@@ -76,7 +76,10 @@ $color-toggle-fg: $color-base-light;
 $color-tile-border: $color-white;
 $color-tile-bg: $color-black;
 $color-tile-fg: $color-base-light;
-$color-title-open-bg: $color-tint;
+$color-tile-open-bg: $color-tint;
+$color-tile-border-low: rgba($color-tile-border, 0.1);
+$color-tile-border-high: rgba($color-tile-border, 0.3);
+
 
 // Other
 $color-divider: $color-tint;
@@ -84,7 +87,7 @@ $color-divider: $color-tint;
 $color-sidebar-bg: rgba($color-tint, 0.1);
 
 // Color cycle used for tile navigation (10). See navigation.scss for application.
-$_ctl: $color-title-open-bg;
+$_ctl: $color-tile-open-bg;
 $color-tile-bg-list:
     darken($_ctl, 3%)
     darken($_ctl, 6%)
@@ -109,5 +112,5 @@ $color-form-element-border: $color-black;
 $color-form-element-bg: darken($color-white, 2%);
 $color-form-element-border-hover: lighten($color-form-element-border, 20%);
 $color-form-element-bg-hover: lighten($color-form-element-bg, 20%);
-$color-form-element-border: darken($color-title-open-bg, 5%);
-$color-form-element-border-hover: darken($color-title-open-bg, 25%);
+$color-form-element-border: darken($color-tile-open-bg, 5%);
+$color-form-element-border-hover: darken($color-tile-open-bg, 25%);
