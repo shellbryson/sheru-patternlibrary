@@ -16,9 +16,9 @@ module.exports = function (grunt) {
   const imagesPattern = ['assets/images/**/*'];
   const iconsPattern =  ['assets/icons/**/*'];
   const fontsPattern = ['assets/fonts/**/*'];
-  const stylesPatternMain = ['./assets/styles/build.scss'];
-  const stylesPatternDist = ['./dist/styles/build.css'];
-  const scriptsPatternDist = ['./dist/scripts/build.js'];
+  const stylesPatternMain = ['./assets/styles/sheru.scss'];
+  const stylesPatternDist = ['./dist/styles/sheru.css'];
+  const scriptsPatternDist = ['./dist/scripts/sheru.js'];
   const svgPattern = ['assets/icons/svg/*.svg'];
   const sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
   const sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
     sass: {
       build: {
         files: {
-          './dist/styles/build.css': stylesPatternMain
+          './dist/styles/sheru.css': stylesPatternMain
         }
       }
     },
@@ -178,9 +178,9 @@ module.exports = function (grunt) {
           optimize: 'none',
           mainConfigFile: 'config/require.config.js',
           name: 'node_modules/almond/almond',
-          include: ['assets/scripts/build.main'],
-          insertRequire: ['assets/scripts/build.main'],
-          out: 'dist/scripts/build.js'
+          include: ['assets/scripts/sheru.main'],
+          insertRequire: ['assets/scripts/sheru.main'],
+          out: 'dist/scripts/sheru.js'
         }
       }
     },
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          './dist/scripts/build.js': [scriptsPatternDist]
+          './dist/scripts/sheru.js': [scriptsPatternDist]
         }
       }
     },
@@ -204,7 +204,7 @@ module.exports = function (grunt) {
         'crawl': true,
         'cache': true,
         'files': {
-          'src': ['./dist/scripts/build.js', './dist/styles/build.css']
+          'src': ['./dist/scripts/sheru.js', './dist/styles/sheru.css']
         },
         'enableJSClass': true,
         'customTests': [],
