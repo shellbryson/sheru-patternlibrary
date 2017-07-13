@@ -6,7 +6,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Added
 
-- Name and path refactoring
 - Adds custom navigation support
 - Component: Head
 - Component: Navigation
