@@ -1,8 +1,8 @@
 define(function (require) {
   'use strict';
 
-  const body = document.querySelector('body');
   const navPanel = document.querySelector('.js-nav');
+  const body = document.querySelector('body');
   const navPanelControls = document.querySelector('.js-nav-control');
   const searchPanel = document.querySelector('.js-search');
   const toggleNavigation = document.querySelector('.js-toggleMenu');
@@ -13,6 +13,7 @@ define(function (require) {
   const _showMenu = 'su-menu-open';
 
   function initnav() {
+
     document.addEventListener("keydown", handleKeys, false);
 
     toggleNavigation.addEventListener('click', function (e) {
@@ -71,6 +72,8 @@ define(function (require) {
     body.classList.remove(_showMenu);
   }
 
-  initnav();
+  if (navPanel) {
+    initnav();
+  }
 
 });
