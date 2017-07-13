@@ -32,25 +32,18 @@ $page-perspective: 10000px;
 
   @include breakpoint($small) {
     @include rem(margin, 20px);
-    transform: perspective( $page-perspective ) rotateY( -3deg );
-  }
-
-  &:hover {
-    @include breakpoint($small) {
-      transform: perspective( $page-perspective ) rotateY( -5deg );
-    }
   }
 
   .su-menu-open & {
 
     @include breakpoint($small) {
       @include rem(margin, 20px);
-      transform: perspective( $page-perspective ) rotateY( -10deg ) translateX( 60px ) translateY( 10px );
+      transform: translateX( 60px ) translateY( 10px );
     }
 
     &:hover {
       @include breakpoint($small) {
-        transform: perspective( $page-perspective ) rotateY( -8deg ) translateX( 40px ) translateY( 10px );
+        transform: translateX( 40px ) translateY( 10px );
       }
     }
 
