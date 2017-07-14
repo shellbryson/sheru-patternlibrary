@@ -39,12 +39,15 @@ $navigation-slider-large-width: 1200px;
   @include breakpoint($small) {
     @include rem(top, 10px);
     @include rem(left, 10px);
-    display: block;
-    position: absolute;
     right: auto;
     bottom: auto;
     width: $navigation-width-small;
     max-width: 800px;
+
+    // Move nav down a little if admin is open
+    .admin-bar & {
+      @include rem(top, 60px);
+    }
   }
 
   @include breakpoint($medium) {
