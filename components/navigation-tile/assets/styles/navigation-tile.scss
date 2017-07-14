@@ -37,6 +37,13 @@ $tile-border-horizontal: 1px;
       background-color: transparent;
     }
 
+    &:hover,
+    &:focus {
+      @include breakpoint($small) {
+        border-top: 2px solid $color-white;
+      }
+    }
+
     &::before,
     &::after {
       @include breakpoint($small) {
@@ -85,6 +92,13 @@ $tile-border-horizontal: 1px;
     text-decoration: none;
     transition: $animation-speed-slow;
     vertical-align: top;
+
+    // Affect borders of tiles
+    &:hover,
+    &:focus {
+      //border: 2px solid $color-highlight;
+      //background-color: $color-highlight;
+    }
 
     span {
       color: $color-white;

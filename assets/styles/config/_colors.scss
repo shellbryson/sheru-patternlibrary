@@ -22,7 +22,7 @@ $color-base-dark: #3e3e3e;
 $color-base-light: #ffffff;
 $color-body-bg: #385978;
 $color-page-bg: #ffffff;
-$color-highlight: #73bd2f;
+$color-highlight: #3e3e3e;
 
 // *****************************************************************************
 // * Element colors
@@ -87,26 +87,26 @@ $color-divider: $color-tint;
 $color-sidebar-bg: rgba($color-tint, 0.1);
 
 // Color cycle used for tile navigation (10). See navigation.scss for application.
-$_ctl: $color-tile-open-bg;
+$_ctl: #6e6e6e;
 $color-tile-bg-list:
-    darken($_ctl, 3%)
-    darken($_ctl, 6%)
-    darken($_ctl, 9%)
-    darken($_ctl, 12%)
+    darken($_ctl, 1%)
+    darken($_ctl, 5%)
+    darken($_ctl, 10%)
     darken($_ctl, 15%)
-    darken($_ctl, 18%)
-    darken($_ctl, 21%)
-    darken($_ctl, 24%)
-    darken($_ctl, 27%)
-    darken($_ctl, 30%)
-    darken($_ctl, 31%)
-    darken($_ctl, 32%)
-    darken($_ctl, 33%)
-    darken($_ctl, 34%)
-    darken($_ctl, 35%)
-    darken($_ctl, 36%)
-    darken($_ctl, 37%)
-    darken($_ctl, 38%);
+    darken($_ctl, 20%)
+    darken($_ctl, 25%)
+    darken($_ctl, 20%)
+    darken($_ctl, 15%)
+    darken($_ctl, 10%)
+    darken($_ctl, 5%)
+    darken($_ctl, 10%)
+    darken($_ctl, 15%)
+    darken($_ctl, 20%)
+    darken($_ctl, 25%)
+    darken($_ctl, 20%)
+    darken($_ctl, 15%)
+    darken($_ctl, 10%)
+    darken($_ctl, 5%);
 
 $color-form-element-border: $color-black;
 $color-form-element-bg: darken($color-white, 2%);

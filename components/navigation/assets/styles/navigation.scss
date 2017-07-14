@@ -200,6 +200,7 @@ $navigation-slider-large-width: 1200px;
     width: 100%;
     -webkit-overflow-scrolling: touch;
     transition: $animation-speed;
+    background-color: rgba($color-black, 0.2);
 
     @include breakpoint($small) {
       margin-top: 10px;
