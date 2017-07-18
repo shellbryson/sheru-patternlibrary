@@ -28,6 +28,7 @@ $tile-border-horizontal: 1px;
     @include breakpoint($small) {
       @include rem(font-size, 19px);
       display: block;
+      width: 190px;
       padding: 0 6px;
       border-top: $tile-border-vertical solid $color-tile-border-high;
       border-right: $tile-border-horizontal solid $color-tile-border-low;

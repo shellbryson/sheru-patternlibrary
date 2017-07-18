@@ -200,7 +200,7 @@ $navigation-slider-large-width: 1200px;
     width: 100%;
     -webkit-overflow-scrolling: touch;
     transition: $animation-speed;
-    background-color: rgba($color-black, 0.2);
+    background-color: rgba($color-black, 0.8);
 
     @include breakpoint($small) {
       margin-top: 10px;
@@ -241,7 +241,7 @@ $navigation-slider-large-width: 1200px;
     &--show {
 
       display: grid;
-      width: $navigation-slider-default-width;
+      max-width: $navigation-slider-default-width;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
@@ -250,13 +250,13 @@ $navigation-slider-large-width: 1200px;
       transition: $animation-speed;
 
       @include breakpoint($xsmall) {
-        width: $navigation-slider-small-width;
+        max-width: $navigation-slider-small-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
       }
 
       @include breakpoint($small) {
-        width: $navigation-slider-medium-width;
+        max-width: $navigation-slider-medium-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-column-gap: 6px;
@@ -264,7 +264,7 @@ $navigation-slider-large-width: 1200px;
       }
 
       @include breakpoint($medium) {
-        width: $navigation-slider-large-width;
+        max-width: $navigation-slider-large-width;
       }
 
     }
