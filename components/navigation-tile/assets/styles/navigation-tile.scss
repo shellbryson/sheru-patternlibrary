@@ -221,3 +221,22 @@ $increment: 0.25s;
     transform: scale(1, 1.1);
   }
 }
+
+// *****************************************************************************
+// * Tile backgrounds
+// *****************************************************************************
+
+.tile-background {
+  background-image: url("../images/tile-icons/tile-example.svg");
+  background-size: cover;
+
+  &--pen {
+    background-image: url("../images/tile-icons/tile-example.svg");
+  }
+  &--category-codepen {
+    background-image: url("../images/tile-icons/tile-example.svg");
+  }
+  &--category-blog {
+    background-image: url("../images/tile-icons/tile-example.svg");
+  }
+}

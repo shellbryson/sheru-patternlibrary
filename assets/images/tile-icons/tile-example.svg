@@ -1,0 +1,18 @@
+
+<svg width="190px" height="100px" viewBox="0 0 190 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="6" y="8" width="56" height="48"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Rectangle">
+                <use fill="#5A5BC3" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#979797" stroke-width="1" x="6.5" y="8.5" width="55" height="47"></rect>
+            </g>
+            <ellipse id="Oval" stroke="#979797" fill="#0BDA54" cx="79.5" cy="57" rx="39.5" ry="31"></ellipse>
+            <polygon id="Star" stroke="#979797" fill="#C52525" points="138.5 79.75 112.931342 92.2651883 117.814521 65.7575941 97.1290415 46.9848117 125.715671 43.1174059 138.5 19 151.284329 43.1174059 179.870958 46.9848117 159.185479 65.7575941 164.068658 92.2651883"></polygon>
+        </g>
+    </g>
+</svg>
