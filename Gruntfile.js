@@ -22,6 +22,7 @@ module.exports = function (grunt) {
   const svgPattern = ['assets/icons/svg/*.svg'];
   const sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
   const sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
+  const versionPath = './assets/'
 
   grunt.config.init({
     watch: {
@@ -29,6 +30,10 @@ module.exports = function (grunt) {
         cwd: './',
         interval: 200,
         spawn: false
+      },
+      fabric: {
+        files: ['package.json'],
+        tasks: ['version', 'copy:versionExternal']
       },
       scripts: {
         files: scriptsPattern,
@@ -68,6 +73,14 @@ module.exports = function (grunt) {
      Copy files to dist folder
      */
     copy: {
+      fabric: {
+        files: [{
+          expand: true,
+          cwd: './assets/',
+          src: 'version.txt',
+          dest: './dist/'
+        }]
+      },
       fonts: {
         files: [{
           expand: true,
@@ -98,6 +111,14 @@ module.exports = function (grunt) {
           cwd: './assets/scripts/libs/',
           src: '**/*',
           dest: './dist/scripts/libs/'
+        }]
+      },
+      versionExternal: {
+        files: [{
+          expand: true,
+          cwd: './dist/',
+          src: 'version.txt',
+          dest: copyToExternalPath + "/"
         }]
       },
       stylesExternal: {
@@ -265,6 +286,21 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
 
+
+  grunt.registerTask('version', [], () => {
+    const obj = grunt.file.readJSON('package.json');
+    const version = obj.version;
+    const project = obj.name;
+    const filePath = versionPath + "version.txt";
+
+    grunt.log.writeln("FABRIC");
+    grunt.log.writeln(`Project: ${project}` );
+    grunt.log.writeln(`Version: ${version}` );
+    grunt.log.writeln("");
+    grunt.log.writeln(`Write version: ${filePath}`);
+    grunt.file.write(filePath, version);
+  });
+
   grunt.registerTask('styles', [], () => {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
@@ -316,7 +352,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.task.run('styles', 'scripts', 'modernizr', 'copy', 'watch');
+    grunt.task.run('version', 'styles', 'scripts', 'modernizr', 'copy', 'watch');
   });
 
   /*
