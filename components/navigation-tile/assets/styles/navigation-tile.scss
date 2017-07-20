@@ -29,7 +29,7 @@ $tile-border-horizontal: 1px;
       @include rem(font-size, 19px);
       display: block;
       width: 190px;
-      padding: 0 6px;
+      height: 100px;
       border-top: $tile-border-vertical solid $color-tile-border-high;
       border-right: $tile-border-horizontal solid $color-tile-border-low;
       border-bottom: $tile-border-vertical solid $color-tile-border-high;
@@ -88,7 +88,9 @@ $tile-border-horizontal: 1px;
     bottom: 0;
     left: 0;
     z-index: 98;
+    padding: 10px;
     font-family: $font-primary;
+    background-size: cover;
     text-align: left;
     text-decoration: none;
     transition: $animation-speed-slow;
@@ -123,6 +125,35 @@ $tile-border-horizontal: 1px;
           background-color: rgba($color-tile-border, 0.4);
         }
       }
+    }
+
+    // Direct article links (internal)
+
+    .tile-pen & {
+      border: 2px solid red;
+      background-image: url("../images/tile-icons/tile-example.svg");
+    }
+
+    // Categories
+
+    .tile-category-codetips & {
+      border: 2px solid blue;
+      background-image: url("../images/tile-icons/tile-example.svg");
+    }
+
+    .tile-category-blog & {
+      border: 2px solid green;
+      background-image: url("../images/tile-icons/tile-example.svg");
+    }
+
+    .tile-category-setup & {
+      border: 2px solid orange;
+      background-image: url("../images/tile-icons/tile-example.svg");
+    }
+
+    .tile-category-inspire & {
+      border: 2px solid pink;
+      background-image: url("../images/tile-icons/tile-example.svg");
     }
 
   }
@@ -219,24 +250,5 @@ $increment: 0.25s;
   }
   to {
     transform: scale(1, 1.1);
-  }
-}
-
-// *****************************************************************************
-// * Tile backgrounds
-// *****************************************************************************
-
-.tile-background {
-  background-image: url("../images/tile-icons/tile-example.svg");
-  background-size: cover;
-
-  &--pen {
-    background-image: url("../images/tile-icons/tile-example.svg");
-  }
-  &--category-codepen {
-    background-image: url("../images/tile-icons/tile-example.svg");
-  }
-  &--category-blog {
-    background-image: url("../images/tile-icons/tile-example.svg");
   }
 }
