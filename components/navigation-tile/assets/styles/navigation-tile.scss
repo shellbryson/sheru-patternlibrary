@@ -76,6 +76,7 @@ $tile-border-horizontal: 1px;
 
 // *****************************************************************************
 // * Tile links
+// * The background images for these links are set in config/_tiles.scss
 // *****************************************************************************
 
   &__secondary-tile-link {
@@ -125,35 +126,6 @@ $tile-border-horizontal: 1px;
           background-color: rgba($color-tile-border, 0.4);
         }
       }
-    }
-
-    // Direct article links (internal)
-
-    .tile-pen & {
-      border: 2px solid red;
-      background-image: url("../images/tile-icons/tile-example.svg");
-    }
-
-    // Categories
-
-    .tile-category-codetips & {
-      border: 2px solid blue;
-      background-image: url("../images/tile-icons/tile-example.svg");
-    }
-
-    .tile-category-blog & {
-      border: 2px solid green;
-      background-image: url("../images/tile-icons/tile-example.svg");
-    }
-
-    .tile-category-setup & {
-      border: 2px solid orange;
-      background-image: url("../images/tile-icons/tile-example.svg");
-    }
-
-    .tile-category-inspire & {
-      border: 2px solid pink;
-      background-image: url("../images/tile-icons/tile-example.svg");
     }
 
   }
