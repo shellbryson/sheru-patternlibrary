@@ -1,0 +1,33 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _site-logo.scss
+// *
+// *****************************************************************************
+
+.su-logo {
+  display: block;
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  transform: perspective( $small-default-perspective ) rotateY( -15deg );
+  transition: $animation-speed-slow;
+  transform-origin: 20% 0;
+  pointer-events: all;
+  background-image: url('../images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @include small {
+    width: 150px;
+    height: 150px;
+  }
+
+  &:hover {
+    transform: perspective( $small-hover-perspective ) rotateY( -25deg );
+  }
+}
