@@ -1,0 +1,15 @@
+<svg width="1500px" height="1500px" viewBox="0 0 1500 1500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="V4b">
+      <polygon id="bg8" fill="#D8D8D8" points="0 1500 0 1000 285.5625 1000 500 1000"></polygon>
+      <polygon id="bg7" fill="#DEDEDE" transform="translate(1250.000000, 750.000000) rotate(450.000000) translate(-1250.000000, -750.000000) " points="1000 1000 1000 500 1500 500"></polygon>
+      <polygon id="bg3" fill="#F1F1F1" transform="translate(750.000000, 250.000000) rotate(270.000000) translate(-750.000000, -250.000000) " points="500 500 500 1.70530257e-13 1000 2.27373675e-13"></polygon>
+      <polygon id="bg2" fill="#D8D8D8" transform="translate(250.000000, 250.000000) rotate(540.000000) translate(-250.000000, -250.000000) " points="-1.13686838e-13 500 1.00974196e-28 1.13686838e-13 500 5.1159077e-13"></polygon>
+      <polygon id="chev4" fill="#64020E" points="500 1000 1000 1500 0 1500"></polygon>
+      <polygon id="chev3" fill="#9A0013" points="999.5 1500 500 1000 1500 1000"></polygon>
+      <polygon id="chev2" fill="#D20C24" points="1000 500 1500 1000 500 1000"></polygon>
+      <polygon id="chev1" fill="#FF122F" points="500 1000 0 500 1000 500"></polygon>
+      <polygon id="line4" fill="#FF122F" points="1000 500 1000 0 1500 0"></polygon>
+    </g>
+  </g>
+</svg>
