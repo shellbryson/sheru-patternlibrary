@@ -18,7 +18,7 @@
     height: $brand-height;
     font-family: $font-primary;
     line-height: $brand-height;
-    background-color: darken($color-tint, 21%);
+    background-color: lighten($color-base-dark, 40%);
     transition: $animation-speed;
 
     border-top: 2px solid rgba($color-tile-border, 0.3);
@@ -31,9 +31,18 @@
   }
 
   &__logo {
-    width: 150px;
-    height: 150px;
-    background-color: blue;
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    top: 0;
+    transition: $animation-speed-slow;
+    transform-origin: 20% 0;
+    pointer-events: all;
+    background-image: url('../images/logo-small.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   &__title {
@@ -43,7 +52,7 @@
     display: flex;
     width: 100%;
     font-weight: lighter;
-    color: lighten($color-tint, 12%);
+    color: $color-black;
     text-transform: uppercase;
 
     &:hover,
@@ -62,9 +71,10 @@
     display: none;
 
     @include breakpoint($medium) {
-      @include rem(padding, 0 20px);
+      @include rem(padding-right, 60px);
+      @include rem(padding-left, 20px);
       display: flex;
-      color: lighten($color-tint, 12%);
+      color: $color-black;
       text-align: right;
       white-space: nowrap;
     }
@@ -73,7 +83,7 @@
   // Content
 
   &__link {
-    color: lighten($color-tint, 12%);
+    color: $color-black;
     text-decoration: none;
 
     &--hidden {
