@@ -1,0 +1,49 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _article-meta.scss
+// *
+// *****************************************************************************
+
+.#{$c-article-meta} {
+
+  line-height: 20px;
+  vertical-align: middle;
+  color: $color-fg-faded;
+
+  a {
+    text-decoration: none;
+    color: $color-fg;
+  }
+
+  &__byline {
+    padding-right: 16px;
+
+  }
+
+  &__author {
+
+  }
+
+  &__published {
+    padding-right: 16px;
+  }
+
+  &__updated {
+    padding-right: 16px;
+  }
+
+  &__postedon {
+    padding-right: 16px;
+  }
+
+  &__comment {
+    padding-right: 16px;
+  }
+
+  &__categories {
+    padding-right: 16px;
+  }
+
+}
