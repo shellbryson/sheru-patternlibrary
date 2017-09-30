@@ -8,6 +8,11 @@
 
 .#{$c-article} {
 
+  // pad to give us a gutter (various brand elements)
+  padding-top: 100px;
+  padding-right: 160px;
+  padding-left: 30px;
+
   &__content {
 
     p {
