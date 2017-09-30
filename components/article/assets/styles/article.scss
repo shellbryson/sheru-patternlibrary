@@ -8,10 +8,53 @@
 
 .#{$c-article} {
 
+  &__header {
+
+  }
+
+  &__date {
+    @include rem(margin-bottom, 16px);
+    color: $color-fg-faded;
+  }
+
   &__content {
 
     p {
       line-height: 1.6;
     }
+  }
+
+  &__more {
+    @include rem(margin-bottom, 16px);
+    @include rem(margin-left, 16px);
+
+    display: block;
+    text-decoration: none;
+    color: $color-fg;
+    line-height: 2;
+
+    @include small {
+      @include rem(margin-left, 32px);
+    }
+
+    &::after {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-top: 3px;
+      margin-left: 8px;
+      background-image: url('../images/logo-small.svg');
+      background-size: 100% 100%;
+      content: "";
+      vertical-align: top;
+    }
+  }
+
+  &__more-sr-only {
+    @include sr-only;
+  }
+
+  &__footer {
+    @include rem(margin-bottom, 48px);
   }
 }

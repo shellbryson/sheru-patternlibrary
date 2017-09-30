@@ -16,7 +16,9 @@ $page-perspective: 10000px;
 
   // Move page down a little if admin is open
   .admin-bar & {
-    @include rem(padding-top, 50px);
+    @include small {
+      @include rem(padding-top, 100px);
+    }
   }
 }
 
@@ -59,6 +61,13 @@ $page-perspective: 10000px;
       }
     }
 
+  }
+
+  .admin-bar & {
+    @include rem(margin-top, 10px);
+    @include small {
+      @include rem(padding-top, 100px);
+    }
   }
 
 }

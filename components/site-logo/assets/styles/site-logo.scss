@@ -16,6 +16,7 @@
   height: 30px;
   transform: perspective( $small-default-perspective ) rotateY( -15deg );
   transform-origin: 20% 0;
+  transition: $animation-speed-xslow;
   pointer-events: all;
   background-image: url('../images/logo.svg');
   background-repeat: no-repeat;
@@ -28,5 +29,13 @@
 
   &:hover {
     transform: perspective( $small-hover-perspective ) rotateY( -25deg );
+  }
+
+  .admin-bar & {
+    @include rem(top, 20px);
+    
+    @include small {
+      @include rem(top, 50px);
+    }
   }
 }

@@ -20,7 +20,7 @@
   @include medium {
     // pad to give us a gutter (various brand elements)
     padding-right: 30px;
-    @include rem(padding-top, 160px);
+    @include rem(padding-top, 110px);
     display: table-cell;
     width: 70%;
     vertical-align: top;

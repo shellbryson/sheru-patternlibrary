@@ -6,11 +6,12 @@
 // *
 // *****************************************************************************
 
-@mixin heading($font-default: 22px, $font-small: 26px, $font-medium: 48px, $font-large: 54px, $font-xlarge: 62px, $class: "default", $level: "h2") {
+@mixin heading($font-default: 22px, $font-small: 26px, $font-medium: 48px, $font-large: 54px, $font-xlarge: 62px, $class: "default", $level: "h2", $margin: 1rem) {
   .#{$class},
   .su-rte #{$level} {
 
     @include rem(font-size, $font-default);
+    @include rem(margin-bottom, $margin);
     line-height: $font-default * 1.1;
 
     @include breakpoint($small) {
@@ -30,12 +31,12 @@
   }
 }
 
-@include heading(26px, 46px, 48px, 54px, 62px, "su-heading--one", "h1");
-@include heading(22px, 24px, 26px, 28px, 34px, "su-heading--two", "h2");
-@include heading(20px, 22px, 22px, 24px, 28px, "su-heading--three", "h3");
-@include heading(19px, 20px, 20px, 22px, 24px, "su-heading--four", "h4");
-@include heading(18px, 18px, 18px, 20px, 22px, "su-heading--five", "h5");
-@include heading(16px, 17px, 17px, 18px, 20px, "su-heading--six", "h6");
+@include heading(26px, 46px, 48px, 54px, 62px, "su-heading--one", "h1", 0);
+@include heading(22px, 24px, 26px, 28px, 34px, "su-heading--two", "h2", 2rem);
+@include heading(20px, 22px, 22px, 24px, 28px, "su-heading--three", "h3", 1rem);
+@include heading(19px, 20px, 20px, 22px, 24px, "su-heading--four", "h4", 1rem);
+@include heading(18px, 18px, 18px, 20px, 22px, "su-heading--five", "h5", 1rem);
+@include heading(16px, 17px, 17px, 18px, 20px, "su-heading--six", "h6", 1rem);
 
 .su-heading {
   color: $color-fg;
@@ -43,9 +44,17 @@
 
   font-family: $font-title;
   font-weight: 300;
-  text-transform: uppercase;
 
   &--light {
     color: $color-fg-on-dark;
+  }
+
+  &--one {
+    text-transform: uppercase;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-fg;
   }
 }

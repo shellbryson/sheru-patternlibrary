@@ -35,10 +35,11 @@ $color-page-bg-end: rgba(125, 185, 232, 1);
 
 // Defaults
 $color-fg: $color-base-dark;
+$color-fg-faded: lighten($color-base-dark, 30%);
 $color-fg-on-dark: $color-base-light;
 
 // Body
-$color-body-text: $color-black;
+$color-body-text: $color-base-dark;
 
 // Lanes
 $color-bg-lane: $color-base-light;
