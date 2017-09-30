@@ -22,10 +22,13 @@ $page-perspective: 10000px;
 
 // *****************************************************************************
 // * Animated wrapper
+// * The children of this may be split into colums and largest sizes
 // *****************************************************************************
 
 .su-wrapper {
-  display: flex;
+
+  @include rem(margin-top, 40px);
+
   position: relative;
   min-height: 100%;
   border: 1px solid $color-base-light;
@@ -37,6 +40,10 @@ $page-perspective: 10000px;
 
   @include breakpoint($small) {
     @include rem(margin, 20px);
+  }
+
+  @include medium {
+    display: table;
   }
 
   .su-menu-open & {

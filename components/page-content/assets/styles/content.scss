@@ -6,30 +6,23 @@
 // *
 // *****************************************************************************
 
-.su-wrapper {
-  @include rem(margin-top, 20px);
-
-  @include medium {
-    display: flex;
-  }
-}
-
 .#{$c-content} {
   width: 100%;
+  padding: 30px;
 
-  @include medium {
-    @include rem(padding, 40px);
-    width: 70%;
+  @include small {
+    // pad to give us a gutter (various brand elements)
+    padding-top: 100px;
+    padding-right: 160px;
+    padding-left: 30px;
   }
-}
-
-// Sidebar: see page-sidebar.scss
-.#{$c-sidebar} {
-  @include rem(padding, 20px);
-  width: 100%;
 
   @include medium {
-    @include rem(padding, 40px);
-    width: 30%;
+    // pad to give us a gutter (various brand elements)
+    padding-right: 30px;
+    @include rem(padding-top, 160px);
+    display: table-cell;
+    width: 70%;
+    vertical-align: top;
   }
 }

@@ -2,16 +2,14 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _article.scss
+// * @name: skip.scss
 // *
 // *****************************************************************************
 
-.#{$c-article} {
-
-  &__content {
-
-    p {
-      line-height: 1.6;
-    }
-  }
+.su-skip-to-content {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
 }
