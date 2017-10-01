@@ -8,7 +8,8 @@
 
 .su-foot {
 
+  @include rem(padding, 32px);
   display: block;
-  background-color: $color-bg-lane-primary;
+  background-color: $color-sidebar-bg;
 
 }
