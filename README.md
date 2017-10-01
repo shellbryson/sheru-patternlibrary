@@ -1,6 +1,6 @@
 # README #
 
-SpaceGirl Pattern Library
+Sheru Pattern Library
 
 ## What is this?
 

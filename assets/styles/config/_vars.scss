@@ -8,16 +8,12 @@
 // *
 // *****************************************************************************
 
-
-
 // *****************************************************************************
 // * GLOBAL CSS NAMESPACE
 // * Example: `namespace-classname` or blank if none
 // *****************************************************************************
 
-$namespace: "sg-";
-
-
+$namespace: "su-";
 
 // *****************************************************************************
 // * PATHS
@@ -28,10 +24,8 @@ $config-font-path: "../fonts/";
 $images: "../images";
 $svg-icons: "../icons/svg";
 
-
-
 // *****************************************************************************
-// * ANIMATION
+// * FOR ANIMATION
 // * General tip: Animations should generally be on "activation state", that is
 // * when an element is first shown or modified. If an element is being hidden
 // * this should be immediate (no delay or animation).
@@ -43,14 +37,48 @@ $animation-speed: 0.2s;
 // Slower animations where we want more obvious movement
 $animation-speed-slow: 0.4s;
 
-
+// Super-slow page movement
+$animation-speed-xslow: 1.2s;
 
 // *****************************************************************************
-// * LAYOUT
+// * TRANSPARENCY / OPACITY
 // *
 // *****************************************************************************
 
-$breakpoint-xsmall: 600px;
-$breakpoint-small: 768px;
-$breakpoint-medium: 1024px;
-$breakpoint-large: 1600px;
+$default-opacity: 0.98;
+
+// *****************************************************************************
+// * FOR LAYOUT
+// *
+// *****************************************************************************
+
+$xxsmall: 20em; //  320px
+$xsmall:  32em; //  500px
+$small:   48em; //  768px
+$medium:  64em; // 1024px
+$large:  100em; // 1600px
+
+$brand-height: 40px;
+$mobile-nav-height: 70px;
+
+
+// *****************************************************************************
+// * FOR NAVIGATION
+// *
+// *****************************************************************************
+
+$small-default-perspective: 800px;
+$small-default-rotation: 8deg;
+$small-hover-perspective: 800px;
+$small-hover-rotation: 10deg;
+
+$menu-tile-height: 40px;
+
+$navigation-width-small: 400px;
+$navigation-width-medium: 500px;
+$navigation-width-large: 600px;
+
+$navigation-slider-default-width: 800px;
+$navigation-slider-small-width: 1000px;
+$navigation-slider-medium-width: 1100px;
+$navigation-slider-large-width: 1200px;

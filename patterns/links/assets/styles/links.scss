@@ -6,8 +6,28 @@
 // *
 // *****************************************************************************
 
-$p-link: $namespace + "link";
+$p-link: $namespace + "action";
 
 .#{$p-link} {
+  @include rem(font-size, 12px);
+  @include rem(line-height, 24px);
+  display: inline-block;
+  border: 0;
+  font-family: $font-primary;
+  color: $color-button-fg;
+  cursor: pointer;
+  outline: none;
+  transition: $animation-speed;
+  background-color: $color-button-bg;
 
+  &:hover,
+  &:focus {
+    background-color: lighten($color-button-fg, 10%);
+    color: darken($color-button-bg, 10%);
+  }
+
+  &--on-dark {
+    background-color: $color-button-fg;
+    color: $color-button-bg;
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "SpaceGirl",
+  "name": "sheru",
   "version": "0.1.0",
   "authors": [
     "Shell Bryson"
@@ -14,6 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "3.1.1"
+    "gsap": "^1.19.1"
   }
 }

@@ -1,0 +1,22 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _widget.scss
+// *
+// *****************************************************************************
+
+// Classes from WordPress not easily changed so for now these are slighly off
+// our usual component styling codestyle
+
+.#{$c-widget} {
+
+  @include chip;
+
+  &-title {
+    @include rem(margin-bottom, 16px);
+    @include rem(font-size, 30px);
+    font-family: $font-primary;
+
+  }
+}

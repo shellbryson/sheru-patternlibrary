@@ -1,0 +1,13 @@
+@mixin chip {
+  &::after {
+    display: block;
+    position: relative;
+    background-image: url('../images/chip.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 44px;
+    content: "";
+  }
+}

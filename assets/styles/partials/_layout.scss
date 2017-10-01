@@ -1,0 +1,130 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Main Layout
+// *
+// *****************************************************************************
+
+$page-perspective: 10000px;
+
+// Wraps everything to avoid page backgrounds messing with Fabric
+.su-page  {
+  @include rem(padding, 10px);
+  min-height: 100%;
+  background: $color-body-bg linear-gradient(135deg, $color-page-bg-start 0%, $color-page-bg-end 100%);
+
+  // Move page down a little if admin is open
+  .admin-bar & {
+    @include small {
+      @include rem(padding-top, 100px);
+    }
+  }
+}
+
+// *****************************************************************************
+// * Animated wrapper
+// * The children of this may be split into colums and largest sizes
+// *****************************************************************************
+
+.su-wrapper {
+
+  @include rem(margin-top, 40px);
+
+  position: relative;
+  min-height: 100%;
+  border: 1px solid $color-base-light;
+  background-color: $color-base-light;
+  transition: $animation-speed-xslow;
+  flex-direction: column;
+  transform-origin: 100% 50%;
+  box-shadow: 0 20px 20px $color-shadows;
+
+  @include breakpoint($small) {
+    @include rem(margin, 20px);
+  }
+
+  @include medium {
+    display: table;
+  }
+
+  .su-menu-open & {
+
+    @include breakpoint($small) {
+      @include rem(margin, 20px);
+      transform: translateX( 60px ) translateY( 10px );
+    }
+
+    &:hover {
+      @include breakpoint($small) {
+        transform: translateX( 40px ) translateY( 10px );
+      }
+    }
+
+  }
+
+  .admin-bar & {
+    @include rem(margin-top, 10px);
+    @include small {
+      @include rem(padding-top, 100px);
+    }
+  }
+
+}
+
+// *****************************************************************************
+// * Component base
+// *****************************************************************************
+
+.su-component {
+
+  color: $color-fg;
+
+  .su-lane-primary__content & {
+    color: $color-fg-on-dark;
+  }
+
+  &__title {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+// *****************************************************************************
+// * Helpers
+// *****************************************************************************
+
+// Hide on medium (display small only)
+.su-display-small {
+  display: inherit!important;
+
+  @include breakpoint($small) {
+    display: none!important;
+  }
+}
+
+// Hide on small (display medium or above)
+.su-display-medium {
+  display: none!important;
+
+  @include breakpoint($small) {
+    display: inherit!important;
+  }
+}
+
+// *****************************************************************************
+// * ADMIN
+// * Here we have to add some space if the WP admin bar is open as our theme
+// * removes the generated space (to allow for accurate absolute positioning)
+// *****************************************************************************
+
+body {
+  &.admin-bar {
+    @include rem(padding-top, 50px);
+
+    @include breakpoint($small) {
+      @include rem(padding-top, 10px);
+    }
+  }
+}

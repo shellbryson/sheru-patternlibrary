@@ -1,16 +1,17 @@
 require.config({
   'baseUrl': '../',
   'paths': {
-    //  path aliases
+    // Path aliases
     'build': 'assets/scripts',
 
-    //  client libs
-    'jquery':               'assets/scripts/jquery',
+    // Client libs
     'modernizr':            'assets/scripts/libs/modernizr/modernizr',
-    'toggleAttribute':      'assets/scripts/toggleattribute',
+    'TweenLite':            'assets/scripts/libs/gsap/src/minified/TweenLite.min',
+    'TweenMax':             'assets/scripts/libs/gsap/src/minified/TweenMax.min',
 
-    //  components
-
+    // Components
+    'navigation':           'components/navigation/assets/scripts/navigation.main',
+    'project-spinner':      'components/lane-primary-interaction/assets/scripts/project-spinner.main',
   },
   shim: {
     'modernizr': {

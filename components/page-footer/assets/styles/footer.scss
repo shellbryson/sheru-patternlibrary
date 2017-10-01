@@ -1,0 +1,48 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Footer
+// *
+// *****************************************************************************
+
+.su-footer {
+
+  display: table;
+  width: 100%;
+  background-color: $color-sidebar-bg;
+
+  @include small {
+    //@include rem(margin, 16px);
+  }
+
+  &__navigation {
+    @include rem(padding, 32px);
+    display: table-cell;
+  }
+
+  &__navigation-menu {
+
+  }
+
+  &__navigation-item {
+    @include rem(margin-right, 16px);
+    display: inline-block;
+
+    a {
+      @include link;
+    }
+  }
+
+  &__meta {
+    @include rem(padding, 32px);
+    @include rem(font-size, 12px);
+    display: table-cell;
+    text-align: right;
+
+    a {
+      @include link;
+    }
+  }
+
+}

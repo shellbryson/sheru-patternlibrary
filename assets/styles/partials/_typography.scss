@@ -8,4 +8,12 @@
 // *
 // *****************************************************************************
 
-$font-quicksand: "font-family: 'Quicksand', sans-serif";
+// Default the fonts
+h1,
+h2,
+h3,
+h4,
+a,
+p {
+  font-family: $font-primary;
+}

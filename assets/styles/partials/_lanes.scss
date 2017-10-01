@@ -1,0 +1,84 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _lanes.scss
+// *
+// *****************************************************************************
+
+$menu-offset: 60px;
+
+.su-lane {
+
+  $this: &;
+
+  color: $color-fg-on-dark;
+  background-color: $color-bg-lane-standard;
+
+  // This is temporary
+  p {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  @include small {
+    display: flex;
+  }
+
+  // Standard lane split
+  &__main {
+
+    @include rem(padding, 20px);
+
+    @include small {
+      @include rem(padding, 40px);
+      width: 60%;
+    }
+  }
+
+  &__side {
+
+    @include rem(padding, 20px);
+
+    @include small {
+      @include rem(padding, 40px);
+      width: 40%;
+    }
+  }
+
+  // ***************************************************************************
+  // * Primary lane with big impact colors
+  // ***************************************************************************
+  &--primary {
+
+    background-color: $color-base-dark;
+
+  }
+
+  // ***************************************************************************
+  // * First lane with spacers for navigation on the first section
+  // ***************************************************************************
+
+  &--first {
+
+    #{$this}__main {
+      @include small {
+        margin-top: $menu-offset;
+      }
+    }
+
+  }
+
+  // ***************************************************************************
+  // * Single column lane
+  // ***************************************************************************
+
+  &--span {
+
+    #{$this}__main {
+      width: 100%;
+    }
+
+  }
+}

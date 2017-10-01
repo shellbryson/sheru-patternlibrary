@@ -2,10 +2,12 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _partials.scss
+// * @name: Partials
 // *
 // *****************************************************************************
 
-
 @import "base";
 @import "typography";
+@import "lanes";
+@import "animation";
+@import "layout";

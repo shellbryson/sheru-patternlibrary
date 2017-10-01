@@ -1,0 +1,94 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _brand.scss
+// *
+// *****************************************************************************
+
+.#{$c-brand} {
+
+  display: none;
+
+  @include breakpoint($small) {
+    @include rem(margin-bottom, 10px);
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: $brand-height;
+    font-family: $font-primary;
+    line-height: $brand-height;
+    background-color: lighten($color-base-dark, 40%);
+    transition: $animation-speed;
+
+    border-top: 2px solid rgba($color-tile-border, 0.3);
+    border-bottom: 1px solid rgba($color-tile-border, 0.2);
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  &__logo {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    top: 0;
+    transition: $animation-speed-slow;
+    transform-origin: 20% 0;
+    pointer-events: all;
+    background-image: url('../images/logo-small.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__title {
+    @include rem(font-size, 20px);
+    @include rem(padding-left, 10px);
+
+    display: flex;
+    width: 100%;
+    font-weight: lighter;
+    color: $color-black;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      .su-brand__link {
+        display: none;
+      }
+      .su-brand__link--hidden {
+        display: block;
+      }
+    }
+  }
+
+  &__subtitle {
+
+    display: none;
+
+    @include breakpoint($medium) {
+      @include rem(padding-right, 60px);
+      @include rem(padding-left, 20px);
+      display: flex;
+      color: $color-black;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  // Content
+
+  &__link {
+    color: $color-black;
+    text-decoration: none;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+}

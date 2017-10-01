@@ -1,0 +1,372 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _navigation.scss
+// *
+// *****************************************************************************
+
+.su-nav {
+
+  $root: &;
+
+  // Mobile first
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  transition: $animation-speed;
+
+  // Tablet screens+
+  @include breakpoint($small) {
+    @include rem(top, 10px);
+    @include rem(left, 10px);
+    right: auto;
+    bottom: auto;
+    width: $navigation-width-small;
+    max-width: 800px;
+
+    // Move nav down a little if admin is open
+    .admin-bar & {
+      @include rem(top, 60px);
+    }
+  }
+
+  @include breakpoint($medium) {
+    width: $navigation-width-medium;
+  }
+
+  @include breakpoint($large) {
+    width: $navigation-width-large;
+  }
+
+  // *****************************************************************************
+  // * Wrap entire tile menu
+  // *****************************************************************************
+
+  &__wrapper {
+    // We flex the wrapper on mobile to enable us to reorder the content, sticking
+    // the primary menu at the bottom of the screen.
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    @include breakpoint($small) {
+      // On desktop, we turn the menu wrapper back into a block allowing for
+      // natural document flow (so keyboard navigation works correctly)
+      display: block;
+      position: absolute;
+      z-index: 99;
+      transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
+      transition: $animation-speed-slow;
+      transform-origin: 20% 0;
+      pointer-events: all;
+
+      &:hover {
+        transform: perspective( $small-hover-perspective ) rotateY( $small-hover-rotation );
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Accessible buttons
+  // *****************************************************************************
+
+  &__button {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include breakpoint($small) {
+      display: inline-block;
+      padding-top: 6px;
+      cursor: pointer;
+      vertical-align: top;
+    }
+
+    i {
+      font-size: 40px;
+      transition: $animation-speed;
+      vertical-align: middle;
+
+      @include breakpoint($small) {
+        font-size: 30px;
+      }
+    }
+
+  }
+
+  // *****************************************************************************
+  // * Primary menu (always visible)
+  // *****************************************************************************
+
+  &__primary {
+
+    display: flex;
+    width: 100%;
+    margin: 0;
+    transition: $animation-speed;
+    flex-direction: row;
+    order: 3;
+
+    @include breakpoint($small) {
+      opacity: $default-opacity;
+      transition: $animation-speed-slow;
+      order: 1;
+    }
+
+  }
+
+  // *****************************************************************************
+  // * Primary titles (always visible)
+  // *****************************************************************************
+
+  &__primary-tile {
+    @include reset-list;
+
+    @each $current-color in $color-tile-bg-list {
+      $i: index($color-tile-bg-list, $current-color);
+
+      &:nth-child( #{$i} ) {
+        background-color: $current-color;
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Primary links
+  // *****************************************************************************
+
+  &__primary-tile-link {
+    @include rem(font-size, 16px);
+    color: $color-white;
+    text-decoration: none;
+    transition: $animation-speed-slow;
+    vertical-align: middle;
+  }
+
+  // *****************************************************************************
+  // * Scroll area wrapping secondary navigation
+  // *****************************************************************************
+
+  &__scroll-wrap {
+    position: relative;
+
+    @include breakpoint($small) {
+      margin-left: 3px;
+      padding: 0 4px;
+      border-right: 2px solid rgba($color-tile-border, 0.3);
+      border-left: 1px solid rgba($color-tile-border, 0.3);
+    }
+
+    &::before {
+      @include breakpoint($small) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: 4px;
+        height: 4px;
+        content: "";
+        background-color: rgba($color-tile-border, 0.4);
+      }
+    }
+  }
+
+  &__scroll {
+    display: block;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    transition: $animation-speed;
+    background-color: rgba($color-black, 0.8);
+
+    @include breakpoint($small) {
+      margin-top: 10px;
+
+      &:hover {
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Secondary navigation (default, hidden)
+  // *****************************************************************************
+
+  &__secondary {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: $animation-speed-slow;
+    pointer-events: all;
+
+    @include breakpoint($small) {
+      opacity: $default-opacity;
+    }
+
+    i {
+      font-size: 40px;
+      line-height: $brand-height;
+      transition: $animation-speed;
+      vertical-align: middle;
+    }
+
+    // *****************************************************************************
+    // * When menu is open...
+    // *****************************************************************************
+
+    &--show {
+
+      display: grid;
+      max-width: $navigation-slider-default-width;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      justify-items: stretch;
+      align-items: stretch;
+      transition: $animation-speed;
+
+      @include breakpoint($xsmall) {
+        max-width: $navigation-slider-small-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      @include breakpoint($small) {
+        max-width: $navigation-slider-medium-width;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
+      }
+
+      @include breakpoint($medium) {
+        max-width: $navigation-slider-large-width;
+      }
+
+    }
+  }
+
+  // *****************************************************************************
+  // * Tiles
+  // * Tiles can be found in navigation-tiles.scss
+  // *****************************************************************************
+
+  &__tile-wrapper {
+    @include reset-list;
+
+    @each $current-color in $color-tile-bg-list {
+      $i: index($color-tile-bg-list, $current-color);
+
+      &:nth-child( #{$i} ) {
+        .su-nav__secondary-tile-link {
+          background-color: $current-color;
+        }
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Scroll controls
+  // *****************************************************************************
+
+  &__action {
+    display: none;
+
+    @include breakpoint($small) {
+      position: absolute;
+      right: -25px;
+      z-index: 9999;
+      width: 24px;
+      height: 40px;
+      background-color: $color-tile-border-high;
+      transition: $animation-speed;
+
+      &:hover {
+        height: 60px;
+        box-shadow: 0 10px 20px $color-shadows;
+      }
+    }
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__action-inner {
+    display: block;
+    width: 20px;
+    height: 100%;
+    margin-left: 10px;
+    color: $color-fg-on-dark;
+    background-color: $color-highlight;
+    cursor: pointer;
+  }
+
+  // *****************************************************************************
+  // * Primary menu
+  // *****************************************************************************
+
+  &__primary {
+
+    // *****************************************************************************
+    // * Fixed Menu, when header at page top
+    // *****************************************************************************
+
+    .#{$c-navigation}__primary-tile {
+      width: 25%;
+      height: auto;
+      line-height: $mobile-nav-height;
+      color: $color-tile-fg;
+      text-align: center;
+      text-decoration: none;
+      transition: $animation-speed;
+      vertical-align: middle;
+
+      @include breakpoint(700px) {
+        display: block;
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      @include breakpoint($small) {
+        display: block;
+        height: $menu-tile-height;
+        line-height: $menu-tile-height;
+      }
+
+      // Animate reveal of Fixed Menu items
+      $increment: 0.25s;
+      @for $i from 1 through 4 {
+        &:nth-child( #{$i} ) {
+          animation-delay: (0.05 * $i) + $increment;
+          animation-duration: 300ms;
+        }
+      }
+
+      &--small {
+        display: none;
+
+        @include breakpoint($small) {
+          display: block;
+          width: 60px;
+          margin-right: -100px;
+        }
+      }
+
+    }
+
+  }
+
+  .admin-bar & {
+    @include rem(padding-top, 40px);
+  }
+
+}

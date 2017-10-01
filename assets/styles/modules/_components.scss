@@ -2,22 +2,9 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _components.scss
+// * @name: Components
 // *
 // *****************************************************************************
-
-// DO NOT REORDER THIS FILE
-
-// *****************************************************************************
-// * GLOBAL NAMES
-// * Unique global names based on namespace. Each component must have a name
-// * here.
-// *****************************************************************************
-
-// Common components and page furniture
-$c-splash: $namespace + "splash";
-$c-linkbar: $namespace + "linkbar";
-
 
 // *****************************************************************************
 // * IMPORT COMPONENT STYLES
@@ -26,7 +13,26 @@ $c-linkbar: $namespace + "linkbar";
 // * with the namespace intact.
 // *****************************************************************************
 
-// Page components
-@import "../../../components/splash/assets/styles/splash";
-@import "../../../components/linkbar/assets/styles/linkbar";
+// Site Head
+@import "../../../components/site-logo/assets/styles/site-logo";
+@import "../../../components/skip/assets/styles/skip";
+@import "../../../components/site-header/assets/styles/header";
+@import "../../../components/site-header-brand/assets/styles/brand";
+@import "../../../components/navigation/assets/styles/navigation";
+@import "../../../components/navigation-tile/assets/styles/navigation-tile";
+@import "../../../components/navigation-search/assets/styles/navigation-search";
+@import "../../../components/page-footer/assets/styles/footer";
+@import "../../../components/page-sidebar/assets/styles/sidebar";
+@import "../../../components/widget/assets/styles/widget";
 
+// Page components
+@import "../../../components/article/assets/styles/article";
+@import "../../../components/article-meta/assets/styles/article-meta";
+@import "../../../components/page-content/assets/styles/content";
+@import "../../../components/projects/assets/styles/projects";
+@import "../../../components/project/assets/styles/project";
+
+// Lanes
+@import "../../../components/lane-primary-article-recent/assets/styles/lane-primary-article-recent";
+@import "../../../components/lane-primary-project-grid/assets/styles/lane-primary-project-grid";
+@import "../../../components/lane-primary-interaction/assets/styles/lane-primary-interaction";
