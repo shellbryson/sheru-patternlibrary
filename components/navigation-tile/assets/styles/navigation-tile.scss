@@ -36,6 +36,7 @@ $tile-border-horizontal: 1px;
       border-left: $tile-border-horizontal solid $color-tile-border-low;
       line-height: $brand-height;
       background-color: transparent;
+      background-size: 100% 100%;
     }
 
     &:hover,
@@ -131,96 +132,48 @@ $tile-border-horizontal: 1px;
   }
 }
 
-.#{$c-navigation}__shard {
-
-  @include breakpoint($small) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: shard ease-in-out infinite;
-    transition: $animation-speed-slow;
-    transform-origin: bottom right;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-duration: 3s;
-  }
-}
-
 .#{$c-navigation}__secondary {
 
-  .#{$c-navigation}__shard:nth-of-type(1) {
-    @include poly(65.65% 79%, 100% 100%, 50% 100%);
-    background-color: rgba(0,0,0,0.05);
-  }
-
-  .#{$c-navigation}__shard:nth-of-type(2)  {
-    @include poly(65.65% 79%, 100% 100%, 83% 70.93%);
-    background-color: rgba(0,0,0,0.10);
-  }
-
-  .#{$c-navigation}__shard:nth-of-type(3)  {
-    @include poly(83% 70.93%, 100% 100%, 86.87% 64.33%);
-    background-color: rgba(0,0,0,0.15);
-  }
-
-  .#{$c-navigation}__shard:nth-of-type(4)  {
-    @include poly(86.87% 64.33%, 100% 100%, 90.28% 57.27%);
-    background-color: rgba(0,0,0,0.20);
-  }
-
-  .#{$c-navigation}__shard:nth-of-type(5)  {
-    @include poly(90.28% 57.27%, 100% 100%, 95.14% 56.13%);
-    background-color: rgba(0,0,0,0.25);
-  }
-
-  .#{$c-navigation}__shard:nth-of-type(6)  {
-    @include poly(95.14% 56.13%, 100% 100%, 100% 45% );
-    background-color: rgba(0,0,0,0.30);
-  }
-
-  &:hover {
-    .#{$c-navigation}__shard:nth-of-type(1) {
-      @include poly(69.05% 81%, 100% 100%, 50% 100%);
-    }
-
-    .#{$c-navigation}__shard:nth-of-type(2)  {
-      @include poly(69.05% 81%, 100% 100%, 81.32% 69%);
-    }
-
-    .#{$c-navigation}__shard:nth-of-type(3)  {
-      @include poly(81.32% 69%, 100% 100%, 86.86% 63.77%);
-    }
-
-    .#{$c-navigation}__shard:nth-of-type(4)  {
-      @include poly(86.86% 63.77%, 100% 100%, 91% 60%);
-    }
-
-    .#{$c-navigation}__shard:nth-of-type(5)  {
-      @include poly(91% 60%, 100% 100%, 95.15% 56.15%);
-    }
-
-    .#{$c-navigation}__shard:nth-of-type(6)  {
-      @include poly(95.15% 56.15%, 100% 100%, 100% 51.55%);
-    }
-  }
 }
 
-$increment: 0.25s;
-@for $i from 1 through 6 {
-  .#{$c-navigation}__shard:nth-of-type( #{$i} ) {
-    animation-delay: (0.15 * $i) + $increment;
-    animation-duration: 2s;
-  }
+// *****************************************************************************
+// * External
+// *****************************************************************************
+.pen {
+  @include tile;
 }
 
-@keyframes shard {
-  from {
-    transform: scale(1, 1);
-  }
-  to {
-    transform: scale(1, 1.1);
-  }
+.profile {
+  @include tile('tile-profile.svg');
+}
+
+.external {
+  @include tile;
+}
+
+// *****************************************************************************
+// * Categories
+// *****************************************************************************
+.code {
+  @include tile('tile-code.svg');
+}
+
+.blog {
+  @include tile('tile-blog.svg');
+}
+
+.log {
+  @include tile('tile-blog.svg');
+}
+
+.projects {
+  @include tile;
+}
+
+.setup {
+  @include tile;
+}
+
+.inspire {
+  @include tile;
 }
