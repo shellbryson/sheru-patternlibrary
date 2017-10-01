@@ -1,13 +1,13 @@
 @mixin chip {
-  position: relative;
-
-  &::before {
+  &::after {
     display: block;
-    position: absolute;
-    left: 0;
-    height: 16px;
-    width: 4px;
+    position: relative;
+    background-image: url('../images/chip.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 44px;
     content: "";
-    background: $color-fg-on-dark;
   }
 }
