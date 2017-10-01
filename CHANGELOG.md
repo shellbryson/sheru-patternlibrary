@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixes
 
 - Article wrapping
+- Fixes issue with duplicated "continue reading" link being displayed
 
 ## [0.9.2] - 2017-10-01
 

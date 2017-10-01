@@ -73,6 +73,11 @@
     @include sr-only;
   }
 
+  // todo, remove this from WP instead
+  .more-link {
+    display: none;
+  }
+
   &__footer {
     @include rem(margin-bottom, 48px);
   }
