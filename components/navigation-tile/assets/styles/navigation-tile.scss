@@ -148,7 +148,7 @@ $tile-border-horizontal: 1px;
 }
 
 .projects {
-  @include tile;
+  @include tile('tile-projects.svg');
 }
 
 .setup {

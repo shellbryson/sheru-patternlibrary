@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Article wrapping
 - Fixes issue with duplicated "continue reading" link being displayed
 
+### Adds
+
+- Projects tile icon
+
 ## [0.9.2] - 2017-10-01
 
 ### Fixes
