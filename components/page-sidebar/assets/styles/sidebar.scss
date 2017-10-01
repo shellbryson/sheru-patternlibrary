@@ -19,4 +19,8 @@
     vertical-align: top;
     background-color: $color-sidebar-bg;
   }
+
+  a {
+    @include link;
+  }
 }

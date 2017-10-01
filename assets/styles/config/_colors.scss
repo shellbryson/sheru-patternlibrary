@@ -23,6 +23,7 @@ $color-base-light: #ffffff;
 $color-body-bg: #385978;
 $color-page-bg: #ffffff;
 $color-highlight: #3e3e3e;
+$color-sidebar-bg: #f9f9f9;
 
 // *****************************************************************************
 // * Element colors
@@ -81,11 +82,8 @@ $color-tile-open-bg: $color-tint;
 $color-tile-border-low: rgba($color-tile-border, 0.1);
 $color-tile-border-high: rgba($color-tile-border, 0.3);
 
-
 // Other
 $color-divider: $color-tint;
-
-$color-sidebar-bg: rgba($color-tint, 0.1);
 
 // Color cycle used for tile navigation (10). See navigation.scss for application.
 $_ctl: #6e6e6e;

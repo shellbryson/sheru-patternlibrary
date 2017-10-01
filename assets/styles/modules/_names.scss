@@ -32,6 +32,4 @@ $c-navigation: $namespace + "nav";
 $c-navigation-search: $namespace + "nav-search";
 $c-foot: $namespace + "foot";
 $c-sidebar: $namespace + "sidebar";
-
-// WordPress class names, no prefix.
-$c-widget: "widget";
+$c-widget: $namespace + "widget";
