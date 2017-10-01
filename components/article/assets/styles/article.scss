@@ -22,6 +22,12 @@
     p {
       line-height: 1.6;
     }
+
+    pre {
+      @include rem(padding, 16px);
+      display: block;
+      font-family: monospace;
+    }
   }
 
   &__more {
