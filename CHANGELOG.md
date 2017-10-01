@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.4] - 2017-10-01
+
+### Fixes
+
+- Fixes several mobile menu display issues
+
+### Changes
+
+- Moves mobile menu to top and shifts mini logo for better modern phone usage
+
 ## [0.9.3] - 2017-10-01
 
 ### Fixes

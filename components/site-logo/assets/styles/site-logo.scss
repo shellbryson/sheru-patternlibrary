@@ -9,8 +9,8 @@
 .su-logo {
   display: block;
   position: absolute;
-  z-index: 99;
-  top: 10px;
+
+  top: 80px;
   right: 10px;
   width: 30px;
   height: 30px;
@@ -22,6 +22,8 @@
   background-size: 100% 100%;
 
   @include small {
+    top: 10px;
+    z-index: 99;
     width: 150px;
     height: 150px;
   }
