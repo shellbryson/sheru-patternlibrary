@@ -116,7 +116,7 @@ module.exports = function (grunt) {
       versionExternal: {
         files: [{
           expand: true,
-          cwd: './dist/',
+          cwd: './assets/',
           src: 'version.txt',
           dest: copyToExternalPath + "/"
         }]

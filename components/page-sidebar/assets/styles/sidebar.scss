@@ -10,6 +10,7 @@
   @include rem(padding, 20px);
   width: 100%;
   margin: 0;
+  background-color: $color-sidebar-bg;
 
   @include medium {
     // pad to give us a gutter (various brand elements)
@@ -17,7 +18,6 @@
     display: table-cell;
     width: 30%;
     vertical-align: top;
-    background-color: $color-sidebar-bg;
   }
 
   a {
