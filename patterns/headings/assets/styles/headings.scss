@@ -8,7 +8,7 @@
 
 @mixin heading($font-default: 22px, $font-small: 26px, $font-medium: 48px, $font-large: 54px, $font-xlarge: 62px, $class: "default", $level: "h2", $margin: 1rem) {
   .#{$class},
-  .su-rte #{$level} {
+  .su-article__content #{$level} {
 
     @include rem(font-size, $font-default);
     @include rem(margin-bottom, $margin);
