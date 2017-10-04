@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changes
 
+- Improves styling of post navigation
 - Improve image spacing and image captions
 - Improved line-spacing for pre-text
 

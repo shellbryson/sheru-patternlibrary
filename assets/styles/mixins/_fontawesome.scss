@@ -17,3 +17,15 @@
   }
 
 }
+
+@mixin fontawesome-after($icon: "\f118") {
+
+  &::after {
+    @include rem(padding-right, 4px);
+    display: inline-block;
+    position: relative;
+    font-family: "fontawesome";
+    content: quote($icon);
+  }
+
+}
