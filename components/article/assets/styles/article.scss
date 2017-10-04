@@ -32,6 +32,7 @@
       font-family: monospace;
       background: $color-sidebar-bg;
       white-space: pre-wrap;
+      line-height: 1.5;
 
       @include small {
         @include rem(margin-right, 32px);
@@ -40,6 +41,25 @@
         margin-left: -30px;
       }
     }
+
+    figure {
+      @include rem(margin-bottom, 32px);
+      @include rem(font-size, 13px);
+
+      @include small {
+        margin-left: -30px;
+      }
+    }
+
+    figcaption {
+
+      @include small {
+        @include rem(margin-top, 8px);
+        @include rem(margin-left, 32px);
+      }
+    }
+
+
   }
 
 
