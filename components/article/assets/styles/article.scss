@@ -51,8 +51,16 @@
       @include rem(margin-bottom, 32px);
       @include rem(font-size, 13px);
 
+      // FU WP
+      width: 100%!important;
+
       @include small {
         margin-left: -30px;
+      }
+
+      img {
+        max-width: 75%;
+        height: auto;
       }
     }
 
