@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixes
 
+- Fixes a sizing and layout issues for main site structure
 - Broken 404 page
 
 ## [0.9.6] - 2017-10-04
