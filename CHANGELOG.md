@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fixes a sizing and layout issues for main site structure
 - Broken 404 page
+- Critical image size hack because WP is... is... ugh.
 
 ### Changes
 
