@@ -1,0 +1,19 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Font Awesome
+// *
+// *****************************************************************************
+
+@mixin fontawesome($icon: "\f118") {
+
+  &::before {
+    @include rem(padding-right, 4px);
+    display: inline-block;
+    position: relative;
+    font-family: "fontawesome";
+    content: quote($icon);
+  }
+
+}

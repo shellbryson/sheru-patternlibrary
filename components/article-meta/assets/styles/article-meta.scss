@@ -7,10 +7,18 @@
 // *****************************************************************************
 
 .#{$c-article-meta} {
+  $root: &;
+
+  @include rem(margin-left, 16px);
 
   line-height: 20px;
   vertical-align: middle;
   color: $color-fg-faded;
+
+  @include small {
+    @include rem(margin-left, 32px);
+    @include rem(padding-top, 16px);
+  }
 
   a {
     text-decoration: none;
@@ -18,8 +26,7 @@
   }
 
   &__byline {
-    padding-right: 16px;
-
+    @include rem(padding-right, 16px);
   }
 
   &__author {
@@ -27,23 +34,50 @@
   }
 
   &__published {
-    padding-right: 16px;
+    @include rem(padding-right, 16px);
   }
 
   &__updated {
-    padding-right: 16px;
+    display: none;
+
+    @include xsmall {
+      display: inline-block;
+    }
   }
 
   &__postedon {
-    padding-right: 16px;
+    @include rem(padding-right, 16px);
+
   }
 
   &__comment {
-    padding-right: 16px;
+    @include rem(padding-top, 16px);
+    @include rem(padding-right, 16px);
+    display: block;
   }
 
   &__categories {
-    padding-right: 16px;
+    @include rem(padding-top, 16px);
+    @include rem(padding-right, 16px);
+    @include fontawesome("\f187");
+    display: block;
+  }
+
+  &__tags {
+    @include rem(padding-right, 16px);
+    @include fontawesome("\f02c");
+    display: block;
+
+    @include small {
+      display: inline-block;
+    }
+  }
+
+  // In excerpts we want to hide some of the meta elements:
+  &--short {
+    #{$root}__comment {
+      display: none;
+    }
   }
 
 }
