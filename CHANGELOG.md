@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Adds
 
+- Styling of comments and replies
 - Category & Tag icons, plus mixin to for easier use of Font-Awesome
 - Styled meta data
 

@@ -21,10 +21,6 @@ $p-forms: $namespace + "forms";
 $c-latest: $namespace + "latest";
 $c-project-grid: $namespace + "project-grid";
 $c-project-spinner: $namespace + "project-spinner";
-
-$c-content: $namespace + "content";
-$c-article: $namespace + "article";
-$c-article-meta: $namespace + "article-meta";
 $c-head: $namespace + "head";
 $c-page-header: $namespace + "page-header";
 $c-brand: $namespace + "brand";
@@ -33,3 +29,7 @@ $c-navigation-search: $namespace + "nav-search";
 $c-foot: $namespace + "foot";
 $c-sidebar: $namespace + "sidebar";
 $c-widget: $namespace + "widget";
+$c-content: $namespace + "content";
+$c-article: $namespace + "article";
+$c-article-meta: $namespace + "article-meta";
+$c-article-comments: $namespace + "article-comments";
