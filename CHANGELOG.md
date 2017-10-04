@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changes
 
+- Clean up the terrible site footer
 - Improves styling of post navigation
 - Improve image spacing and image captions
 - Improved line-spacing for pre-text
