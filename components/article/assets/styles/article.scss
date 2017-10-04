@@ -17,6 +17,11 @@
     color: $color-fg-faded;
   }
 
+  &__404 {
+    font-weight: bold;
+    color: $color-brand;
+  }
+
   &__content {
 
     p {

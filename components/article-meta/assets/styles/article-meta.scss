@@ -61,12 +61,14 @@
     @include rem(padding-right, 16px);
     @include fontawesome("\f187");
     display: block;
+    line-height: 1.6;
   }
 
   &__tags {
     @include rem(padding-right, 16px);
     @include fontawesome("\f02c");
     display: block;
+    line-height: 1.6;
 
     @include small {
       display: inline-block;
