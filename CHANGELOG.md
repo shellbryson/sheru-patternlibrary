@@ -9,6 +9,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fixes a sizing and layout issues for main site structure
 - Broken 404 page
 
+### Changes
+
+- New background colors
+- Improved main menu
+- Larger, easier to read tiles
+- Scrollbar color in custom components
+- Adjusted breakpoints for primary navigation
+
+### Added
+
+- Primary nav menu toggle now labelled for improved a11y
+
 ## [0.9.6] - 2017-10-04
 
 ### Changes

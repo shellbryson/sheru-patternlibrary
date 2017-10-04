@@ -3,7 +3,6 @@ define(function (require) {
 
   const navPanel = document.querySelector('.js-nav');
   const body = document.querySelector('body');
-  const navPanelControls = document.querySelector('.js-nav-control');
   const searchPanel = document.querySelector('.js-search');
   const toggleNavigation = document.querySelector('.js-toggleMenu');
   const toggleSearch = document.querySelector('.js-toggleSearch');
@@ -46,7 +45,6 @@ define(function (require) {
     navPanel.classList.add(_navOnClass);
     navPanel.setAttribute("aria-hidden", "false");
     navPanel.setAttribute("aria-expanded", "true");
-    navPanelControls.classList.add(_navOnControlOnClass);
     openSearch();
   }
 
@@ -54,7 +52,6 @@ define(function (require) {
     navPanel.classList.remove(_navOnClass);
     navPanel.setAttribute("aria-hidden", "true");
     navPanel.setAttribute("aria-expanded", "false");
-    navPanelControls.classList.remove(_navOnControlOnClass);
     closeSearch();
   }
 

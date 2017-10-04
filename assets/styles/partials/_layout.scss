@@ -10,7 +10,7 @@ $page-perspective: 10000px;
 
 // Wraps everything to avoid page backgrounds messing with Fabric
 .su-page  {
-  @include rem(padding, 90px 10px);
+  @include rem(padding, 50px 10px);
   min-height: 100%;
   background: $color-body-bg linear-gradient(135deg, $color-page-bg-start 0%, $color-page-bg-end 100%);
 

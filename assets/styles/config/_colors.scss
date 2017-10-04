@@ -32,8 +32,8 @@ $color-brand: #9a0013;
 // *****************************************************************************
 
 // Page gradient
-$color-page-bg-start: rgba(56,89,120,1);
-$color-page-bg-end: rgba(125, 185, 232, 1);
+$color-page-bg-start: lighten($color-base-dark, 20%);
+$color-page-bg-end: lighten($color-base-dark, 15%);
 
 // Defaults
 $color-fg: $color-base-dark;

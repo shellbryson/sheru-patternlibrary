@@ -9,8 +9,8 @@
 .su-scrollbar {
 
   &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 10px;
+    height: 10px;
   }
 
   &::-webkit-scrollbar-track {
@@ -20,7 +20,7 @@
 
   &::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background: $color-highlight;
+    background: $color-brand;
   }
 
   &::-webkit-scrollbar-thumb:hover {

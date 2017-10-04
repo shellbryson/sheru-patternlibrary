@@ -10,8 +10,8 @@
   display: block;
   position: absolute;
 
-  top: 90px;
-  right: 10px;
+  top: 100px;
+  right: 20px;
   width: 30px;
   height: 30px;
   transform: translate3d(0,0,0) perspective( $small-default-perspective ) rotateY( -15deg );
@@ -20,6 +20,7 @@
   background-image: url('../images/logo.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  z-index: 99;
 
   @include small {
     top: 10px;
