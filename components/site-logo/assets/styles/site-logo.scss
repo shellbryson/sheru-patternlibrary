@@ -7,33 +7,34 @@
 // *****************************************************************************
 
 .su-logo {
-  display: block;
+  display: none;
   position: absolute;
 
-  top: 80px;
-  right: 18px;
-  width: 30px;
-  height: 30px;
   transform: translate3d(0,0,0) perspective( $small-default-perspective ) rotateY( -15deg );
   transform-origin: 20% 0;
   pointer-events: all;
   background-image: url('../images/logo.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  z-index: 99;
 
   @include small {
+    display: block;
     top: 10px;
-    z-index: 99;
+    right: 18px;
     width: 150px;
     height: 150px;
+    z-index: 9;
   }
 
-  .admin-bar & {
-    @include rem(top, 20px);
+  &--small {
+    display: block;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
 
     @include small {
-      @include rem(top, 50px);
+      display: none;
     }
   }
 }

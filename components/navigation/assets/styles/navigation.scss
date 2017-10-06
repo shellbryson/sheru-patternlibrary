@@ -14,7 +14,7 @@
   right: 0;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99;
   transition: $animation-speed-slow;
   transform: translate3d(0,0,0);
 
@@ -63,7 +63,7 @@
       // natural document flow (so keyboard navigation works correctly)
       display: block;
       position: absolute;
-      z-index: 99;
+      z-index: 999;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
       transition: $animation-speed-slow;
       transform-origin: 20% 0;
@@ -199,7 +199,8 @@
 
   &__scroll {
     display: block;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     width: 100%;
     -webkit-overflow-scrolling: touch;
@@ -261,8 +262,8 @@
       @include breakpoint($small) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-column-gap: 6px;
-        grid-row-gap: 6px;
+        // grid-column-gap: 6px;
+        // grid-row-gap: 6px;
       }
 
     }

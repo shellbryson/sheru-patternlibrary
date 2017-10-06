@@ -26,6 +26,14 @@ $page-perspective: 10000px;
       @include rem(padding-top, 100px);
     }
   }
+
+  &-header {
+    @include rem(margin, 16px 16px 32px 16px);
+
+    @include small {
+      @include rem(margin, 0 44px 32px 44px);
+    }
+  }
 }
 
 // *****************************************************************************
