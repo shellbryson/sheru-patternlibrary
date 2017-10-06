@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixes
 
+- Invalid markup from primary menu items (walker)
+- Invalid markup in secondary menu
 - JS minification broken due uglifier not supporting ES6
 
 ### Adds
@@ -17,6 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - WordPress updated to use minified JS.
 - Minified CSS now separated and linked in WP.
+- Removes duplicate/unrequired content attributes
 
 ## [0.9.7] - 2017-10-04
 
