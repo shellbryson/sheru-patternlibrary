@@ -1,6 +1,6 @@
 {
   "name": "sheru",
-  "version": "0.9.7",
+  "version": "0.9.8-pre",
   "description": "Front end developer blog",
   "main": "Gruntfile.js",
   "scripts": {
