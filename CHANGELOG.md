@@ -6,7 +6,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixes
 
-- 
+- JS minification broken due uglifier not supporting ES6
+
+### Adds
+
+- New externally executed minifier (via grunt)
+- New minified JS file copied into WP
+
+## Changes
+
+- WordPress updated to use minified JS.
 
 ## [0.9.7] - 2017-10-04
 
