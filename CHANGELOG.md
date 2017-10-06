@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Invalid markup from primary menu items (walker)
 - Invalid markup in secondary menu
 - JS minification broken due uglifier not supporting ES6
+- Minification bug causing CSS to grow exponentially
+- Tile nav image classes too loose, causing bg images to be applied to posts/body
 
 ### Adds
 

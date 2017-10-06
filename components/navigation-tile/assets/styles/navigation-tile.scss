@@ -116,47 +116,45 @@ $tile-border-horizontal: 1px;
 }
 
 .#{$c-navigation}__secondary {
+  // *****************************************************************************
+  // * External
+  // *****************************************************************************
+  .pen {
+    @include tile;
+  }
 
-}
+  .profile {
+    @include tile('tile-profile.svg');
+  }
 
-// *****************************************************************************
-// * External
-// *****************************************************************************
-.pen {
-  @include tile;
-}
+  .external {
+    @include tile;
+  }
 
-.profile {
-  @include tile('tile-profile.svg');
-}
+  // *****************************************************************************
+  // * Categories
+  // *****************************************************************************
+  .code {
+    @include tile('tile-code.svg');
+  }
 
-.external {
-  @include tile;
-}
+  .blog {
+    @include tile('tile-blog.svg');
+  }
 
-// *****************************************************************************
-// * Categories
-// *****************************************************************************
-.code {
-  @include tile('tile-code.svg');
-}
+  .log {
+    @include tile('tile-blog.svg');
+  }
 
-.blog {
-  @include tile('tile-blog.svg');
-}
+  .projects {
+    @include tile('tile-projects.svg');
+  }
 
-.log {
-  @include tile('tile-blog.svg');
-}
+  .setup {
+    @include tile;
+  }
 
-.projects {
-  @include tile('tile-projects.svg');
-}
-
-.setup {
-  @include tile;
-}
-
-.inspire {
-  @include tile;
+  .inspire {
+    @include tile;
+  }
 }

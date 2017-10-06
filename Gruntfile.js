@@ -19,7 +19,6 @@ module.exports = function (grunt) {
   const stylesPatternMain = ['./assets/styles/build.scss'];
   const stylesPatternDist = ['./dist/styles/build.css'];
   const scriptsPatternDist = ['./dist/scripts/build.js'];
-  const svgPattern = ['assets/icons/svg/*.svg'];
   const sasslintIgnorePattern = ['!assets/styles/{vendor,mixins}/*.scss'];
   const sasslintPattern = stylesPattern.concat(sasslintIgnorePattern);
   const versionPath = './assets/'
@@ -190,7 +189,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: './dist/',
-        src: ['styles/*.css', 'fonts/**/*.css'],
+        src: ['styles/*.css', 'fonts/**/*.css', '!styles/*.min.css'],
         dest: './dist/',
         ext: '.min.css'
       }
@@ -235,29 +234,6 @@ module.exports = function (grunt) {
       }
     },
     /*
-     Generate us some svg icons
-     */
-    svgstore: {
-      options: {
-        prefix: 'icon-',
-        cleanup: true,
-        cleanupdefs: true,
-        includeTitleElement: false,
-        svg: {
-          viewBox: '0 0 100 100',
-          xmlns: 'http://www.w3.org/2000/svg'
-        },
-        formatting: {
-          indent_size: 2
-        }
-      },
-      your_target: {
-        files: {
-          'assets/icons/svg/dist/defs.svg': [svgPattern]
-        }
-      }
-    },
-    /*
      * JSCS Linting - for definition's see config and http://jscs.info/rules
      */
     jscs: {
@@ -281,14 +257,13 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-
   grunt.registerTask('version', [], () => {
     const obj = grunt.file.readJSON('package.json');
     const version = obj.version;
     const project = obj.name;
     const filePath = versionPath + "version.txt";
 
-    grunt.log.writeln("FABRIC");
+    grunt.log.writeln("SHERU.UK");
     grunt.log.writeln(`Project: ${project}` );
     grunt.log.writeln(`Version: ${version}` );
     grunt.log.writeln("");
@@ -299,6 +274,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', [], () => {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.task.run('sass', 'postcss:build', 'cssmin');
   });
 
@@ -311,17 +287,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-run');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.task.run('requirejs', 'run:minifyjs');
-  });
-
-  grunt.registerTask('dist', [], () => {
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.task.run(
-      'styles', 'cssmin', 'scripts', 'modernizr', 'copy',
-      'copy:stylesExternal',
-      'copy:scriptsExternal',
-      'copy:fontsExternal',
-      'copy:imagesExternal'
-    );
   });
 
   grunt.registerTask('lintjs', [], () => {
@@ -338,14 +303,8 @@ module.exports = function (grunt) {
     grunt.task.run('lintscss', 'lintjs');
   });
 
-  grunt.registerTask('svg', [], () => {
-    grunt.loadNpmTasks('grunt-svgstore');
-    grunt.task.run('svgstore');
-  });
-
   grunt.registerTask('default', [], () => {
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.task.run('version', 'styles', 'scripts', 'modernizr', 'copy', 'watch');
   });
