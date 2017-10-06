@@ -62,6 +62,11 @@ module.exports = function (grunt) {
         files: scriptsPattern
       }
     },
+    run: {
+      minifyjs: {
+        exec: 'uglifyjs ./dist/scripts/build.js -o ./dist/scripts/build.min.js'
+      }
+    },
     sass: {
       build: {
         files: {
@@ -206,16 +211,6 @@ module.exports = function (grunt) {
       }
     },
     /*
-     Minify JS - only does the build file until a decision is made on browserify/RequireJS
-     */
-    uglify: {
-      dist: {
-        files: {
-          './dist/scripts/build.js': [scriptsPatternDist]
-        }
-      }
-    },
-    /*
      Generate a modernizr build based on requirements
      */
     modernizr: {
@@ -313,15 +308,15 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('scripts', [], () => {
+    grunt.loadNpmTasks('grunt-run');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.task.run('requirejs');
+    grunt.task.run('requirejs', 'run:minifyjs');
   });
 
   grunt.registerTask('dist', [], () => {
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.task.run(
-      'styles', 'cssmin', 'scripts', 'modernizr', 'uglify', 'copy',
+      'styles', 'cssmin', 'scripts', 'modernizr', 'copy',
       'copy:stylesExternal',
       'copy:scriptsExternal',
       'copy:fontsExternal',
