@@ -11,6 +11,7 @@ $page-perspective: 10000px;
 // Wraps everything to avoid page backgrounds messing with Fabric
 .su-page  {
   @include rem(padding, 30px 10px);
+  position: relative;
   min-height: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -44,8 +45,6 @@ $page-perspective: 10000px;
 .su-wrapper {
 
   @include rem(margin-top, 40px);
-
-  position: relative;
   width: 100%;
   min-height: 100%;
   border: 1px solid $color-base-light;
