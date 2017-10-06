@@ -18,7 +18,6 @@ $tile-border-horizontal: 1px;
 
   &__secondary-tile {
     @include reset-list;
-    @include rem(font-size, 18px);
 
     display: block;
     position: relative;
@@ -83,7 +82,7 @@ $tile-border-horizontal: 1px;
 
   &__secondary-tile-link {
     @include rem(padding, 4px);
-    @include rem(font-size, 16px);
+    @include rem(font-size, 28px);
     display: block;
     position: absolute;
     top: 0;
@@ -98,6 +97,8 @@ $tile-border-horizontal: 1px;
     text-decoration: none;
     transition: $animation-speed-slow;
     vertical-align: top;
+    overflow: hidden;
+    line-height: 100%;
 
     // Affect borders of tiles
     &:hover,
@@ -107,7 +108,8 @@ $tile-border-horizontal: 1px;
     }
 
     span {
-      color: $color-white;
+      color: rgba($color-white, 0.6);
+      text-transform: uppercase;
     }
 
   }
@@ -148,7 +150,7 @@ $tile-border-horizontal: 1px;
 }
 
 .projects {
-  @include tile;
+  @include tile('tile-projects.svg');
 }
 
 .setup {

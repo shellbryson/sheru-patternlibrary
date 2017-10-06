@@ -1,0 +1,39 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Post Navigation
+// *
+// *****************************************************************************
+
+.#{$c-post-navigation} {
+
+  &__next {
+    @include fontawesome-after("\f105");
+    color: $color-fg;
+    text-decoration: none;
+
+    &::after {
+      @include rem(padding-left, 8px);
+    }
+  }
+
+  &__previous {
+    @include fontawesome("\f104");
+    color: $color-fg;
+    text-decoration: none;
+
+    &::before {
+      @include rem(padding-right, 8px);
+    }
+  }
+}
+
+.nav-links {
+  @include rem(padding-top, 16px);
+
+  a {
+    text-decoration: none;
+    color: $color-brand;
+  }
+}

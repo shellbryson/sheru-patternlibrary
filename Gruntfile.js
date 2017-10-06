@@ -304,7 +304,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', [], () => {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.task.run('sass', 'postcss:build');
+    grunt.task.run('sass', 'postcss:build', 'cssmin');
   });
 
   grunt.registerTask('modernizr', [], () => {

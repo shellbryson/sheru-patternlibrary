@@ -1,0 +1,159 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Article Comments
+// *
+// *****************************************************************************
+
+.#{$c-article-comments} {
+  @include rem(margin-bottom, 32px);
+  @include rem(padding, 32px);
+
+  $root: &;
+  display: block;
+  color: $color-fg-on-dark;
+  background-color: $color-body-bg;
+
+  &__list {
+    color: $color-fg-on-dark;
+  }
+
+  &__no-comments {
+
+  }
+
+  &__heading {
+    color: $color-fg-on-dark;
+  }
+
+  // *****************************************************************************
+  // * WordPress elements for form
+  // *****************************************************************************
+
+  // Todo: make all of this components
+
+  label {
+    @include rem(margin-top, 16px);
+    display: block;
+    width: 100%;
+    vertical-align: top;
+
+    @include small {
+      display: inline-block;
+      width: 100px;
+    }
+  }
+
+  input,
+  textarea {
+    @include rem(margin-top, 16px);
+    @include rem(padding, 8px);
+    @include rem(font-size, 16px);
+    display: block;
+    width: 100%;
+    vertical-align: top;
+
+    @include small {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  input[type=submit] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    width: 100%;
+    max-width: 200px;
+    border: 0;
+    background-color: $color-white;
+    color: $color-body-fg;
+    cursor: pointer;
+
+    @include small {
+      display: inline-block;
+      width: auto;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-brand;
+      color: $color-white;
+    }
+
+  }
+
+  .comment {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      @include rem(margin, 32px 0);
+      display: block;
+      background-color: $color-white;
+      max-width: 16px;
+      height: 4px;
+      content: "";
+    }
+  }
+
+  .comment-awaiting-moderation {
+    @include rem(margin, 32px auto);
+    display: block;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .fn {
+    vertical-align: top;
+  }
+
+  .says {
+    vertical-align: top;
+  }
+
+  .reply {
+    display: block;
+    position: relative;
+
+    a {
+      color: $color-white;
+
+      &::after {
+        @include rem(margin-left, 8px);
+        display: inline-block;
+        content: "";
+        width: 24px;
+        height: 16px;
+        background-size: 24px 16px;
+        background-repeat: no-repeat;
+        background-position: right top;
+        background: url('../images/brand-on-dark.svg');
+      }
+    }
+  }
+
+  .comment-content {
+    @include rem(margin, 16px 0);
+  }
+
+  .comment-author {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .comment-metadata {
+    @include rem(margin, 16px 0);
+    color: $color-fg-on-dark;
+
+    a {
+      color: $color-fg-on-dark;
+    }
+  }
+
+}

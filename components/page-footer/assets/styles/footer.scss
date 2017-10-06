@@ -8,17 +8,20 @@
 
 .su-footer {
 
-  display: table;
+
   width: 100%;
-  background-color: $color-sidebar-bg;
 
   @include small {
-    //@include rem(margin, 16px);
+    display: table;
   }
 
   &__navigation {
-    @include rem(padding, 32px);
-    display: table-cell;
+    @include rem(padding, 16px);
+
+    @include small {
+      @include rem(padding, 32px);
+      display: table-cell;
+    }
   }
 
   &__navigation-menu {
@@ -37,11 +40,19 @@
   &__meta {
     @include rem(padding, 32px);
     @include rem(font-size, 12px);
-    display: table-cell;
-    text-align: right;
+
+    line-height: 1.5;
+    font-family: monospace;
+    text-transform: lowercase;
+
+    @include small {
+      display: table-cell;
+      text-align: right;
+    }
 
     a {
       @include link;
+      font-family: monospace;
     }
   }
 

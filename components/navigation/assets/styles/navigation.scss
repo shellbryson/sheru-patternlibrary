@@ -13,10 +13,11 @@
   // Mobile first
   position: fixed;
   right: 0;
-  bottom: 0;
+  top: 0;
   left: 0;
-  z-index: 99;
-  transition: $animation-speed;
+  z-index: 999;
+  transition: $animation-speed-slow;
+  transform: translate3d(0,0,0);
 
   // Tablet screens+
   @include breakpoint($small) {
@@ -39,6 +40,12 @@
 
   @include breakpoint($large) {
     width: $navigation-width-large;
+  }
+
+  .su-menu-open & {
+    @include small {
+      transform: translate(20px, 4px) scale(1.05);
+    }
   }
 
   // *****************************************************************************
@@ -97,6 +104,22 @@
       }
     }
 
+    &--title {
+      margin-left: -5px;
+
+      @include small {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+      }
+
+      i {
+        @include small {
+          float: right;
+        }
+      }
+    }
+
   }
 
   // *****************************************************************************
@@ -110,12 +133,11 @@
     margin: 0;
     transition: $animation-speed;
     flex-direction: row;
-    order: 3;
+    order: 0;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
       transition: $animation-speed-slow;
-      order: 1;
     }
 
   }
@@ -205,6 +227,7 @@
     padding: 0;
     transition: $animation-speed-slow;
     pointer-events: all;
+    order: 1;
 
     @include breakpoint($small) {
       opacity: $default-opacity;
@@ -224,7 +247,6 @@
     &--show {
 
       display: grid;
-      max-width: $navigation-slider-default-width;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
@@ -233,21 +255,15 @@
       transition: $animation-speed;
 
       @include breakpoint($xsmall) {
-        max-width: $navigation-slider-small-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
       }
 
       @include breakpoint($small) {
-        max-width: $navigation-slider-medium-width;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-column-gap: 6px;
         grid-row-gap: 6px;
-      }
-
-      @include breakpoint($medium) {
-        max-width: $navigation-slider-large-width;
       }
 
     }
@@ -260,6 +276,12 @@
 
   &__tile-wrapper {
     @include reset-list;
+
+    // Default color
+    // Todo, fix why the color loop isn't being applied in navigation
+    .su-nav__secondary-tile-link {
+      background-color: darken($_ctl, 25%)
+    }
 
     @each $current-color in $color-tile-bg-list {
       $i: index($color-tile-bg-list, $current-color);
@@ -299,16 +321,6 @@
     }
   }
 
-  &__action-inner {
-    display: block;
-    width: 20px;
-    height: 100%;
-    margin-left: 10px;
-    color: $color-fg-on-dark;
-    background-color: $color-highlight;
-    cursor: pointer;
-  }
-
   // *****************************************************************************
   // * Primary menu
   // *****************************************************************************
@@ -322,18 +334,17 @@
     .#{$c-navigation}__primary-tile {
       width: 25%;
       height: auto;
-      line-height: $mobile-nav-height;
+      line-height: 50px;
       color: $color-tile-fg;
-      text-align: center;
       text-decoration: none;
       transition: $animation-speed;
       vertical-align: middle;
+      text-transform: uppercase;
+      padding-left: 10px;
 
       @include breakpoint(700px) {
         display: block;
         position: relative;
-        height: 50px;
-        line-height: 50px;
       }
 
       @include breakpoint($small) {
@@ -358,9 +369,23 @@
           display: block;
           width: 60px;
           margin-right: -100px;
+          padding-left: 0;
         }
       }
 
+    }
+
+  }
+
+  &__primary-menu-title {
+    display: none;
+
+    @include small {
+      @include rem(font-size, 16px);
+      display: inline-block;
+      padding-top: 4px;
+      padding-right: 4px;
+      text-transform: uppercase;
     }
 
   }

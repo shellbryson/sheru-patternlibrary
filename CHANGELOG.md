@@ -2,6 +2,81 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.7] - 2017-10-04
+
+### Fixes
+
+- Fixes a sizing and layout issues for main site structure
+- Broken 404 page
+- Critical image size hack because WP is... is... ugh.
+
+### Changes
+
+- New background colors
+- Improved main menu
+- Larger, easier to read tiles
+- Scrollbar color in custom components
+- Adjusted breakpoints for primary navigation
+
+### Added
+
+- Primary nav menu toggle now labelled for improved a11y
+
+## [0.9.6] - 2017-10-04
+
+### Changes
+
+- Clean up the terrible site footer
+- Improves styling of post navigation
+- Improve image spacing and image captions
+- Improved line-spacing for pre-text
+
+## [0.9.5] - 2017-10-04
+
+### Adds
+
+- Styling of comments and replies
+- Category & Tag icons, plus mixin to for easier use of Font-Awesome
+- Styled meta data
+
+### Fixes
+
+- Wrapping of Article meta on smaller devices
+
+## [0.9.4] - 2017-10-01
+
+### Fixes
+
+- Fixes several mobile menu display issues
+
+### Changes
+
+- Moves mobile menu to top and shifts mini logo for better modern phone usage
+
+## [0.9.3] - 2017-10-01
+
+### Fixes
+
+- Article wrapping
+- Fixes issue with duplicated "continue reading" link being displayed
+
+### Adds
+
+- Projects tile icon
+
+## [0.9.2] - 2017-10-01
+
+### Fixes
+
+- Article pre-formatted text
+
+## [0.9.1] - 2017-10-01
+
+### Fixes
+
+- Article headings
+- Archive headings
+
 ## [0.9.0] - 2017-10-01
 
 ### Adds
