@@ -2,7 +2,7 @@ const remapify = require('remapify');
 const path = require('path');
 
 module.exports = function (grunt) {
-  const copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/fabric';
+  const copyToExternalPath = '../../../site/wordpress/wp-content/themes/sheru/ui';
   const scriptsPattern = [
     'patterns/**/*.js',
     'components/**/*.js',
@@ -192,7 +192,7 @@ module.exports = function (grunt) {
         cwd: './dist/',
         src: ['styles/*.css', 'fonts/**/*.css'],
         dest: './dist/',
-        ext: '.css'
+        ext: '.min.css'
       }
     },
     /*

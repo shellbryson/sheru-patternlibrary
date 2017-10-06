@@ -16,6 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Changes
 
 - WordPress updated to use minified JS.
+- Minified CSS now separated and linked in WP.
 
 ## [0.9.7] - 2017-10-04
 
