@@ -7,20 +7,13 @@
 // *****************************************************************************
 
 .#{$c-content} {
-  padding: 60px 20px;
 
   @include small {
-    // pad to give us a gutter (various brand elements)
-    padding-top: 100px;
-    padding-right: 160px;
-    padding-left: 44px;
+    margin-top: 100px;
   }
 
   @include medium {
     @include rem(padding-top, 110px);
-    // pad to give us a gutter (various brand elements)
-    padding-right: 30px;
-    display: table-cell;
     width: 70%;
     vertical-align: top;
   }

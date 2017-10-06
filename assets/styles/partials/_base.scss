@@ -14,7 +14,9 @@
 
 html,
 body {
-  overflow-x: hidden;
+  // If you enable hidden overflow here, iOS 11 Safari doesn't calculate the
+  // page size correctly and you get strange clipping.
+  // overflow-x: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
