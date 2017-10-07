@@ -2,7 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.9.8-pre] - 2017-10-06
+## [0.9.9] - 2017-10-07
+
+### Changes
+
+- Hides default pagination
+- Improves spacing of comment block
+
+## [0.9.8] - 2017-10-06
 
 ### Fixes
 

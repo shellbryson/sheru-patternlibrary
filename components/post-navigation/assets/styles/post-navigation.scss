@@ -8,6 +8,12 @@
 
 .#{$c-post-navigation} {
 
+  @include rem(margin, 16px);
+
+  @include small {
+    @include rem(margin, 44px);
+  }
+
   &__next {
     @include fontawesome-after("\f105");
     color: $color-fg;
@@ -36,4 +42,10 @@
     text-decoration: none;
     color: $color-brand;
   }
+}
+
+// Hide the default navigation
+// Todo: remove this in WP
+.post-navigation {
+  display: none;
 }
