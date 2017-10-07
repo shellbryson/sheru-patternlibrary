@@ -21,9 +21,17 @@
     display: block;
     top: 10px;
     right: 18px;
+    width: 90px;
+    height: 90px;
+    z-index: 9;
+  }
+
+  @include medium {
+    display: block;
+    top: 10px;
+    right: 18px;
     width: 150px;
     height: 150px;
-    z-index: 9;
   }
 
   &--small {

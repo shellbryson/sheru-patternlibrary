@@ -77,6 +77,12 @@ $tile-border-horizontal: 1px;
 }
 
 .#{$c-navigation}__secondary {
+
+  // *****************************************************************************
+  // * Categories
+  // * See config/icons.scss
+  // *****************************************************************************
+
   // *****************************************************************************
   // * External
   // *****************************************************************************
@@ -85,7 +91,7 @@ $tile-border-horizontal: 1px;
   }
 
   .profile {
-    @include tile('tile-profile.svg');
+    @include tile($icon-profile);
   }
 
   .external {
@@ -93,22 +99,23 @@ $tile-border-horizontal: 1px;
   }
 
   // *****************************************************************************
-  // * Categories
+  // * Main categories
   // *****************************************************************************
+
   .code {
-    @include tile('tile-code.svg');
+    @include tile($icon-code);
   }
 
   .blog {
-    @include tile('tile-blog.svg');
+    @include tile($icon-blog);
   }
 
   .log {
-    @include tile('tile-blog.svg');
+    @include tile($icon-blog);
   }
 
   .projects {
-    @include tile('tile-projects.svg');
+    @include tile($icon-project);
   }
 
   .setup {

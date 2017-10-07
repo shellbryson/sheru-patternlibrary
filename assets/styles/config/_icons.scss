@@ -2,13 +2,11 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _config.scss
-// *
-// * Imports various configuration files
+// * @name: Icon names
 // *
 // *****************************************************************************
 
-@import "vars";
-@import "icons";
-@import "colors";
-@import "fonts";
+$icon-profile: 'tile-profile.svg';
+$icon-project: 'tile-projects.svg';
+$icon-code: 'tile-code.svg';
+$icon-blog: 'tile-blog.svg';
