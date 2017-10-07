@@ -205,17 +205,16 @@
     .su-article__3d-wrap {
       @include rem(padding, 16px);
       background-color: rgba($color-white, 0.5);
+      transition: $animation-speed-slow;
 
       &:hover {
         @include small {
-          transform: perspective( $small-default-perspective ) rotateY( -15deg ) scale(1.05) translateX(-10px);
+          transform: scale(1.05) translateX(-10px);
         }
       }
 
       @include small {
         @include rem(margin-right, 16px);
-        transform: perspective( $small-default-perspective ) rotateY( -20deg );
-        transition: $animation-speed-slow;
         transform-origin: 20% 0;
         max-width: 90%;
       }
