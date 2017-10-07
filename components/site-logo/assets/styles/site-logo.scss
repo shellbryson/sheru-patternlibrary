@@ -47,3 +47,119 @@
     }
   }
 }
+
+.su-logo-animated {
+
+  $color-base: #385978;
+  $color-bg: #e3e3e3;
+  $color-chev: #ff0000;
+
+  display: none;
+  position: absolute;
+  transform: translate3d(0,0,0) perspective( $small-default-perspective ) rotateY( -15deg );
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+
+  @include small {
+    display: block;
+    top: 10px;
+    right: 18px;
+    z-index: 9;
+  }
+
+  @include medium {
+    display: block;
+  }
+
+  &__wrapper {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    transform: scale(0.8);
+
+    @include medium {
+      transform: scale(1);
+    }
+
+    &:hover {
+      .c {
+        transform: scale(1.1);
+      }
+    }
+
+    @mixin poly($p1, $p2, $p3, $c) {
+      -webkit-clip-path: polygon($p1, $p2, $p3);
+      clip-path: polygon($p1, $p2, $p3);
+      background-color: $c;
+    }
+
+    $increment: 3;
+    $incrementAnim: 1500;
+
+    @for $i from 1 through 5 {
+      .c:nth-child( #{$i} ) {
+        animation-duration: #{($i * $incrementAnim)}ms;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      .b:nth-child( #{$i} ) {
+        animation-duration: #{($i * $incrementAnim)}ms;
+      }
+    }
+
+    @keyframes fade-logo {
+      0% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .l {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      transition: 1s;
+      width: 100%;
+      height: 100%;
+      animation: fade-logo ease-in-out infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
+    }
+
+    .bg2 {
+      @include poly(50px 0, 50px 50px, 0 50px, darken($color-bg, 10%));
+    }
+    .bg3 {
+      @include poly(50px 0, 100px 50px, 50px 50px,  darken($color-bg, 20%));
+    }
+    .bg7 {
+      @include poly(100px 50px, 150px 50px, 150px 100px,  darken($color-bg, 10%));
+    }
+    .bg8 {
+      @include poly(0 100px, 50px 100px, 0 150px,  darken($color-bg, 10%));
+    }
+    .chev0 {
+      @include poly(100px 0, 150px 0, 100px 50px, $color-chev);
+    }
+    .chev1 {
+      @include poly(0 50px, 100px 50px, 50px 100px, $color-chev);
+    }
+    .chev2 {
+      @include poly(100px 50px, 150px 100px, 50px 100px, darken($color-chev, 10%));
+    }
+    .chev3 {
+      @include poly(50px 100px, 150px 100px, 100px 150px, darken($color-chev, 20%));
+    }
+    .chev4 {
+      @include poly(50px 100px, 100px 150px, 0 150px, darken($color-chev, 30%));
+    }
+  }
+}

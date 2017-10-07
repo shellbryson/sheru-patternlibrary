@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Adds
 
+- New animated logo
 - New content type and intro for site
 - Section breaks
 
