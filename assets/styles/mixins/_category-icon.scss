@@ -1,0 +1,14 @@
+@mixin category-icon( $image: 'tile-default.svg' ) {
+  &::after {
+    // Sadly this doesn't work. We need to create new icons...
+    // display: inline-block;
+    // content: "";
+    // background-color: black;
+    // background-image: url('../images/tile-icons/#{$image}');
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-position: right top;
+    // width: 30px;
+    // height: 30px;
+  }
+}

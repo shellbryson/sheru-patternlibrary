@@ -30,50 +30,11 @@ $tile-border-horizontal: 1px;
       display: block;
       width: 190px;
       height: 100px;
-      border-top: $tile-border-vertical solid $color-tile-border-high;
-      border-right: $tile-border-horizontal solid $color-tile-border-low;
-      border-bottom: $tile-border-vertical solid $color-tile-border-high;
-      border-left: $tile-border-horizontal solid $color-tile-border-low;
       line-height: $brand-height;
       background-color: transparent;
       background-size: 100% 100%;
     }
-
-    &:hover,
-    &:focus {
-      @include breakpoint($small) {
-        border-top: 2px solid $color-white;
-      }
-    }
-
-    &::before,
-    &::after {
-      @include breakpoint($small) {
-        display: block;
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        content: "";
-        background-color: rgba($color-tile-border, 0.4);
-      }
-    }
-
-    &::before {
-      top: -$tile-border-vertical;
-      right: -$tile-border-horizontal;
-    }
-
-    &::after {
-      bottom: -$tile-border-vertical;
-      left: -$tile-border-horizontal;
-    }
-
-    &:hover,
-    &:focus {
-      border-top-color: $color-highlight;
-    }
   }
-
 
 // *****************************************************************************
 // * Tile links
@@ -117,46 +78,51 @@ $tile-border-horizontal: 1px;
 
 .#{$c-navigation}__secondary {
 
-}
+  // *****************************************************************************
+  // * Categories
+  // * See config/icons.scss
+  // *****************************************************************************
 
-// *****************************************************************************
-// * External
-// *****************************************************************************
-.pen {
-  @include tile;
-}
+  // *****************************************************************************
+  // * External
+  // *****************************************************************************
+  .pen {
+    @include tile;
+  }
 
-.profile {
-  @include tile('tile-profile.svg');
-}
+  .profile {
+    @include tile($icon-profile);
+  }
 
-.external {
-  @include tile;
-}
+  .external {
+    @include tile;
+  }
 
-// *****************************************************************************
-// * Categories
-// *****************************************************************************
-.code {
-  @include tile('tile-code.svg');
-}
+  // *****************************************************************************
+  // * Main categories
+  // *****************************************************************************
 
-.blog {
-  @include tile('tile-blog.svg');
-}
+  .code {
+    @include tile($icon-code);
+  }
 
-.log {
-  @include tile('tile-blog.svg');
-}
+  .blog {
+    @include tile($icon-blog);
+  }
 
-.projects {
-  @include tile('tile-projects.svg');
-}
+  .log {
+    @include tile($icon-blog);
+  }
 
-.setup {
-  @include tile;
-}
+  .projects {
+    @include tile($icon-project);
+  }
 
-.inspire {
-  @include tile;
+  .setup {
+    @include tile;
+  }
+
+  .inspire {
+    @include tile;
+  }
 }

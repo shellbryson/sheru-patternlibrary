@@ -7,15 +7,17 @@
 // *****************************************************************************
 
 .#{$c-sidebar} {
-  @include rem(padding, 20px);
+  @include rem(padding, 16px);
   width: 100%;
   margin: 0;
   background-color: $color-sidebar-bg;
 
+  @include small {
+    @include rem(padding, 44px);
+  }
+
   @include medium {
-    // pad to give us a gutter (various brand elements)
-    padding-top: 110px;
-    display: table-cell;
+    @include rem(padding-top, 110px);
     width: 30%;
     vertical-align: top;
   }

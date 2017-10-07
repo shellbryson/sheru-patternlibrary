@@ -8,8 +8,16 @@
 
 .#{$c-article} {
 
-  &__header {
+  margin: 20px 20px 0 20px;
 
+  &__title {
+    text-transform: inherit;
+  }
+
+  @include small {
+    margin-top: 0;
+    margin-right: 128px;
+    margin-left: 44px;
   }
 
   &__date {
@@ -23,6 +31,7 @@
   }
 
   &__content {
+    width: 100%;
 
     p {
       line-height: 1.6;
@@ -72,9 +81,7 @@
       }
     }
 
-
   }
-
 
   &__more {
     @include rem(margin-bottom, 16px);
@@ -93,7 +100,6 @@
 
     &:hover,
     &:focus {
-
       color: $color-brand;
 
       &::after {
@@ -138,4 +144,116 @@
       content: "";
     }
   }
+
+  // *****************************************************************************
+  // * Frontpage specific
+  // *****************************************************************************
+
+  &--frontpage {
+    background-image: url('../images/backgrounds/frontpage.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 282px;
+    margin-top: 0;
+    margin: 0;
+
+    @include small {
+      display: flex;
+      margin-top: -100px;
+      min-height: 450px;
+    }
+
+    .su-article__header {
+      @include rem(margin-left, 16px);
+      @include rem(padding-top, 44px);
+
+      @include small {
+        @include rem(margin-left, 44px);
+        @include rem(padding-top, 112px);
+        width: 50%;
+      }
+
+      @include medium {
+        width: 50%;
+      }
+
+      .su-heading {
+        @include small {
+          max-width: 100px;
+        }
+      }
+    }
+
+    .su-article__content {
+
+      @include rem(margin, 0 16px);
+      @include rem(padding-top, 44px);
+      width: auto;
+
+      @include small {
+        @include rem(margin, 16px 16px 16px 0);
+        @include rem(padding-top, 112px);
+        width: 50%;
+      }
+
+      @include medium {
+        @include rem(margin, 16px 32px 16px 16px);
+      }
+    }
+
+    .su-article__3d-wrap {
+      @include rem(padding, 16px);
+      background-color: rgba($color-white, 0.5);
+      transition: $animation-speed-slow;
+
+      @include small {
+        @include rem(margin-right, 16px);
+        transform-origin: 20% 0;
+        // max-width: 90%;
+      }
+
+      @include medium {
+        //@include rem(margin-right, 32px);
+      }
+
+      a {
+        @include rem(margin-right, 4px);
+        @include rem(margin-bottom, 4px);
+        @include rem(padding, 4px 8px);
+        @include rem(font-size, 16px);
+        display: inline-block;
+        background-color: rgba($color-black, 0.1);
+        color: $color-black;
+
+        &:hover,
+        &:focus {
+          background-color: $color-brand;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Category specific
+  // *****************************************************************************
+
+  &--project {
+    .su-article__title {
+      @include category-icon( $icon-project );
+    }
+  }
+
+  &--code {
+    .su-article__title {
+      @include category-icon( $icon-code ) ;
+    }
+  }
+
+  &--blog {
+    .su-article__title {
+      @include category-icon($icon-blog);
+    }
+  }
+
 }

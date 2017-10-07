@@ -11,13 +11,14 @@ $page-perspective: 10000px;
 // Wraps everything to avoid page backgrounds messing with Fabric
 .su-page  {
   @include rem(padding, 30px 10px);
+  position: relative;
   min-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
   background: $color-body-bg linear-gradient(135deg, $color-page-bg-start 0%, $color-page-bg-end 100%);
 
   @include small {
-    @include rem(padding-top, 0);
-    padding-left: 30px;
-    padding-right: 30px;
+    @include rem(padding, 0 30px);
   }
 
   // Move page down a little if admin is open
@@ -26,10 +27,14 @@ $page-perspective: 10000px;
       @include rem(padding-top, 100px);
     }
   }
-}
 
-.su-main {
-  width: 100%;
+  &-header {
+    @include rem(margin, 16px 16px 32px 16px);
+
+    @include small {
+      @include rem(margin, 0 44px 32px 44px);
+    }
+  }
 }
 
 // *****************************************************************************
@@ -40,8 +45,6 @@ $page-perspective: 10000px;
 .su-wrapper {
 
   @include rem(margin-top, 40px);
-
-  position: relative;
   width: 100%;
   min-height: 100%;
   border: 1px solid $color-base-light;
@@ -51,13 +54,12 @@ $page-perspective: 10000px;
   box-shadow: 0 20px 20px $color-shadows;
 
   @include medium {
-    display: table;
+    display: flex;
   }
 
   .su-menu-open & {
 
     @include breakpoint($small) {
-      //@include rem(margin, 20px);
       transform: translateX( 60px ) translateY( 10px );
     }
 

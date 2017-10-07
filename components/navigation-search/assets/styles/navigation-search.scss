@@ -17,6 +17,7 @@ $layout-search-field-height: 50px;
   width: 100%;
   background-color: $color-base-dark;
   transition: $animation-speed;
+  transform: translate3d(0,0,0);
 
   // As the navigation reorders nav/secondary/search, here we
   // deliberate set the search to be 2nd item (directly above)

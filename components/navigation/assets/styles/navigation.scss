@@ -10,12 +10,11 @@
 
   $root: &;
 
-  // Mobile first
   position: fixed;
   right: 0;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 9;
   transition: $animation-speed-slow;
   transform: translate3d(0,0,0);
 
@@ -27,11 +26,6 @@
     bottom: auto;
     width: $navigation-width-small;
     max-width: 800px;
-
-    // Move nav down a little if admin is open
-    .admin-bar & {
-      @include rem(top, 60px);
-    }
   }
 
   @include breakpoint($medium) {
@@ -44,7 +38,7 @@
 
   .su-menu-open & {
     @include small {
-      transform: translate(20px, 4px) scale(1.05);
+      transform: translate(20px, 20px) scale(1.05);
     }
   }
 
@@ -63,12 +57,11 @@
       // On desktop, we turn the menu wrapper back into a block allowing for
       // natural document flow (so keyboard navigation works correctly)
       display: block;
-      position: absolute;
-      z-index: 99;
       transform: perspective( $small-default-perspective ) rotateY( $small-default-rotation );
       transition: $animation-speed-slow;
       transform-origin: 20% 0;
       pointer-events: all;
+      z-index: 1;
 
       &:hover {
         transform: perspective( $small-hover-perspective ) rotateY( $small-hover-rotation );
@@ -200,7 +193,8 @@
 
   &__scroll {
     display: block;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     width: 100%;
     -webkit-overflow-scrolling: touch;
@@ -262,8 +256,8 @@
       @include breakpoint($small) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-column-gap: 6px;
-        grid-row-gap: 6px;
+        // grid-column-gap: 6px;
+        // grid-row-gap: 6px;
       }
 
     }
@@ -291,33 +285,6 @@
           background-color: $current-color;
         }
       }
-    }
-  }
-
-  // *****************************************************************************
-  // * Scroll controls
-  // *****************************************************************************
-
-  &__action {
-    display: none;
-
-    @include breakpoint($small) {
-      position: absolute;
-      right: -25px;
-      z-index: 9999;
-      width: 24px;
-      height: 40px;
-      background-color: $color-tile-border-high;
-      transition: $animation-speed;
-
-      &:hover {
-        height: 60px;
-        box-shadow: 0 10px 20px $color-shadows;
-      }
-    }
-
-    &--show {
-      display: block;
     }
   }
 

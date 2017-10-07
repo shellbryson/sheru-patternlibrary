@@ -57,4 +57,17 @@
     text-decoration: none;
     color: $color-fg;
   }
+
+  // *****************************************************************************
+  // * For headings that are between article blocks (index.php, for example)
+  // *****************************************************************************
+
+  &--section {
+    @include rem(padding, 16px);
+    text-transform: uppercase;
+
+    @include small {
+      @include rem(padding, 0 44px 44px 44px);
+    }
+  }
 }

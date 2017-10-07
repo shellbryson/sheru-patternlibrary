@@ -1,6 +1,10 @@
 {
   "name": "sheru",
+<<<<<<< HEAD
   "version": "0.9.8-pre",
+=======
+  "version": "0.9.10",
+>>>>>>> release/0.9.10
   "description": "Front end developer blog",
   "main": "Gruntfile.js",
   "scripts": {
@@ -24,7 +28,6 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.1.0",
     "grunt-contrib-requirejs": "^1.0.0",
-    "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jscs": "^3.0.1",
     "grunt-modernizr": "^1.0.2",
@@ -32,7 +35,9 @@
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-svgstore": "^1.0.0",
+    "grunt-run": "0.8.0",
     "jquery": "3.2.1",
-    "remapify": "^2.1.0"
+    "remapify": "^2.1.0",
+    "uglify-es": "^3.1.3"
   }
 }

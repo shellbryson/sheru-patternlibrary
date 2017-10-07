@@ -8,8 +8,8 @@
 
 .su-footer {
 
-
   width: 100%;
+  color: darken($color-white, 10%);
 
   @include small {
     display: table;
@@ -42,7 +42,6 @@
     @include rem(font-size, 12px);
 
     line-height: 1.5;
-    font-family: monospace;
     text-transform: lowercase;
 
     @include small {
@@ -52,7 +51,7 @@
 
     a {
       @include link;
-      font-family: monospace;
+      color: darken($color-white, 20%);
     }
   }
 
