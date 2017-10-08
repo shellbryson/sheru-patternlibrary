@@ -24,5 +24,6 @@
 
   a {
     @include link;
+    color: $color-brand;
   }
 }

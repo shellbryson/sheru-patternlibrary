@@ -10,6 +10,18 @@
 
   margin: 20px 20px 0 20px;
 
+  .su-header {
+    @include rem(margin-right, 32px);
+
+    @include small {
+      @include rem(margin-right, 64px);
+    }
+
+    @include medium {
+      @include rem(margin-right, 0);
+    }
+  }
+
   &__title {
     text-transform: inherit;
   }
@@ -68,17 +80,53 @@
       }
 
       img {
-        max-width: 75%;
+        max-width: 100%;
         height: auto;
       }
     }
 
+    img {
+      max-width: 100%;
+    }
+
     figcaption {
+
+      @include rem(margin-top, 8px);
 
       @include small {
         @include rem(margin-top, 8px);
         @include rem(margin-left, 32px);
       }
+    }
+
+    code {
+      background-color: #f9f9f9;
+      font-family: monospace;
+      padding: 4px 8px;
+      font-size: inherit;
+    }
+
+    blockquote {
+      @include rem(margin-left, 32px);
+      @include rem(margin-bottom, 32px);
+
+      p {
+        display: inline;
+      }
+
+      &::before {
+        @include rem(font-size, 32px);
+        margin-left: -34px;
+        margin-right: 10px;
+        display: inline-block;
+        font-family: "fontawesome";
+        content: "\f054";
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-brand;
     }
 
   }
@@ -187,7 +235,6 @@
     .su-article__content {
 
       @include rem(margin, 0 16px);
-      @include rem(padding-top, 44px);
       width: auto;
 
       @include small {
@@ -209,11 +256,6 @@
       @include small {
         @include rem(margin-right, 16px);
         transform-origin: 20% 0;
-        // max-width: 90%;
-      }
-
-      @include medium {
-        //@include rem(margin-right, 32px);
       }
 
       a {
@@ -253,6 +295,12 @@
   &--blog {
     .su-article__title {
       @include category-icon($icon-blog);
+    }
+  }
+
+  &--404 {
+    .su-article__title {
+
     }
   }
 
