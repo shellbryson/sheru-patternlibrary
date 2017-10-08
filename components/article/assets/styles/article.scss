@@ -10,6 +10,18 @@
 
   margin: 20px 20px 0 20px;
 
+  .su-header {
+    @include rem(margin-right, 32px);
+
+    @include small {
+      @include rem(margin-right, 64px);
+    }
+
+    @include medium {
+      @include rem(margin-right, 0);
+    }
+  }
+
   &__title {
     text-transform: inherit;
   }
@@ -71,6 +83,10 @@
         max-width: 75%;
         height: auto;
       }
+    }
+
+    img {
+      max-width: 100%;
     }
 
     figcaption {
@@ -187,7 +203,6 @@
     .su-article__content {
 
       @include rem(margin, 0 16px);
-      @include rem(padding-top, 44px);
       width: auto;
 
       @include small {
@@ -209,11 +224,6 @@
       @include small {
         @include rem(margin-right, 16px);
         transform-origin: 20% 0;
-        // max-width: 90%;
-      }
-
-      @include medium {
-        //@include rem(margin-right, 32px);
       }
 
       a {
@@ -253,6 +263,12 @@
   &--blog {
     .su-article__title {
       @include category-icon($icon-blog);
+    }
+  }
+
+  &--404 {
+    .su-article__title {
+
     }
   }
 

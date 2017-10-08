@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.11-pre] - 2017-10-08
+
+### Fixes
+
+- Images (that are not <figures>) escaping content box
+- Fixes spacing of 404 page
+- Fixes heading spacing issues
+
+### Changes
+
+- Heading size adjustments (especially on mobile)
+- Article Frontpage spacing adjustments (mobile)
+
+### Adds
+
+- Makes logo clickable link Home
+
 ## [0.9.10] - 2017-10-07
 
 ### Adds

@@ -56,20 +56,26 @@
 
   display: none;
   position: absolute;
-  transform: translate3d(0,0,0) perspective( $small-default-perspective ) rotateY( -15deg );
   z-index: 1;
   width: 150px;
   height: 150px;
+  transform: scale(0.8);
+  transition: $animation-speed-slow;
 
   @include small {
     display: block;
-    top: 10px;
+    top: 6px;
     right: 18px;
     z-index: 9;
   }
 
   @include medium {
-    display: block;
+    right: -10px;
+    transform: scale(0.9) translateX(16px) perspective( $small-default-perspective ) rotateY( -25deg );
+  }
+
+  &:hover {
+    transform: scale(0.9) translateX(16px) perspective( $small-default-perspective ) rotateY( -20deg );
   }
 
   &__wrapper {
@@ -77,18 +83,6 @@
     display: block;
     width: 100%;
     height: 100%;
-
-    transform: scale(0.8);
-
-    @include medium {
-      transform: scale(1);
-    }
-
-    &:hover {
-      .c {
-        transform: scale(1.1);
-      }
-    }
 
     @mixin poly($p1, $p2, $p3, $c) {
       -webkit-clip-path: polygon($p1, $p2, $p3);
