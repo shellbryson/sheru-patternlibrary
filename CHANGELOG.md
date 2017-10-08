@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fixes spacing of 404 page
 - Fixes heading spacing issues
 - Fixes unstyled links
+- Support for Blockquotes
 
 ### Changes
 

@@ -80,7 +80,7 @@
       }
 
       img {
-        max-width: 75%;
+        max-width: 100%;
         height: auto;
       }
     }
@@ -91,9 +91,36 @@
 
     figcaption {
 
+      @include rem(margin-top, 8px);
+
       @include small {
         @include rem(margin-top, 8px);
         @include rem(margin-left, 32px);
+      }
+    }
+
+    code {
+      background-color: #f9f9f9;
+      font-family: monospace;
+      padding: 4px 8px;
+      font-size: inherit;
+    }
+
+    blockquote {
+      @include rem(margin-left, 32px);
+      @include rem(margin-bottom, 32px);
+
+      p {
+        display: inline;
+      }
+
+      &::before {
+        @include rem(font-size, 32px);
+        margin-left: -34px;
+        margin-right: 10px;
+        display: inline-block;
+        font-family: "fontawesome";
+        content: "\f054";
       }
     }
 
