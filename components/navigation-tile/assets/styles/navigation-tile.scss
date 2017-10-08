@@ -61,15 +61,14 @@ $tile-border-horizontal: 1px;
     overflow: hidden;
     line-height: 100%;
 
-    // Affect borders of tiles
+    color: rgba($color-white, 0.6);
+
     &:hover,
     &:focus {
-      //border: 2px solid $color-highlight;
-      //background-color: $color-highlight;
+      background-color: $color-brand;
     }
 
     span {
-      color: rgba($color-white, 0.6);
       text-transform: uppercase;
     }
 

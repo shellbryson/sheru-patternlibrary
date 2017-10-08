@@ -14,6 +14,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Heading size adjustments (especially on mobile)
 - Article Frontpage spacing adjustments (mobile)
+- Primary Nav: Improved hitboxes for links
+- Tiles / Primary Nav: interactive color
+- Primary Nav: Remove highlight outline
 
 ### Adds
 

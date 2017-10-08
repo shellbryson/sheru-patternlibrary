@@ -79,6 +79,7 @@
     color: inherit;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
 
     @include breakpoint($small) {
       display: inline-block;
@@ -149,6 +150,11 @@
         background-color: $current-color;
       }
     }
+
+    &:hover,
+    &:focus {
+      background-color: $color-brand;
+    }
   }
 
   // *****************************************************************************
@@ -157,6 +163,7 @@
 
   &__primary-tile-link {
     @include rem(font-size, 16px);
+    display: block;
     color: $color-white;
     text-decoration: none;
     transition: $animation-speed-slow;
@@ -256,8 +263,6 @@
       @include breakpoint($small) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        // grid-column-gap: 6px;
-        // grid-row-gap: 6px;
       }
 
     }
@@ -274,7 +279,7 @@
     // Default color
     // Todo, fix why the color loop isn't being applied in navigation
     .su-nav__secondary-tile-link {
-      background-color: darken($_ctl, 25%)
+      background-color: darken($_ctl, 25%);
     }
 
     @each $current-color in $color-tile-bg-list {
@@ -283,6 +288,11 @@
       &:nth-child( #{$i} ) {
         .su-nav__secondary-tile-link {
           background-color: $current-color;
+
+          &:hover,
+          &:focus {
+            background-color: $color-brand;
+          }
         }
       }
     }
