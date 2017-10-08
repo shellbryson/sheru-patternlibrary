@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Images (that are not <figures>) escaping content box
 - Fixes spacing of 404 page
 - Fixes heading spacing issues
+- Fixes unstyled links
 
 ### Changes
 

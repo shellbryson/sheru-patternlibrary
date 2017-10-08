@@ -30,7 +30,13 @@
   }
 
   &__author {
-
+    a {
+      @include rem(padding, 0 8px);
+      @include rem(font-size, 16px);
+      text-decoration: none;
+      display: inline-block;
+      color: $color-brand;
+    }
   }
 
   &__published {
@@ -42,6 +48,7 @@
 
     @include xsmall {
       display: inline-block;
+      color: $color-fg-faded;
     }
   }
 
@@ -54,6 +61,16 @@
     @include rem(padding-top, 16px);
     @include rem(padding-right, 16px);
     display: block;
+
+    a {
+      @include rem(padding, 4px 8px);
+      @include rem(font-size, 16px);
+      text-decoration: none;
+      display: inline-block;
+      background-color: $color-brand;
+      color: $color-white;
+      line-height: 1.6;
+    }
   }
 
   &__categories {
