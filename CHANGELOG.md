@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.12-pre] - 2017-10-09
+
+### Fixes
+
+- Corrects font size for <code>
+- Fixes incorrect article body text weight
+
+### Changes
+
+- Improved blockquote display
+
 ## [0.9.11] - 2017-10-08
 
 ### Fixes

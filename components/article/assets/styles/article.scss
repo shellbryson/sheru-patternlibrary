@@ -47,6 +47,8 @@
 
     p {
       line-height: 1.6;
+      color: $color-fg;
+      font-weight: lighter;
     }
 
     pre {
@@ -100,15 +102,27 @@
     }
 
     code {
+      font-size: 18px;
       background-color: #f9f9f9;
       font-family: monospace;
       padding: 4px 8px;
-      font-size: inherit;
+      color: lighten($color-fg, 10%);
     }
 
     blockquote {
-      @include rem(margin-left, 32px);
       @include rem(margin-bottom, 32px);
+      @include rem(padding, 16px 32px 16px 48px);
+      background-color: rgba($color-black, 0.1);
+      font-weight: bolder;
+      font-size: 20px;
+
+      // FU WP
+      width: 100%!important;
+
+      @include small {
+        @include rem(padding, 16px 16px 16px 64px);
+        margin-left: -30px;
+      }
 
       p {
         display: inline;
@@ -117,10 +131,12 @@
       &::before {
         @include rem(font-size, 32px);
         margin-left: -34px;
+        top: 10px;
         margin-right: 10px;
         display: inline-block;
         font-family: "fontawesome";
         content: "\f054";
+        color: $color-white;
       }
     }
 
