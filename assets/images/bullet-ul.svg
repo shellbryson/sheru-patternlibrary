@@ -1,0 +1,12 @@
+
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bullet">
+            <polygon id="bottom" fill="#5C5C5C" transform="translate(2.000000, 10.000000) rotate(315.000000) translate(-2.000000, -10.000000) " points="2 7.17157288 7.65685425 12.8284271 -3.65685425 12.8284271"></polygon>
+            <polygon id="top" fill="#898989" transform="translate(1.965820, 6.020386) rotate(225.000000) translate(-1.965820, -6.020386) " points="1.96582031 3.19195862 7.62267456 8.84881287 -3.69103394 8.84881287"></polygon>
+        </g>
+    </g>
+</svg>
