@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Adds
 
 - Fade content with overlay when menu open on desktops
+- If overlay clicked, hide navigation
 
 ### Changes
 
