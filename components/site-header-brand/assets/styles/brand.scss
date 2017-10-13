@@ -33,10 +33,12 @@
   &__logo {
     display: block;
     position: absolute;
+
+    // Fx: Specific sizes set because FireFox doesn't scale the SVG background properly
     width: 40px;
-    height: 40px;
+    height: 26px;
     right: 10px;
-    top: 0;
+    top: 5px;
     transition: $animation-speed-slow;
     transform-origin: 20% 0;
     pointer-events: all;

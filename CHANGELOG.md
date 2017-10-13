@@ -2,12 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.9.12-pre] - 2017-10-09
+## [0.9.12-pre] - 2017-10-13
 
 ### Fixes
 
 - Corrects font size for <code>
 - Fixes incorrect article body text weight
+- Fixes brand logo display (header) scaling in FireFox
+
+### Adds
+
+- Fade content with overlay when menu open on desktops
 
 ### Changes
 

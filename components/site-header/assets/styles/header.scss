@@ -8,7 +8,28 @@
 
 .#{$c-head} {
   position: relative;
-  
+
   // Safari needs this as it gets confused about index...
   z-index: 1;
+
+  // Apply full-page overlay on desktops if menu is open
+  .su-menu-open & {
+
+    &::before {
+
+      @include small {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $color-page-overlay;
+        content: "";
+      }
+
+    }
+  }
 }
