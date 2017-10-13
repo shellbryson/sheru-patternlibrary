@@ -145,6 +145,12 @@
       color: $color-brand;
     }
 
+    li {
+      pre {
+        @include rem(margin-top, 32px);
+      }
+    }
+
   }
 
   &__more {
