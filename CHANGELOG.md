@@ -8,8 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - New template structure (PL) for handling special page types (devlogs etc)
 - New templates for devlogs, archives, 'first' articles
+- Basic styling for Logs page
 
-### changes
+### Changes
 
 - Rename content/page elements to more closely match WordPress structure
 - Restructure SCSS around WordPress

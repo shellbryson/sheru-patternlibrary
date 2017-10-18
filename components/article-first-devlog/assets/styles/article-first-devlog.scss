@@ -12,7 +12,7 @@
   // * Any content styling overrides for this content type
   // *****************************************************************************
 
-  background-image: url('../images/backgrounds/frontpage.svg');
+  background-image: url('../images/backgrounds/frontpage-devlog.svg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 282px;
@@ -20,9 +20,9 @@
   margin: 0;
 
   @include small {
+    @include rem(margin-bottom, 32px);
     display: flex;
     margin-top: -100px;
-    min-height: 450px;
   }
 
   // *****************************************************************************
