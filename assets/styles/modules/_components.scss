@@ -25,13 +25,18 @@
 @import "../../../components/page-sidebar/assets/styles/sidebar";
 @import "../../../components/widget/assets/styles/widget";
 
-// Page components
+
+// Article types ('archive pages' in WordPress theme root)
 @import "../../../components/article/assets/styles/article";
+@import "../../../components/article-devlog/assets/styles/article-devlog";
+
+// Article content types ('template parts' in WordPress theme)
+@import "../../../components/content/assets/styles/content";
+@import "../../../components/content-devlog/assets/styles/content-devlog";
+
+// Article components
 @import "../../../components/article-meta/assets/styles/article-meta";
 @import "../../../components/article-comments/assets/styles/article-comments";
-@import "../../../components/page-content/assets/styles/content";
-@import "../../../components/projects/assets/styles/projects";
-@import "../../../components/project/assets/styles/project";
 @import "../../../components/post-navigation/assets/styles/post-navigation";
 
 // Lanes

@@ -1,0 +1,329 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: _article.scss
+// *
+// *****************************************************************************
+
+.#{$c-article} {
+
+  margin: 20px 20px 0 20px;
+
+  .su-header {
+    @include rem(margin-right, 32px);
+
+    @include small {
+      @include rem(margin-right, 64px);
+    }
+
+    @include medium {
+      @include rem(margin-right, 0);
+    }
+  }
+
+  &__title {
+    text-transform: inherit;
+  }
+
+  @include small {
+    margin-top: 0;
+    margin-right: 128px;
+    margin-left: 44px;
+  }
+
+  &__date {
+    @include rem(margin-bottom, 16px);
+    color: $color-fg-faded;
+  }
+
+  &__404 {
+    font-weight: bold;
+    color: $color-brand;
+  }
+
+  &__content {
+    width: 100%;
+
+    p {
+      line-height: 1.6;
+      color: $color-fg;
+      font-weight: lighter;
+    }
+
+    pre {
+      @include rem(margin-bottom, 32px);
+      @include rem(padding, 16px 16px);
+      max-width: 100%;
+      overflow: auto;
+      display: block;
+      font-family: monospace;
+      background: $color-sidebar-bg;
+      white-space: pre-wrap;
+      line-height: 1.5;
+
+      @include small {
+        @include rem(margin-right, 32px);
+        @include rem(padding, 16px 32px);
+        @include rem(font-size, 18px);
+        margin-left: -30px;
+      }
+    }
+
+    figure {
+      @include rem(margin-bottom, 32px);
+      @include rem(font-size, 13px);
+
+      // FU WP
+      width: 100%!important;
+
+      @include small {
+        margin-left: -30px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
+
+      @include rem(margin-top, 8px);
+
+      @include small {
+        @include rem(margin-top, 8px);
+        @include rem(margin-left, 32px);
+      }
+    }
+
+    code {
+      font-size: 18px;
+      background-color: #f9f9f9;
+      font-family: monospace;
+      padding: 4px 8px;
+      color: lighten($color-fg, 10%);
+    }
+
+    blockquote {
+      @include rem(margin-bottom, 32px);
+      @include rem(padding, 16px 32px 16px 48px);
+      background-color: rgba($color-black, 0.05);
+      font-weight: bolder;
+      font-size: 20px;
+
+      // FU WP
+      width: 100%!important;
+
+      @include small {
+        @include rem(padding, 16px 16px 16px 64px);
+        margin-left: -30px;
+      }
+
+      p {
+        display: inline;
+      }
+
+      &::before {
+        @include rem(font-size, 32px);
+        margin-left: -34px;
+        top: 10px;
+        margin-right: 10px;
+        display: inline-block;
+        font-family: "fontawesome";
+        content: "\f054";
+        color: $color-white;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-brand;
+    }
+
+    li {
+      pre {
+        @include rem(margin-top, 32px);
+      }
+    }
+
+  }
+
+  &__more {
+    @include rem(margin-bottom, 16px);
+    @include rem(margin-left, 16px);
+
+    display: block;
+    text-decoration: none;
+    color: $color-fg;
+    line-height: 2;
+    font-weight: bold;
+    transition: $animation-speed;
+
+    @include small {
+      @include rem(margin-left, 32px);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-brand;
+
+      &::after {
+        @include rem(margin-left, 16px);
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-top: 3px;
+      margin-left: 8px;
+      background-image: url('../images/logo-small.svg');
+      background-size: 100% 100%;
+      content: "";
+      vertical-align: top;
+      transition: $animation-speed;
+    }
+  }
+
+  &__more-sr-only {
+    @include sr-only;
+  }
+
+  // todo, remove this from WP instead
+  .more-link {
+    display: none;
+  }
+
+  &__footer {
+    @include rem(margin-bottom, 48px);
+  }
+
+  &--divider {
+    &::after {
+      @include rem(margin, 32px 0);
+      display: block;
+      background-color: $color-brand;
+      max-width: 4px;
+      height: 4px;
+      content: "";
+    }
+  }
+
+  // *****************************************************************************
+  // * Frontpage specific
+  // *****************************************************************************
+
+  &--frontpage {
+    background-image: url('../images/backgrounds/frontpage.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 282px;
+    margin-top: 0;
+    margin: 0;
+
+    @include small {
+      display: flex;
+      margin-top: -100px;
+      min-height: 450px;
+    }
+
+    .su-article__header {
+      @include rem(margin-left, 16px);
+      @include rem(padding-top, 44px);
+
+      @include small {
+        @include rem(margin-left, 44px);
+        @include rem(padding-top, 112px);
+        width: 50%;
+      }
+
+      @include medium {
+        width: 50%;
+      }
+
+      .su-heading {
+        @include small {
+          max-width: 100px;
+        }
+      }
+    }
+
+    .su-article__content {
+
+      @include rem(margin, 0 16px);
+      width: auto;
+
+      @include small {
+        @include rem(margin, 16px 16px 16px 0);
+        @include rem(padding-top, 112px);
+        width: 50%;
+      }
+
+      @include medium {
+        @include rem(margin, 16px 32px 16px 16px);
+      }
+    }
+
+    .su-article__3d-wrap {
+      @include rem(padding, 16px);
+      background-color: rgba($color-white, 0.5);
+      transition: $animation-speed-slow;
+
+      @include small {
+        @include rem(margin-right, 16px);
+        transform-origin: 20% 0;
+      }
+
+      a {
+        @include rem(margin-right, 4px);
+        @include rem(margin-bottom, 4px);
+        @include rem(padding, 4px 8px);
+        @include rem(font-size, 16px);
+        display: inline-block;
+        background-color: rgba($color-black, 0.1);
+        color: $color-black;
+
+        &:hover,
+        &:focus {
+          background-color: $color-brand;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  // *****************************************************************************
+  // * Category specific
+  // *****************************************************************************
+
+  &--project {
+    .su-article__title {
+      @include category-icon( $icon-project );
+    }
+  }
+
+  &--code {
+    .su-article__title {
+      @include category-icon( $icon-code ) ;
+    }
+  }
+
+  &--blog {
+    .su-article__title {
+      @include category-icon($icon-blog);
+    }
+  }
+
+  &--404 {
+    .su-article__title {
+
+    }
+  }
+
+}
