@@ -1,0 +1,77 @@
+// *****************************************************************************
+// * Pattern Library
+// *****************************************************************************
+// *
+// * @name: Article: Devlog
+// *
+// *****************************************************************************
+
+$color-console-highlight: #F39700;
+
+.su-article-devlog {
+
+  // *****************************************************************************
+  // * Any content styling overrides for this content type
+  // *****************************************************************************
+
+  @include small {
+    margin-right: 44px;
+  }
+
+  .su-article__header {
+    @include rem(margin, 32px 0);
+    text-transform: lowercase;
+  }
+
+  .su-article__content {
+    @include rem(padding, 20px);
+    @include rem(font-size, 12px);
+    font-family: monospace;
+    background-color: rgba($color-black, 0.8);
+
+
+    & p,
+    & li,
+    & pre,
+    & code {
+      @include rem(font-size, 12px);
+      font-family: monospace;
+      color: $color-white;
+
+      @include small {
+        @include rem(font-size, 14px);
+      }
+    }
+
+    p {
+      color: rgba($color-white, 0.7);
+    }
+
+    code {
+      background-color: $color-base-dark;
+      color: $color-console-highlight;
+    }
+
+    pre {
+      background-color: $color-base-dark;
+      color: $color-console-highlight;
+    }
+  }
+
+  // *****************************************************************************
+  // * Article furnature: content styling overrides for this content type
+  // *****************************************************************************
+
+  .su-article__more {
+
+  }
+
+  .su-article__footer {
+
+  }
+
+  .su-article__meta {
+
+  }
+
+}

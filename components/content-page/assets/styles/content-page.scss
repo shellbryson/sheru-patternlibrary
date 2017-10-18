@@ -2,16 +2,18 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _article.scss
+// * @name: Content: Page
 // *
 // *****************************************************************************
 
-.#{$c-article} {
+.su-content-page {
 
-  &__content {
+  @include small {
+    @include rem(margin-top, 100px);
+  }
 
-    p {
-      line-height: 1.6;
-    }
+  @include medium {
+    width: 70%;
+    vertical-align: top;
   }
 }

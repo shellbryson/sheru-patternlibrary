@@ -2,11 +2,24 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.0.1-pre] - 2017-10-13
+## [1.1.0-pre] - 2017-10-18
+
+### Adds
+
+- New template structure (PL) for handling special page types (devlogs etc)
+- New templates for devlogs, archives, 'first' articles
+- Basic styling for Logs page
+
+### Changes
+
+- Rename content/page elements to more closely match WordPress structure
+- Restructure SCSS around WordPress
+
+## [1.0.1] - 2017-10-13
 
 ### Fixes
 
-- Pre inside lists spacing
+- 'Pre' elements inside lists, spacing issues
 
 ## [1.0.0] - 2017-10-13
 

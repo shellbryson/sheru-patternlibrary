@@ -2,16 +2,18 @@
 // * Pattern Library
 // *****************************************************************************
 // *
-// * @name: _article.scss
+// * @name: Content: Archive (default in WordPress)
 // *
 // *****************************************************************************
 
-.#{$c-article} {
+.su-content-archive {
 
-  &__content {
+  @include small {
+    @include rem(margin-top, 100px);
+  }
 
-    p {
-      line-height: 1.6;
-    }
+  @include medium {
+    width: 70%;
+    vertical-align: top;
   }
 }
