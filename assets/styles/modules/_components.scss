@@ -25,16 +25,45 @@
 @import "../../../components/page-sidebar/assets/styles/sidebar";
 @import "../../../components/widget/assets/styles/widget";
 
+// *****************************************************************************
+// * Index page articles
+// *****************************************************************************
 
 // Article types ('archive pages' in WordPress theme root)
 @import "../../../components/article/assets/styles/article";
-@import "../../../components/article-devlog/assets/styles/article-devlog";
 
 // Article content types ('template parts' in WordPress theme)
 @import "../../../components/content/assets/styles/content";
-@import "../../../components/content-devlog/assets/styles/content-devlog";
 
-// Article components
+// Optional 'first' articles that appear at top of article types
+@import "../../../components/article-first/assets/styles/article-first";
+
+// *****************************************************************************
+// * Archive view
+// *****************************************************************************
+
+@import "../../../components/article-archive/assets/styles/article-archive";
+@import "../../../components/content-archive/assets/styles/content-archive";
+
+// *****************************************************************************
+// * Devlogs view
+// *****************************************************************************
+
+@import "../../../components/article-devlog/assets/styles/article-devlog";
+@import "../../../components/content-devlog/assets/styles/content-devlog";
+@import "../../../components/article-first-devlog/assets/styles/article-first-devlog";
+
+// *****************************************************************************
+// * Pages view
+// *****************************************************************************
+
+@import "../../../components/article-page/assets/styles/article-page";
+@import "../../../components/content-page/assets/styles/content-page";
+
+// *****************************************************************************
+// * Article components
+// *****************************************************************************
+
 @import "../../../components/article-meta/assets/styles/article-meta";
 @import "../../../components/article-comments/assets/styles/article-comments";
 @import "../../../components/post-navigation/assets/styles/post-navigation";
