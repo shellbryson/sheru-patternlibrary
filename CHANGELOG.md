@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - New template structure (PL) for handling special page types (devlogs etc)
 - New templates for devlogs, archives, 'first' articles
 - Basic styling for Logs page
+- New article type: Dev Project ("live dev")
+- New article type: Project ("case study")
 
 ### Changes
 
