@@ -6,7 +6,48 @@
 // *
 // *****************************************************************************
 
-.su-article-devlog {
+.su-article-project {
+
+  display: table;
+  width: 100%;
+  margin: 0;
+
+  &__meta {
+    @include rem(padding, 0 30px);
+    display: table-cell;
+    position: relative;
+    width: 150px;
+  }
+
+  &__excerpt {
+    display: table-cell;
+  }
+
+  &__year {
+    @include rem(padding, 16px);
+    @include rem(font-size, 32px);
+    position: absolute;
+    display: block;
+    height: 70px;
+    background-color: $color-brand;
+    color: $color-white;
+    z-index: 2;
+  }
+
+  &__divider {
+    &::after {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 2px;
+      left: 80px;
+      bottom: 0;
+      content: '';
+      background-color: $color-brand;
+      height: 100%;
+    }
+  }
+
 
   // *****************************************************************************
   // * Any content styling overrides for this content type

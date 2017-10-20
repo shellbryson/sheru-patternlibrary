@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.0-pre] - 2017-10-18
+## [1.1.0-pre] - 2017-10-20
 
 ### Adds
 
@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Basic styling for Logs page
 - New article type: Dev Project ("live dev")
 - New article type: Project ("case study")
+- Project "list" view
 
 ### Changes
 
